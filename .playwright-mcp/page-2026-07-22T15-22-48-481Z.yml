@@ -1,0 +1,24 @@
+- generic [ref=f4e3]:
+  - complementary [ref=f4e4]:
+    - generic [ref=f4e5]:
+      - text: Ridgeline
+      - generic [ref=f4e7]: Admin
+    - navigation [ref=f4e8]:
+      - link "Dashboard" [ref=f4e9] [cursor=pointer]:
+        - /url: /admin
+      - link "Categories" [ref=f4e10] [cursor=pointer]:
+        - /url: /admin/categories
+      - link "Items" [ref=f4e11] [cursor=pointer]:
+        - /url: /admin/items
+      - link "Inquiries" [ref=f4e12] [cursor=pointer]:
+        - /url: /admin/inquiries
+    - button "Log out" [ref=f4e13] [cursor=pointer]
+  - generic [ref=f4e15]:
+    - generic [ref=f4e16]:
+      - generic [ref=f4e17]:
+        - heading "Items" [level=1] [ref=f4e18]
+        - paragraph [ref=f4e19]: Individual products, each belonging to a category.
+      - button "+ Add item" [ref=f4e20] [cursor=pointer]
+    - generic [ref=f4e21]:
+      - status "Loading items..." [ref=f4e22]
+      - paragraph [ref=f4e23]: Loading items...

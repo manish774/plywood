@@ -1,0 +1,31 @@
+{
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
+  "permissions": {
+    "allow": [
+      "Skill(update-config)",
+      "Bash(npm -v)",
+      "Bash(npm install *)",
+      "Bash(pkill -f \"node server.js\")",
+      "Bash(lsof -nP -iTCP:5050 -sTCP:LISTEN)",
+      "Bash(lsof -nP -iTCP:5000 -sTCP:LISTEN)",
+      "Bash(curl -s -o /dev/null -w \"health check status: %{http_code}\\\\n\" http://localhost:5050/api/health)",
+      "Bash(curl -s http://localhost:5050/api/health)",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_console_messages",
+      "mcp__playwright__browser_snapshot",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_evaluate",
+      "mcp__playwright__browser_fill_form",
+      "mcp__playwright__browser_click",
+      "mcp__playwright__browser_find",
+      "Bash(npm run *)",
+      "mcp__playwright__browser_resize",
+      "mcp__playwright__browser_close",
+      "Bash(pkill -f \"vite$\")",
+      "Bash(pkill -f \"node.*vite\")",
+      "Bash(node -e ' *)"
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+- generic [ref=f2e16]:
+  - complementary [ref=f2e17]:
+    - generic [ref=f2e18]:
+      - text: Ridgeline
+      - generic [ref=f2e20]: Admin
+    - navigation [ref=f2e21]:
+      - link "Dashboard" [ref=f2e22] [cursor=pointer]:
+        - /url: /admin
+      - link "Categories" [ref=f2e23] [cursor=pointer]:
+        - /url: /admin/categories
+      - link "Items" [ref=f2e24] [cursor=pointer]:
+        - /url: /admin/items
+      - link "Inquiries" [ref=f2e25] [cursor=pointer]:
+        - /url: /admin/inquiries
+    - button "Log out" [ref=f2e26] [cursor=pointer]
+  - generic [ref=f2e28]:
+    - generic [ref=f2e30]:
+      - heading "Dashboard" [level=1] [ref=f2e31]
+      - paragraph [ref=f2e32]: Manage what shows up on the public site.
+    - generic [ref=f2e33]:
+      - link "0 Categories" [ref=f2e35] [cursor=pointer]:
+        - /url: /admin/categories
+        - generic [ref=f2e36]: "0"
+        - generic [ref=f2e37]: Categories
+      - link "0 Items" [ref=f2e39] [cursor=pointer]:
+        - /url: /admin/items
+        - generic [ref=f2e40]: "0"
+        - generic [ref=f2e41]: Items
+      - link "0 Inquiries" [ref=f2e43] [cursor=pointer]:
+        - /url: /admin/inquiries
+        - generic [ref=f2e44]: "0"
+        - generic [ref=f2e45]: Inquiries
+    - generic [ref=f2e46]:
+      - heading "Getting started" [level=3] [ref=f2e47]
+      - paragraph [ref=f2e48]: Add a category first, then add items under it — items you create here appear immediately on the public site's category pages.

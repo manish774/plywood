@@ -1,0 +1,12 @@
+- generic [ref=f9e4]:
+  - generic [ref=f9e5]: Ridgeline
+  - paragraph [ref=f9e7]: Staff sign-in for the plywood shop admin panel.
+  - generic [ref=f9e16]: Invalid email or password
+  - generic [ref=f9e8]:
+    - generic [ref=f9e9]:
+      - generic [ref=f9e10]: Email
+      - textbox "Email" [ref=f9e11]: wrong@example.com
+    - generic [ref=f9e12]:
+      - generic [ref=f9e13]: Password
+      - textbox "Password" [ref=f9e14]: wrongpass
+    - button "Sign in" [ref=f9e15] [cursor=pointer]

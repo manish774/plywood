@@ -1,0 +1,41 @@
+- generic [ref=f9e17]:
+  - complementary [ref=f9e18]:
+    - generic [ref=f9e19]:
+      - text: Ridgeline
+      - generic [ref=f9e21]: Admin
+    - navigation [ref=f9e22]:
+      - link "Dashboard" [ref=f9e23] [cursor=pointer]:
+        - /url: /admin
+      - link "Categories" [ref=f9e24] [cursor=pointer]:
+        - /url: /admin/categories
+      - link "Items" [ref=f9e25] [cursor=pointer]:
+        - /url: /admin/items
+      - link "Inquiries" [ref=f9e26] [cursor=pointer]:
+        - /url: /admin/inquiries
+    - button "Log out" [ref=f9e27] [cursor=pointer]
+  - generic [ref=f9e29]:
+    - generic [ref=f9e30]:
+      - generic [ref=f9e31]:
+        - heading "Items" [level=1] [ref=f9e32]
+        - paragraph [ref=f9e33]: Individual products, each belonging to a category.
+      - button "+ Add item" [ref=f9e34] [cursor=pointer]
+    - table [ref=f9e36]:
+      - rowgroup [ref=f9e37]:
+        - row [ref=f9e38]:
+          - columnheader [ref=f9e39]
+          - columnheader "Name" [ref=f9e40]
+          - columnheader "Category" [ref=f9e41]
+          - columnheader "Price" [ref=f9e42]
+          - columnheader [ref=f9e43]
+      - rowgroup [ref=f9e44]:
+        - row [ref=f9e45]:
+          - cell [ref=f9e46]
+          - cell "BS 1088 Marine Ply 18mm 18mm" [ref=f9e47]:
+            - generic [ref=f9e48]: BS 1088 Marine Ply 18mm
+            - generic [ref=f9e49]: 18mm
+          - cell "Marine Plywood" [ref=f9e50]
+          - cell "$84.50" [ref=f9e51]
+          - cell [ref=f9e52]:
+            - generic [ref=f9e53]:
+              - button "Edit" [ref=f9e54] [cursor=pointer]
+              - button "Delete" [ref=f9e55] [cursor=pointer]

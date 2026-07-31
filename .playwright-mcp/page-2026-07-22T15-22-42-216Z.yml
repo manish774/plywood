@@ -1,0 +1,37 @@
+- generic [ref=f3e3]:
+  - complementary [ref=f3e4]:
+    - generic [ref=f3e5]:
+      - text: Ridgeline
+      - generic [ref=f3e7]: Admin
+    - navigation [ref=f3e8]:
+      - link "Dashboard" [ref=f3e9] [cursor=pointer]:
+        - /url: /admin
+      - link "Categories" [ref=f3e10] [cursor=pointer]:
+        - /url: /admin/categories
+      - link "Items" [ref=f3e11] [cursor=pointer]:
+        - /url: /admin/items
+      - link "Inquiries" [ref=f3e12] [cursor=pointer]:
+        - /url: /admin/inquiries
+    - button "Log out" [ref=f3e13] [cursor=pointer]
+  - generic [ref=f3e15]:
+    - generic [ref=f3e16]:
+      - generic [ref=f3e17]:
+        - heading "Categories" [level=1] [ref=f3e18]
+        - paragraph [ref=f3e19]: Groups of plywood shown on the public site.
+      - button "+ Add category" [ref=f3e20] [cursor=pointer]
+    - table [ref=f3e41]:
+      - rowgroup [ref=f3e42]:
+        - row [ref=f3e43]:
+          - columnheader [ref=f3e44]
+          - columnheader "Name" [ref=f3e45]
+          - columnheader "Description" [ref=f3e46]
+          - columnheader [ref=f3e47]
+      - rowgroup [ref=f3e48]:
+        - row [ref=f3e49]:
+          - cell [ref=f3e50]
+          - cell "Marine Plywood" [ref=f3e51]
+          - cell "Water-resistant plywood for boats and wet environments." [ref=f3e52]
+          - cell [ref=f3e53]:
+            - generic [ref=f3e54]:
+              - button "Edit" [ref=f3e55] [cursor=pointer]
+              - button "Delete" [ref=f3e56] [cursor=pointer]

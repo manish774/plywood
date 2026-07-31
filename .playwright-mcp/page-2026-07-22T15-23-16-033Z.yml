@@ -1,0 +1,83 @@
+- generic [ref=f5e2]:
+  - banner [ref=f5e3]:
+    - generic [ref=f5e4]:
+      - link "Ridgeline Plywood Co." [ref=f5e5] [cursor=pointer]:
+        - /url: /
+        - text: Ridgeline
+        - generic [ref=f5e7]: Plywood Co.
+      - navigation [ref=f5e8]:
+        - link "Home" [ref=f5e9] [cursor=pointer]:
+          - /url: /
+        - link "Categories" [ref=f5e11] [cursor=pointer]:
+          - /url: /categories
+        - link "Contact" [ref=f5e12] [cursor=pointer]:
+          - /url: /contact
+  - main [ref=f5e13]:
+    - generic [ref=f5e15]:
+      - generic [ref=f5e17]:
+        - generic [ref=f5e18]:
+          - paragraph [ref=f5e19]: Yard-direct plywood & sheet goods
+          - heading [level=1] [ref=f5e20]:
+            - text: Cut true.Built to
+            - emphasis [ref=f5e21]: last
+            - text: .
+          - paragraph [ref=f5e22]: Marine, hardwood, structural and decorative plywood, stocked deep and priced straight. Browse the catalog or tell us what you're building and we'll find the right sheet for it.
+          - generic [ref=f5e23]:
+            - link "Browse categories" [ref=f5e25] [cursor=pointer]:
+              - /url: /categories
+            - link "Get a quote" [ref=f5e27] [cursor=pointer]:
+              - /url: /contact
+        - generic [ref=f5e28]:
+          - generic [ref=f5e29]: 18mm — BS 1088 Marine
+          - generic [ref=f5e30]: 15mm — Baltic Birch
+          - generic [ref=f5e31]: 12mm — CDX Structural
+          - generic [ref=f5e32]: 6mm — Decorative Veneer
+      - generic [ref=f5e34]:
+        - generic [ref=f5e35]:
+          - generic [ref=f5e36]:
+            - generic [ref=f5e37]: Featured
+            - heading "Shop by category" [level=2] [ref=f5e38]
+          - link "View all" [ref=f5e39] [cursor=pointer]:
+            - /url: /categories
+        - link "Marine Plywood Water-resistant plywood for boats and wet environments. Browse items →" [ref=f5e41] [cursor=pointer]:
+          - generic [ref=f5e43]:
+            - heading "Marine Plywood" [level=3] [ref=f5e45]
+            - paragraph [ref=f5e46]: Water-resistant plywood for boats and wet environments.
+            - generic [ref=f5e47]: Browse items →
+      - generic [ref=f5e50]:
+        - generic [ref=f5e52]:
+          - generic [ref=f5e53]: Why Ridgeline
+          - heading "Built like the yard, not a showroom" [level=2] [ref=f5e54]
+        - generic [ref=f5e55]:
+          - generic [ref=f5e58]:
+            - heading "Real specs, every sheet" [level=3] [ref=f5e59]
+            - paragraph [ref=f5e60]: Thickness, size, grade and brand listed up front — no guessing what's arriving on the truck.
+          - generic [ref=f5e63]:
+            - heading "Stocked deep" [level=3] [ref=f5e64]
+            - paragraph [ref=f5e65]: Marine to decorative veneer, kept in stock so your job doesn't wait on a backorder.
+          - generic [ref=f5e68]:
+            - heading "Straight answers" [level=3] [ref=f5e69]
+            - paragraph [ref=f5e70]: Send a message with what you're building — we'll tell you the right sheet, not just the priciest one.
+  - contentinfo [ref=f5e71]:
+    - generic [ref=f5e73]:
+      - generic [ref=f5e74]:
+        - generic [ref=f5e75]:
+          - text: Ridgeline
+          - generic [ref=f5e77]: Plywood Co.
+        - paragraph [ref=f5e78]: Sheet goods, sourced straight and cut true, since day one.
+      - generic [ref=f5e79]:
+        - generic [ref=f5e80]:
+          - paragraph [ref=f5e81]: Shop
+          - link "Categories" [ref=f5e82] [cursor=pointer]:
+            - /url: /categories
+          - link "Get a quote" [ref=f5e83] [cursor=pointer]:
+            - /url: /contact
+        - generic [ref=f5e84]:
+          - paragraph [ref=f5e85]: Yard
+          - paragraph [ref=f5e86]: Mon–Sat, 7am–5pm
+          - paragraph [ref=f5e87]: 221 Millwork Row, Fall City
+        - generic [ref=f5e88]:
+          - paragraph [ref=f5e89]: Admin
+          - link "Staff login" [ref=f5e90] [cursor=pointer]:
+            - /url: /admin/login
+    - paragraph [ref=f5e92]: © 2026 Ridgeline Plywood Co. All boards sold as-is, grain and all.
