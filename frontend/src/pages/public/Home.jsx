@@ -6,25 +6,19 @@ import CategoryCard from "../../components/public/CategoryCard";
 import { LoadingBlock, ErrorBlock, EmptyBlock } from "../../components/public/StateBlock";
 import { staggerContainer } from "../../components/motionVariants";
 import { getErrorMessage } from "../../utils/errors";
+import { useLanguage } from "../../i18n/useLanguage";
 
-const sheetLabels = [
-  "18mm — BS 1088 Marine",
-  "15mm — Baltic Birch",
-  "12mm — CDX Structural",
-  "6mm — Decorative Veneer",
-];
-
-function HeroStack() {
+function HeroStack({ labels }) {
   return (
     <div className="hero-stack" aria-hidden="true">
-      {sheetLabels.map((label, i) => (
+      {labels.map((label, i) => (
         <motion.div
           key={label}
           className="hero-sheet"
           style={{
             top: i * 58,
             background: i % 2 === 0 ? "var(--bg-dark)" : "var(--bg-dark-panel)",
-            zIndex: sheetLabels.length - i,
+            zIndex: labels.length - i,
           }}
           initial={{ opacity: 0, x: 60, rotate: 3 }}
           animate={{ opacity: 1, x: 0, rotate: 0 }}
@@ -46,12 +40,17 @@ function HeroStack() {
 export default function Home() {
   const [categories, setCategories] = useState(null);
   const [error, setError] = useState("");
+  const { t } = useLanguage();
+  const sheetLabels = t("home.sheetLabels");
+  const featureItems = t("home.features");
+  const heroTitleLine2 = t("home.heroTitleLine2");
+  const heroTitleLine2Accent = t("home.heroTitleLine2Accent");
 
   const load = () => {
     setError("");
     listCategories()
-      .then((data) => setCategories(data.slice(0, 4)))
-      .catch((err) => setError(getErrorMessage(err, "Could not load categories.")));
+      .then((data) => setCategories(data.slice(0, 40)))
+      .catch((err) => setError(getErrorMessage(err, t("common.couldNotLoadCategories"))));
   };
 
   useEffect(load, []);
@@ -67,16 +66,16 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.05 }}
             >
-              Yard-direct plywood &amp; sheet goods
+              {t("home.eyebrow")}
             </motion.p>
             <motion.h1
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ type: "spring", stiffness: 200, damping: 22, delay: 0.1 }}
             >
-              Cut true.
+              {t("home.heroTitleLine1")}
               <br />
-              Built to <em>last</em>.
+              {heroTitleLine2} <em>{heroTitleLine2Accent}</em>.
             </motion.h1>
             <motion.p
               className="hero-lede"
@@ -84,9 +83,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ type: "spring", stiffness: 200, damping: 22, delay: 0.2 }}
             >
-              Marine, hardwood, structural and decorative plywood, stocked deep and priced
-              straight. Browse the catalog or tell us what you're building and we'll
-              find the right sheet for it.
+              {t("home.heroLede")}
             </motion.p>
             <motion.div
               className="hero-actions"
@@ -96,17 +93,17 @@ export default function Home() {
             >
               <motion.div whileTap={{ scale: 0.96 }} whileHover={{ y: -2 }}>
                 <Link to="/categories" className="btn btn-accent">
-                  Browse categories
+                  {t("common.browseCategories")}
                 </Link>
               </motion.div>
               <motion.div whileTap={{ scale: 0.96 }} whileHover={{ y: -2 }}>
                 <Link to="/contact" className="btn btn-outline">
-                  Get a quote
+                  {t("common.getQuote")}
                 </Link>
               </motion.div>
             </motion.div>
           </div>
-          <HeroStack />
+          <HeroStack labels={sheetLabels} />
         </div>
       </section>
 
@@ -114,20 +111,20 @@ export default function Home() {
         <div className="container">
           <div className="section-head">
             <div>
-              <span className="eyebrow">Featured</span>
-              <h2>Shop by category</h2>
+              <span className="eyebrow">{t("home.featured")}</span>
+              <h2>{t("home.shopByCategory")}</h2>
             </div>
             <Link to="/categories" className="btn btn-outline btn-sm">
-              View all
+              {t("common.viewAll")}
             </Link>
           </div>
 
-          {categories === null && !error && <LoadingBlock label="Loading categories..." />}
+          {categories === null && !error && <LoadingBlock label={t("common.loadingCategories")} />}
           {error && <ErrorBlock message={error} onRetry={load} />}
           {categories && categories.length === 0 && (
             <EmptyBlock
-              title="No categories yet"
-              message="Check back soon — the catalog is being stocked."
+              title={t("common.noCategories")}
+              message={t("common.noCategoriesMessage")}
             />
           )}
 
@@ -151,8 +148,8 @@ export default function Home() {
         <div className="container">
           <div className="section-head">
             <div>
-              <span className="eyebrow">Why Ridgeline</span>
-              <h2>Built like the yard, not a showroom</h2>
+              <span className="eyebrow">{t("home.whyRidgeline")}</span>
+              <h2>{t("home.builtLike")}</h2>
             </div>
           </div>
           <motion.div
@@ -162,20 +159,7 @@ export default function Home() {
             whileInView="show"
             viewport={{ once: true, amount: 0.3 }}
           >
-            {[
-              {
-                title: "Real specs, every sheet",
-                copy: "Thickness, size, grade and brand listed up front — no guessing what's arriving on the truck.",
-              },
-              {
-                title: "Stocked deep",
-                copy: "Marine to decorative veneer, kept in stock so your job doesn't wait on a backorder.",
-              },
-              {
-                title: "Straight answers",
-                copy: "Send a message with what you're building — we'll tell you the right sheet, not just the priciest one.",
-              },
-            ].map((f) => (
+            {featureItems.map((f) => (
               <motion.div key={f.title} variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 240, damping: 24 } } }} className="ply-card" style={{ cursor: "default" }}>
                 <div className="ply-card-edge ply-stripe" aria-hidden="true" />
                 <div className="ply-card-body">

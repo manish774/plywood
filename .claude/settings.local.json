@@ -25,7 +25,12 @@
       "mcp__playwright__browser_close",
       "Bash(pkill -f \"vite$\")",
       "Bash(pkill -f \"node.*vite\")",
-      "Bash(node -e ' *)"
+      "Bash(node -e ' *)",
+      "Read(//Users/priya/.claude/**)",
+      "Bash(claude mcp *)",
+      "Bash(git check-ignore *)",
+      "Skill(schedule)",
+      "Bash(git add *)"
     ]
   }
 }

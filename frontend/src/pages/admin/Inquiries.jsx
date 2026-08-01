@@ -3,8 +3,10 @@ import { motion } from "framer-motion";
 import { listInquiries } from "../../api/contact";
 import { LoadingBlock, ErrorBlock, EmptyBlock } from "../../components/public/StateBlock";
 import { getErrorMessage } from "../../utils/errors";
+import { useLanguage } from "../../i18n/useLanguage";
 
 export default function Inquiries() {
+  const { t } = useLanguage();
   const [inquiries, setInquiries] = useState(null);
   const [error, setError] = useState("");
 
@@ -12,7 +14,7 @@ export default function Inquiries() {
     setError("");
     listInquiries()
       .then(setInquiries)
-      .catch((err) => setError(getErrorMessage(err, "Could not load inquiries.")));
+      .catch((err) => setError(getErrorMessage(err, t("common.couldNotLoadInquiries"))));
   };
 
   useEffect(load, []);
@@ -21,15 +23,15 @@ export default function Inquiries() {
     <div>
       <div className="admin-page-head">
         <div>
-          <h1>Inquiries</h1>
-          <p>Messages submitted through the public contact form.</p>
+          <h1>{t("admin.manageInquiriesTitle")}</h1>
+          <p>{t("admin.manageInquiriesDescription")}</p>
         </div>
       </div>
 
-      {inquiries === null && !error && <LoadingBlock label="Loading inquiries..." />}
+      {inquiries === null && !error && <LoadingBlock label={t("common.loadingInquiries")} />}
       {error && <ErrorBlock message={error} onRetry={load} />}
       {inquiries && inquiries.length === 0 && (
-        <EmptyBlock title="No inquiries yet" message="Customer messages will show up here as they come in." />
+        <EmptyBlock title={t("common.noInquiries")} message={t("common.noInquiriesMessage")} />
       )}
 
       {inquiries && inquiries.length > 0 && (
@@ -37,10 +39,10 @@ export default function Inquiries() {
           <table className="admin-table">
             <thead>
               <tr>
-                <th>From</th>
-                <th>Contact</th>
-                <th>Message</th>
-                <th>Received</th>
+                <th>{t("common.from")}</th>
+                <th>{t("common.contact")}</th>
+                <th>{t("common.message")}</th>
+                <th>{t("common.received")}</th>
               </tr>
             </thead>
             <tbody>

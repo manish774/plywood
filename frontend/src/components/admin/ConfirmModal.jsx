@@ -1,4 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
+import { useLanguage } from "../../i18n/useLanguage";
 
 export default function ConfirmModal({
   open,
@@ -9,6 +10,7 @@ export default function ConfirmModal({
   onConfirm,
   onCancel,
 }) {
+  const { t } = useLanguage();
   return (
     <AnimatePresence>
       {open && (
@@ -31,10 +33,10 @@ export default function ConfirmModal({
             <p>{message}</p>
             <div className="modal-actions">
               <button className="btn btn-outline" onClick={onCancel} disabled={busy}>
-                Cancel
+                {t("common.cancel")}
               </button>
               <button className="btn btn-danger" onClick={onConfirm} disabled={busy}>
-                {busy ? "Deleting..." : confirmLabel}
+                {busy ? t("common.deleteBusy") : confirmLabel || t("common.deleteConfirm")}
               </button>
             </div>
           </motion.div>

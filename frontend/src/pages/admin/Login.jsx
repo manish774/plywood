@@ -3,10 +3,12 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useAuth } from "../../context/AuthContext";
 import { getErrorMessage } from "../../utils/errors";
+import { useLanguage } from "../../i18n/useLanguage";
 import "../../styles/admin.css";
 
 export default function Login() {
   const { login } = useAuth();
+  const { t } = useLanguage();
   const navigate = useNavigate();
   const location = useLocation();
   const [email, setEmail] = useState("");
@@ -23,7 +25,7 @@ export default function Login() {
       const redirectTo = location.state?.from?.pathname || "/admin";
       navigate(redirectTo, { replace: true });
     } catch (err) {
-      setError(getErrorMessage(err, "Invalid email or password."));
+      setError(getErrorMessage(err, t("common.invalidLogin")));
     } finally {
       setBusy(false);
     }
@@ -41,7 +43,7 @@ export default function Login() {
           <span className="navbar-logo-mark" aria-hidden="true" />
           Ridgeline
         </div>
-        <p>Staff sign-in for the plywood shop admin panel.</p>
+        <p>{t("admin.loginSubtitle")}</p>
 
         {error && (
           <motion.div
@@ -81,7 +83,7 @@ export default function Login() {
             disabled={busy}
             whileTap={{ scale: 0.97 }}
           >
-            {busy ? "Signing in..." : "Sign in"}
+            {busy ? t("common.signingIn") : t("common.signIn")}
           </motion.button>
         </form>
       </motion.div>

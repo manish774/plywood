@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { submitContact } from "../../api/contact";
 import { getErrorMessage } from "../../utils/errors";
+import { useLanguage } from "../../i18n/useLanguage";
 
 const emptyForm = { name: "", email: "", phone: "", message: "" };
 
@@ -9,6 +10,7 @@ export default function Contact() {
   const [form, setForm] = useState(emptyForm);
   const [status, setStatus] = useState("idle"); // idle | busy | success | error
   const [error, setError] = useState("");
+  const { t } = useLanguage();
 
   const handleChange = (e) => {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
@@ -24,7 +26,7 @@ export default function Contact() {
       setForm(emptyForm);
     } catch (err) {
       setStatus("error");
-      setError(getErrorMessage(err, "Could not send your message. Please try again."));
+      setError(getErrorMessage(err, t("common.couldNotSendMessage")));
     }
   };
 
@@ -32,11 +34,8 @@ export default function Contact() {
     <div>
       <div className="page-header">
         <div className="container">
-          <h1>Get in touch</h1>
-          <p>
-            Tell us what you're building and what sheet goods you need &mdash; we'll get
-            back to you with pricing and availability.
-          </p>
+          <h1>{t("contact.pageTitle")}</h1>
+          <p>{t("contact.pageDescription")}</p>
         </div>
       </div>
 
@@ -48,23 +47,20 @@ export default function Contact() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ type: "spring", stiffness: 220, damping: 24 }}
           >
-            <h2>Ridgeline Plywood Co.</h2>
-            <p>
-              Whether it's a single sheet or a full job list, send us the details and
-              we'll follow up within one business day.
-            </p>
+            <h2>{t("contact.companyName")}</h2>
+            <p>{t("contact.companyCopy")}</p>
             <div className="contact-info-list">
               <div className="contact-info-item">
-                <span>Yard address</span>
-                221 Millwork Row, Fall City
+                <span>{t("contact.yardAddressLabel")}</span>
+                {t("contact.yardAddressValue")}
               </div>
               <div className="contact-info-item">
-                <span>Hours</span>
-                Mon&ndash;Sat, 7am&ndash;5pm
+                <span>{t("contact.hoursLabel")}</span>
+                {t("contact.hoursValue")}
               </div>
               <div className="contact-info-item">
-                <span>Phone</span>
-                (555) 019-2044
+                <span>{t("contact.phoneLabel")}</span>
+                {t("contact.phoneValue")}
               </div>
             </div>
           </motion.div>
@@ -84,7 +80,7 @@ export default function Contact() {
                   animate={{ opacity: 1, height: "auto" }}
                   exit={{ opacity: 0, height: 0 }}
                 >
-                  Thanks &mdash; your message is in. We'll be in touch soon.
+                  {t("contact.successMessage")}
                 </motion.div>
               )}
               {status === "error" && (
@@ -101,7 +97,7 @@ export default function Contact() {
 
             <div className="field-row">
               <div className="field">
-                <label htmlFor="contact-name">Name</label>
+                <label htmlFor="contact-name">{t("common.name")}</label>
                 <input
                   id="contact-name"
                   name="name"
@@ -111,7 +107,7 @@ export default function Contact() {
                 />
               </div>
               <div className="field">
-                <label htmlFor="contact-phone">Phone</label>
+                <label htmlFor="contact-phone">{t("common.phone")}</label>
                 <input
                   id="contact-phone"
                   name="phone"
@@ -122,7 +118,7 @@ export default function Contact() {
             </div>
 
             <div className="field">
-              <label htmlFor="contact-email">Email</label>
+              <label htmlFor="contact-email">{t("common.email")}</label>
               <input
                 id="contact-email"
                 name="email"
@@ -134,7 +130,7 @@ export default function Contact() {
             </div>
 
             <div className="field">
-              <label htmlFor="contact-message">Message</label>
+              <label htmlFor="contact-message">{t("common.message")}</label>
               <textarea
                 id="contact-message"
                 name="message"
@@ -142,7 +138,7 @@ export default function Contact() {
                 value={form.message}
                 onChange={handleChange}
                 required
-                placeholder="What are you building, and what do you need?"
+                placeholder={t("contact.placeholder")}
               />
             </div>
 
@@ -154,7 +150,7 @@ export default function Contact() {
               whileHover={{ y: -2 }}
               style={{ width: "100%" }}
             >
-              {status === "busy" ? "Sending..." : "Send message"}
+              {status === "busy" ? t("common.sending") : t("common.sendMessage")}
             </motion.button>
           </motion.form>
         </div>

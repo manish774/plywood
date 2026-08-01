@@ -1,15 +1,22 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
-
-const links = [
-  { to: "/", label: "Home", end: true },
-  { to: "/categories", label: "Categories" },
-  { to: "/contact", label: "Contact" },
-];
+import { useLanguage } from "../../i18n/useLanguage";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const { lang, setLang, t } = useLanguage();
+
+  const links = [
+    { to: "/", label: t("nav.home"), end: true },
+    { to: "/categories", label: t("nav.categories") },
+    { to: "/contact", label: t("nav.contact") },
+  ];
+
+  const toggleLanguage = () => {
+    setLang(lang === "en" ? "hi" : "en");
+    setOpen(false);
+  };
 
   return (
     <header className="navbar">
@@ -17,7 +24,7 @@ export default function Navbar() {
         <NavLink to="/" className="navbar-logo" onClick={() => setOpen(false)}>
           <span className="navbar-logo-mark" aria-hidden="true" />
           Ridgeline
-          <span className="navbar-logo-sub">Plywood Co.</span>
+          <span className="navbar-logo-sub">{t("nav.logoSub")}</span>
         </NavLink>
 
         <nav className="navbar-links navbar-links-desktop">
@@ -44,11 +51,19 @@ export default function Navbar() {
               )}
             </NavLink>
           ))}
+          <button
+            className="navbar-lang-switch"
+            type="button"
+            onClick={toggleLanguage}
+            aria-label={t("nav.toggleAria")}
+          >
+            {t("nav.toggle")}
+          </button>
         </nav>
 
         <button
           className="navbar-burger"
-          aria-label="Toggle menu"
+          aria-label={t("nav.burgerAria")}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
         >
@@ -79,6 +94,9 @@ export default function Navbar() {
               {link.label}
             </NavLink>
           ))}
+          <button className="navbar-lang-switch-mobile" type="button" onClick={toggleLanguage}>
+            {t("nav.toggle")}
+          </button>
         </motion.nav>
       )}
     </header>

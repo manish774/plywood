@@ -4,19 +4,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import { getItem } from "../../api/items";
 import { LoadingBlock, ErrorBlock } from "../../components/public/StateBlock";
 import { getErrorMessage } from "../../utils/errors";
-
-const specLabels = {
-  thickness: "Thickness",
-  size: "Sheet size",
-  grade: "Grade",
-  brand: "Brand",
-};
+import { useLanguage } from "../../i18n/useLanguage";
 
 export default function ItemDetail() {
   const { id } = useParams();
   const [item, setItem] = useState(null);
   const [error, setError] = useState("");
   const [activeImage, setActiveImage] = useState(0);
+  const { t } = useLanguage();
+  const specLabels = t("itemDetail.specLabels");
 
   const load = () => {
     setError("");
@@ -24,7 +20,7 @@ export default function ItemDetail() {
     setActiveImage(0);
     getItem(id)
       .then(setItem)
-      .catch((err) => setError(getErrorMessage(err, "Could not load this item.")));
+      .catch((err) => setError(getErrorMessage(err, t("common.couldNotLoadItem"))));
   };
 
   useEffect(load, [id]);
@@ -32,7 +28,7 @@ export default function ItemDetail() {
   if (!item && !error) {
     return (
       <div className="container section">
-        <LoadingBlock label="Loading item..." />
+        <LoadingBlock label={t("common.loadingItem")} />
       </div>
     );
   }
@@ -51,12 +47,12 @@ export default function ItemDetail() {
   return (
     <div className="container section">
       <div className="breadcrumb">
-        <Link to="/categories">Categories</Link>
+        <Link to="/categories">{t("itemDetail.breadcrumbCategories")}</Link>
         <span>/</span>
         {category?._id ? (
           <Link to={`/categories/${category._id}`}>{category.name}</Link>
         ) : (
-          <span>{category?.name || "Item"}</span>
+          <span>{category?.name || t("itemDetail.pageTitle")}</span>
         )}
         <span>/</span>
         <span>{item.name}</span>
@@ -104,7 +100,7 @@ export default function ItemDetail() {
 
           {typeof item.price === "number" && (
             <div className="item-price-tag">
-              ${item.price.toFixed(2)} <small>per sheet</small>
+              ₹{item.price.toFixed(2)} <small>{t("common.perSheet")}</small>
             </div>
           )}
 
@@ -125,7 +121,7 @@ export default function ItemDetail() {
 
           <div style={{ marginTop: 32 }}>
             <Link to="/contact" className="btn btn-accent">
-              Ask about this sheet
+              {t("common.askAboutSheet")}
             </Link>
           </div>
         </motion.div>

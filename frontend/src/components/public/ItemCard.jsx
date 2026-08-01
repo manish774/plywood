@@ -1,9 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { revealItem } from "../motionVariants";
+import { useLanguage } from "../../i18n/useLanguage";
 
 export default function ItemCard({ item }) {
   const navigate = useNavigate();
+  const { t } = useLanguage();
 
   return (
     <motion.article
@@ -30,10 +32,12 @@ export default function ItemCard({ item }) {
         <p>{item.description}</p>
         <div className="ply-card-footer">
           <span className="ply-card-cta">
-            {item.specifications?.thickness ? `${item.specifications.thickness} sheet` : "View details"}
+            {item.specifications?.thickness
+              ? `${item.specifications.thickness} ${t("common.perSheet")}`
+              : t("common.viewDetails")}
           </span>
           {typeof item.price === "number" && (
-            <span className="ply-card-price">${item.price.toFixed(2)}</span>
+            <span className="ply-card-price">₹{item.price.toFixed(2)}</span>
           )}
         </div>
       </div>

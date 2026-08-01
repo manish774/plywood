@@ -1,16 +1,18 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
-
-const links = [
-  { to: "/admin", label: "Dashboard", end: true },
-  { to: "/admin/categories", label: "Categories" },
-  { to: "/admin/items", label: "Items" },
-  { to: "/admin/inquiries", label: "Inquiries" },
-];
+import { useLanguage } from "../../i18n/useLanguage";
 
 export default function AdminSidebar() {
   const { logout } = useAuth();
   const navigate = useNavigate();
+  const { lang, setLang, t } = useLanguage();
+
+  const links = [
+    { to: "/admin", label: t("admin.dashboardTitle"), end: true },
+    { to: "/admin/categories", label: t("admin.manageCategoriesTitle") },
+    { to: "/admin/items", label: t("admin.manageItemsTitle") },
+    { to: "/admin/inquiries", label: t("admin.manageInquiriesTitle") },
+  ];
 
   const handleLogout = () => {
     logout();
@@ -38,8 +40,15 @@ export default function AdminSidebar() {
           </NavLink>
         ))}
       </nav>
+      <button
+        className="admin-sidebar-logout"
+        style={{ marginBottom: 12 }}
+        onClick={() => setLang(lang === "en" ? "hi" : "en")}
+      >
+        {t("nav.toggle")}
+      </button>
       <button className="admin-sidebar-logout" onClick={handleLogout}>
-        Log out
+        {t("common.logOut")}
       </button>
     </aside>
   );

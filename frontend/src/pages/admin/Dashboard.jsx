@@ -4,8 +4,10 @@ import { motion } from "framer-motion";
 import { listCategories } from "../../api/categories";
 import { listItems } from "../../api/items";
 import { listInquiries } from "../../api/contact";
+import { useLanguage } from "../../i18n/useLanguage";
 
 export default function Dashboard() {
+  const { t } = useLanguage();
   const [stats, setStats] = useState({ categories: null, items: null, inquiries: null });
 
   useEffect(() => {
@@ -32,16 +34,16 @@ export default function Dashboard() {
     <div>
       <div className="admin-page-head">
         <div>
-          <h1>Dashboard</h1>
-          <p>Manage what shows up on the public site.</p>
+          <h1>{t("admin.dashboardTitle")}</h1>
+          <p>{t("admin.dashboardDescription")}</p>
         </div>
       </div>
 
       <div className="stat-grid">
         {[
-          { label: "Categories", value: stats.categories, to: "/admin/categories" },
-          { label: "Items", value: stats.items, to: "/admin/items" },
-          { label: "Inquiries", value: stats.inquiries, to: "/admin/inquiries" },
+          { label: t("admin.dashboardCards.categories"), value: stats.categories, to: "/admin/categories" },
+          { label: t("admin.dashboardCards.items"), value: stats.items, to: "/admin/items" },
+          { label: t("admin.dashboardCards.inquiries"), value: stats.inquiries, to: "/admin/inquiries" },
         ].map((s, i) => (
           <motion.div
             key={s.label}
@@ -59,11 +61,10 @@ export default function Dashboard() {
 
       <div className="admin-table-wrap" style={{ padding: 28 }}>
         <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.2rem", marginBottom: 10 }}>
-          Getting started
+          {t("admin.gettingStartedTitle")}
         </h3>
         <p style={{ color: "var(--ink-soft)" }}>
-          Add a category first, then add items under it &mdash; items you create here appear
-          immediately on the public site's category pages.
+          {t("admin.gettingStartedBody")}
         </p>
       </div>
     </div>

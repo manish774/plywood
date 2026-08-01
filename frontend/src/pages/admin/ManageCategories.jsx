@@ -10,8 +10,10 @@ import CategoryForm from "../../components/admin/CategoryForm";
 import ConfirmModal from "../../components/admin/ConfirmModal";
 import { LoadingBlock, ErrorBlock, EmptyBlock } from "../../components/public/StateBlock";
 import { getErrorMessage } from "../../utils/errors";
+import { useLanguage } from "../../i18n/useLanguage";
 
 export default function ManageCategories() {
+  const { t } = useLanguage();
   const [categories, setCategories] = useState(null);
   const [loadError, setLoadError] = useState("");
 
@@ -27,7 +29,7 @@ export default function ManageCategories() {
     setLoadError("");
     listCategories()
       .then(setCategories)
-      .catch((err) => setLoadError(getErrorMessage(err, "Could not load categories.")));
+      .catch((err) => setLoadError(getErrorMessage(err, t("common.couldNotLoadCategories"))));
   };
 
   useEffect(load, []);
@@ -56,7 +58,7 @@ export default function ManageCategories() {
       setFormOpen(false);
       load();
     } catch (err) {
-      setFormError(getErrorMessage(err, "Could not save category."));
+      setFormError(getErrorMessage(err, t("common.couldNotSaveCategory")));
     } finally {
       setBusy(false);
     }
@@ -69,7 +71,7 @@ export default function ManageCategories() {
       setConfirmTarget(null);
       load();
     } catch (err) {
-      setLoadError(getErrorMessage(err, "Could not delete category."));
+      setLoadError(getErrorMessage(err, t("common.couldNotDeleteCategory")));
       setConfirmTarget(null);
     } finally {
       setDeleteBusy(false);
@@ -80,20 +82,20 @@ export default function ManageCategories() {
     <div>
       <div className="admin-page-head">
         <div>
-          <h1>Categories</h1>
-          <p>Groups of plywood shown on the public site.</p>
+          <h1>{t("admin.manageCategoriesTitle")}</h1>
+          <p>{t("admin.manageCategoriesDescription")}</p>
         </div>
         <button className="btn btn-accent" onClick={openCreate}>
-          + Add category
+          {t("common.addCategory")}
         </button>
       </div>
 
-      {categories === null && !loadError && <LoadingBlock label="Loading categories..." />}
+      {categories === null && !loadError && <LoadingBlock label={t("common.loadingCategories")} />}
       {loadError && <ErrorBlock message={loadError} onRetry={load} />}
       {categories && categories.length === 0 && (
         <EmptyBlock
-          title="No categories yet"
-          message="Add your first category to start building out the public catalog."
+          title={t("common.noCategories")}
+          message={t("common.categoryEmpty")}
         />
       )}
 
@@ -103,8 +105,8 @@ export default function ManageCategories() {
             <thead>
               <tr>
                 <th></th>
-                <th>Name</th>
-                <th>Description</th>
+                <th>{t("common.name")}</th>
+                <th>{t("common.description")}</th>
                 <th></th>
               </tr>
             </thead>
@@ -127,13 +129,13 @@ export default function ManageCategories() {
                   <td>
                     <div className="admin-table-actions">
                       <button className="btn btn-outline btn-sm" onClick={() => openEdit(c)}>
-                        Edit
+                        {t("common.edit")}
                       </button>
                       <button
                         className="btn btn-danger btn-sm"
                         onClick={() => setConfirmTarget(c)}
                       >
-                        Delete
+                        {t("common.delete")}
                       </button>
                     </div>
                   </td>
@@ -155,10 +157,10 @@ export default function ManageCategories() {
 
       <ConfirmModal
         open={Boolean(confirmTarget)}
-        title="Delete this category?"
+        title={t("common.confirmDeleteCategory")}
         message={
           confirmTarget
-            ? `"${confirmTarget.name}" and its items will no longer appear on the public site.`
+            ? t("common.confirmCategoryDeleteText", { name: confirmTarget.name })
             : ""
         }
         busy={deleteBusy}

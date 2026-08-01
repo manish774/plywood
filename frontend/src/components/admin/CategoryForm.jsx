@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLanguage } from "../../i18n/useLanguage";
 
 const emptyForm = { name: "", description: "", image: "" };
 
 export default function CategoryForm({ open, initial, busy, error, onSubmit, onCancel }) {
+  const { t } = useLanguage();
   const [form, setForm] = useState(initial || emptyForm);
 
   // Re-seed the form whenever a different category is opened for editing.
@@ -41,22 +43,22 @@ export default function CategoryForm({ open, initial, busy, error, onSubmit, onC
             transition={{ type: "spring", stiffness: 340, damping: 28 }}
             onClick={(e) => e.stopPropagation()}
           >
-            <h2>{initial ? "Edit category" : "Add category"}</h2>
+            <h2>{initial ? t("common.editCategory") : t("common.addCategoryModal")}</h2>
             {error && <div className="form-feedback form-feedback-error">{error}</div>}
             <form onSubmit={handleSubmit}>
               <div className="field">
-                <label htmlFor="cat-name">Name</label>
+                <label htmlFor="cat-name">{t("common.name")}</label>
                 <input
                   id="cat-name"
                   name="name"
                   value={form.name}
                   onChange={handleChange}
                   required
-                  placeholder="e.g. Marine Plywood"
+                  placeholder={t("common.categoryPlaceholder")}
                 />
               </div>
               <div className="field">
-                <label htmlFor="cat-description">Description</label>
+                <label htmlFor="cat-description">{t("common.description")}</label>
                 <textarea
                   id="cat-description"
                   name="description"
@@ -67,7 +69,7 @@ export default function CategoryForm({ open, initial, busy, error, onSubmit, onC
                 />
               </div>
               <div className="field">
-                <label htmlFor="cat-image">Image URL</label>
+                <label htmlFor="cat-image">{t("common.imageUrl")}</label>
                 <input
                   id="cat-image"
                   name="image"
@@ -78,10 +80,10 @@ export default function CategoryForm({ open, initial, busy, error, onSubmit, onC
               </div>
               <div className="modal-actions">
                 <button type="button" className="btn btn-outline" onClick={onCancel} disabled={busy}>
-                  Cancel
+                  {t("common.cancel")}
                 </button>
                 <button type="submit" className="btn btn-accent" disabled={busy}>
-                  {busy ? "Saving..." : "Save category"}
+                  {busy ? t("common.saving") : t("common.saveCategory")}
                 </button>
               </div>
             </form>

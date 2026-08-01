@@ -5,16 +5,18 @@ import CategoryCard from "../../components/public/CategoryCard";
 import { LoadingBlock, ErrorBlock, EmptyBlock } from "../../components/public/StateBlock";
 import { staggerContainer } from "../../components/motionVariants";
 import { getErrorMessage } from "../../utils/errors";
+import { useLanguage } from "../../i18n/useLanguage";
 
 export default function Categories() {
   const [categories, setCategories] = useState(null);
   const [error, setError] = useState("");
+  const { t } = useLanguage();
 
   const load = () => {
     setError("");
     listCategories()
       .then(setCategories)
-      .catch((err) => setError(getErrorMessage(err, "Could not load categories.")));
+      .catch((err) => setError(getErrorMessage(err, t("common.couldNotLoadCategories"))));
   };
 
   useEffect(load, []);
@@ -23,16 +25,16 @@ export default function Categories() {
     <div>
       <div className="page-header">
         <div className="container">
-          <h1>Categories</h1>
-          <p>Every family of sheet good we stock, grouped by what it's built for.</p>
+          <h1>{t("categories.pageTitle")}</h1>
+          <p>{t("categories.pageDescription")}</p>
         </div>
       </div>
 
       <div className="container section">
-        {categories === null && !error && <LoadingBlock label="Loading categories..." />}
+        {categories === null && !error && <LoadingBlock label={t("common.loadingCategories")} />}
         {error && <ErrorBlock message={error} onRetry={load} />}
         {categories && categories.length === 0 && (
-          <EmptyBlock title="No categories yet" message="Check back soon — the catalog is being stocked." />
+          <EmptyBlock title={t("common.noCategories")} message={t("common.noCategoriesMessage")} />
         )}
         {categories && categories.length > 0 && (
           <motion.div

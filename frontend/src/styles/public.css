@@ -38,12 +38,18 @@
   flex-shrink: 0;
   background-image: repeating-linear-gradient(
     to bottom,
-    var(--ink) 0, var(--ink) 3px,
-    var(--bg) 3px, var(--bg) 6px,
-    var(--amber) 6px, var(--amber) 7px,
-    var(--bg) 7px, var(--bg) 10px,
-    var(--accent) 10px, var(--accent) 11px,
-    var(--bg) 11px, var(--bg) 14px
+    var(--ink) 0,
+    var(--ink) 3px,
+    var(--bg) 3px,
+    var(--bg) 6px,
+    var(--amber) 6px,
+    var(--amber) 7px,
+    var(--bg) 7px,
+    var(--bg) 10px,
+    var(--accent) 10px,
+    var(--accent) 11px,
+    var(--bg) 11px,
+    var(--bg) 14px
   );
 }
 
@@ -97,6 +103,24 @@
   border: none;
   cursor: pointer;
   padding: 8px;
+}
+
+.navbar-lang-switch,
+.navbar-lang-switch-mobile {
+  border: 1px solid var(--line);
+  background: var(--bg-panel);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.navbar-lang-switch-mobile {
+  margin: 12px 24px 16px;
 }
 
 .navbar-burger span {

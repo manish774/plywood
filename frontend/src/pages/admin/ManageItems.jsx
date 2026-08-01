@@ -6,8 +6,10 @@ import ItemForm from "../../components/admin/ItemForm";
 import ConfirmModal from "../../components/admin/ConfirmModal";
 import { LoadingBlock, ErrorBlock, EmptyBlock } from "../../components/public/StateBlock";
 import { getErrorMessage } from "../../utils/errors";
+import { useLanguage } from "../../i18n/useLanguage";
 
 export default function ManageItems() {
+  const { t } = useLanguage();
   const [items, setItems] = useState(null);
   const [categories, setCategories] = useState([]);
   const [loadError, setLoadError] = useState("");
@@ -27,14 +29,14 @@ export default function ManageItems() {
         setItems(itemData);
         setCategories(catData);
       })
-      .catch((err) => setLoadError(getErrorMessage(err, "Could not load items.")));
+      .catch((err) => setLoadError(getErrorMessage(err, t("common.couldNotLoadItems"))));
   };
 
   useEffect(load, []);
 
   const openCreate = () => {
     if (categories.length === 0) {
-      setLoadError("Add a category before creating an item.");
+      setLoadError(t("common.categoryRequired"));
       return;
     }
     setEditing(null);
@@ -60,7 +62,7 @@ export default function ManageItems() {
       setFormOpen(false);
       load();
     } catch (err) {
-      setFormError(getErrorMessage(err, "Could not save item."));
+      setFormError(getErrorMessage(err, t("common.couldNotSaveItem")));
     } finally {
       setBusy(false);
     }
@@ -73,7 +75,7 @@ export default function ManageItems() {
       setConfirmTarget(null);
       load();
     } catch (err) {
-      setLoadError(getErrorMessage(err, "Could not delete item."));
+      setLoadError(getErrorMessage(err, t("common.couldNotDeleteItem")));
       setConfirmTarget(null);
     } finally {
       setDeleteBusy(false);
@@ -84,18 +86,18 @@ export default function ManageItems() {
     <div>
       <div className="admin-page-head">
         <div>
-          <h1>Items</h1>
-          <p>Individual products, each belonging to a category.</p>
+          <h1>{t("admin.manageItemsTitle")}</h1>
+          <p>{t("admin.manageItemsDescription")}</p>
         </div>
         <button className="btn btn-accent" onClick={openCreate}>
-          + Add item
+          {t("common.addItem")}
         </button>
       </div>
 
-      {items === null && !loadError && <LoadingBlock label="Loading items..." />}
+      {items === null && !loadError && <LoadingBlock label={t("common.loadingItems")} />}
       {loadError && <ErrorBlock message={loadError} onRetry={load} />}
       {items && items.length === 0 && (
-        <EmptyBlock title="No items yet" message="Add your first item to show it on the public site." />
+        <EmptyBlock title={t("common.noItems")} message={t("common.noItemsMessage")} />
       )}
 
       {items && items.length > 0 && (
@@ -104,9 +106,9 @@ export default function ManageItems() {
             <thead>
               <tr>
                 <th></th>
-                <th>Name</th>
-                <th>Category</th>
-                <th>Price</th>
+                <th>{t("common.name")}</th>
+                <th>{t("common.category")}</th>
+                <th>{t("common.priceUsd")}</th>
                 <th></th>
               </tr>
             </thead>
@@ -128,15 +130,15 @@ export default function ManageItems() {
                     {item.category?.name || "—"}
                   </td>
                   <td style={{ fontFamily: "var(--font-mono)" }}>
-                    {typeof item.price === "number" ? `$${item.price.toFixed(2)}` : "—"}
+                    {typeof item.price === "number" ? `₹${item.price.toFixed(2)}` : "—"}
                   </td>
                   <td>
                     <div className="admin-table-actions">
                       <button className="btn btn-outline btn-sm" onClick={() => openEdit(item)}>
-                        Edit
+                        {t("common.edit")}
                       </button>
                       <button className="btn btn-danger btn-sm" onClick={() => setConfirmTarget(item)}>
-                        Delete
+                        {t("common.delete")}
                       </button>
                     </div>
                   </td>
@@ -159,8 +161,8 @@ export default function ManageItems() {
 
       <ConfirmModal
         open={Boolean(confirmTarget)}
-        title="Delete this item?"
-        message={confirmTarget ? `"${confirmTarget.name}" will be removed from the public site.` : ""}
+        title={t("common.confirmDeleteItem")}
+        message={confirmTarget ? t("common.confirmItemDeleteText", { name: confirmTarget.name }) : ""}
         busy={deleteBusy}
         onConfirm={handleDelete}
         onCancel={() => setConfirmTarget(null)}

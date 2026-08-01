@@ -1,9 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { revealItem } from "../motionVariants";
+import { useLanguage } from "../../i18n/useLanguage";
 
 export default function CategoryCard({ category }) {
   const navigate = useNavigate();
+  const { t } = useLanguage();
 
   return (
     <motion.article
@@ -29,7 +31,7 @@ export default function CategoryCard({ category }) {
         <h3>{category.name}</h3>
         <p>{category.description}</p>
         <div className="ply-card-footer">
-          <span className="ply-card-cta">Browse items &rarr;</span>
+          <span className="ply-card-cta">{t("common.browseItems")}</span>
         </div>
       </div>
     </motion.article>
