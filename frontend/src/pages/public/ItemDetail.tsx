@@ -23,7 +23,9 @@ export default function ItemDetail() {
     setActiveImage(0);
     getItem(id)
       .then(setItem)
-      .catch((err) => setError(getErrorMessage(err, t("common.couldNotLoadItem"))));
+      .catch((err) =>
+        setError(getErrorMessage(err, t("common.couldNotLoadItem"))),
+      );
   };
 
   useEffect(load, [id]);
@@ -47,7 +49,8 @@ export default function ItemDetail() {
   if (!item) return null;
 
   const images = item.images?.length ? item.images : [];
-  const category = item.category && typeof item.category === "object" ? item.category : null;
+  const category =
+    item.category && typeof item.category === "object" ? item.category : null;
 
   return (
     <div className="container section">
@@ -98,6 +101,7 @@ export default function ItemDetail() {
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
+          style={{ padding: 10 }}
           transition={{ type: "spring", stiffness: 240, damping: 26 }}
         >
           {category?.name && <span className="eyebrow">{category.name}</span>}
@@ -132,7 +136,11 @@ export default function ItemDetail() {
           )}
 
           <div style={{ marginTop: 32 }}>
-            <Link to="/contact" state={{ itemName: item.name, itemId: item._id }} className="btn btn-accent">
+            <Link
+              to="/contact"
+              state={{ itemName: item.name, itemId: item._id }}
+              className="btn btn-accent"
+            >
               {t("common.askAboutSheet")}
             </Link>
           </div>
