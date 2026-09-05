@@ -1,0 +1,151 @@
+- generic [ref=f15e2]:
+  - generic [ref=f15e3]: Same-day dispatch on in-stock sheets — ask about delivery to your job site.
+  - banner [ref=f15e5]:
+    - generic [ref=f15e6]:
+      - link "Ridgeline Plywood Co." [ref=f15e7] [cursor=pointer]:
+        - /url: /
+        - text: Ridgeline
+        - generic [ref=f15e9]: Plywood Co.
+      - navigation [ref=f15e10]:
+        - link "Home" [ref=f15e11] [cursor=pointer]:
+          - /url: /
+        - link "Categories" [ref=f15e13] [cursor=pointer]:
+          - /url: /categories
+        - link "Contact" [ref=f15e14] [cursor=pointer]:
+          - /url: /contact
+        - link "Login" [ref=f15e15] [cursor=pointer]:
+          - /url: /account
+        - button "Switch to Hindi" [ref=f15e16] [cursor=pointer]: हिंदी
+        - link "Get a quote" [ref=f15e17] [cursor=pointer]:
+          - /url: /contact
+  - main [ref=f15e18]:
+    - generic [ref=f15e20]:
+      - generic [ref=f15e22]:
+        - generic [ref=f15e25]:
+          - paragraph [ref=f15e26]: This week's stock
+          - heading "Marine plywood, freshly stacked" [level=2] [ref=f15e27]
+          - paragraph [ref=f15e28]: BS 1088 sheets in 12mm–18mm, ready for pickup or delivery today.
+          - link "Browse categories" [ref=f15e30] [cursor=pointer]:
+            - /url: /categories
+        - button "Previous slide" [ref=f15e31] [cursor=pointer]
+        - button "Next slide" [ref=f15e34] [cursor=pointer]
+        - tablist "Banner slides" [ref=f15e37]:
+          - tab "Go to slide 1" [selected] [ref=f15e38] [cursor=pointer]
+          - tab "Go to slide 2" [ref=f15e39] [cursor=pointer]
+          - tab "Go to slide 3" [ref=f15e40] [cursor=pointer]
+          - tab "Go to slide 4" [ref=f15e41] [cursor=pointer]
+      - generic [ref=f15e43]:
+        - generic [ref=f15e44]:
+          - paragraph [ref=f15e45]: Yard-direct plywood & sheet goods
+          - heading [level=1] [ref=f15e46]:
+            - text: Cut true.Built to
+            - emphasis [ref=f15e47]: last
+            - text: .
+          - paragraph [ref=f15e48]: Marine, hardwood, structural and decorative plywood, stocked deep and priced straight. Browse the catalog or tell us what you're building and we'll find the right sheet for it.
+          - generic [ref=f15e49]:
+            - link "Browse categories" [ref=f15e51] [cursor=pointer]:
+              - /url: /categories
+            - link "Get a quote" [ref=f15e53] [cursor=pointer]:
+              - /url: /contact
+        - generic [aria-hidden] [ref=f15e54]:
+          - generic [ref=f15e55]: 18mm — BS 1088 Marine
+          - generic [ref=f15e56]: 15mm — Baltic Birch
+          - generic [ref=f15e57]: 12mm — CDX Structural
+          - generic [ref=f15e58]: 6mm — Decorative Veneer
+      - generic [ref=f15e60]:
+        - generic [ref=f15e61]:
+          - heading "Same-day dispatch" [level=3] [ref=f15e65]
+          - paragraph [ref=f15e66]: In-stock sheets go out the same day you order.
+        - generic [ref=f15e67]:
+          - heading "Genuine stock, real specs" [level=3] [ref=f15e71]
+          - paragraph [ref=f15e72]: Thickness, grade and brand as listed — no surprises off the truck.
+        - generic [ref=f15e73]:
+          - heading "Warranty-backed boards" [level=3] [ref=f15e77]
+          - paragraph [ref=f15e78]: Manufacturer warranty honored on every board we sell.
+        - generic [ref=f15e79]:
+          - heading "Straight-forward pricing" [level=3] [ref=f15e83]
+          - paragraph [ref=f15e84]: The price you see is the price you pay — no hidden yard fees.
+      - group "Sheet goods we stock" [ref=f15e85]:
+        - generic [ref=f15e86]:
+          - generic [ref=f15e87]: 18mm — BS 1088 Marine
+          - generic [ref=f15e88]: 15mm — Baltic Birch
+          - generic [ref=f15e89]: 12mm — CDX Structural
+          - generic [ref=f15e90]: 6mm — Decorative Veneer
+          - generic [aria-hidden] [ref=f15e91]: 18mm — BS 1088 Marine
+          - generic [aria-hidden] [ref=f15e92]: 15mm — Baltic Birch
+          - generic [aria-hidden] [ref=f15e93]: 12mm — CDX Structural
+          - generic [aria-hidden] [ref=f15e94]: 6mm — Decorative Veneer
+      - generic [ref=f15e95]:
+        - generic [ref=f15e96]:
+          - generic [ref=f15e97]: "0"
+          - generic [ref=f15e98]: Sheet categories stocked
+        - generic [ref=f15e99]:
+          - generic [ref=f15e100]: "0"
+          - generic [ref=f15e101]: Sheet types available
+        - generic [ref=f15e102]:
+          - generic [ref=f15e103]: "0"
+          - generic [ref=f15e104]: Business-day quote turnaround
+      - generic [ref=f15e106]:
+        - generic [ref=f15e107]:
+          - generic [ref=f15e108]:
+            - generic [ref=f15e109]: Featured
+            - heading "Shop by category" [level=2] [ref=f15e110]
+          - link "View all" [ref=f15e111] [cursor=pointer]:
+            - /url: /categories
+        - generic [ref=f15e112]:
+          - status "Loading categories..." [ref=f15e113]
+          - paragraph [ref=f15e114]: Loading categories...
+      - generic [ref=f15e116]:
+        - generic [ref=f15e118]:
+          - generic [ref=f15e119]: How it works
+          - heading "From browse to delivered, three steps" [level=2] [ref=f15e120]
+        - generic [ref=f15e121]:
+          - generic [ref=f15e122]:
+            - text: "01"
+            - heading "Browse the catalog" [level=3] [ref=f15e123]
+            - paragraph [ref=f15e124]: Filter by category and check real specs — thickness, size, grade and brand — before you ever call.
+          - generic [ref=f15e125]:
+            - text: "02"
+            - heading "Tell us the job" [level=3] [ref=f15e126]
+            - paragraph [ref=f15e127]: Send a quick message with what you're building. We'll match you to the right sheet and confirm stock.
+          - generic [ref=f15e128]:
+            - text: "03"
+            - heading "Pick up or arrange delivery" [level=3] [ref=f15e129]
+            - paragraph [ref=f15e130]: Swing by the yard or ask about delivery — either way, we'll have it staged and ready.
+      - generic [ref=f15e132]:
+        - generic [ref=f15e134]:
+          - generic [ref=f15e135]: Why Ridgeline
+          - heading "Built like the yard, not a showroom" [level=2] [ref=f15e136]
+        - generic [ref=f15e137]:
+          - generic [ref=f15e140]:
+            - heading "Real specs, every sheet" [level=3] [ref=f15e141]
+            - paragraph [ref=f15e142]: Thickness, size, grade and brand listed up front — no guessing what's arriving on the truck.
+          - generic [ref=f15e145]:
+            - heading "Stocked deep" [level=3] [ref=f15e146]
+            - paragraph [ref=f15e147]: Marine to decorative veneer, kept in stock so your job doesn't wait on a backorder.
+          - generic [ref=f15e150]:
+            - heading "Straight answers" [level=3] [ref=f15e151]
+            - paragraph [ref=f15e152]: Send a message with what you're building — we'll tell you the right sheet, not just the priciest one.
+  - contentinfo [ref=f15e153]:
+    - generic [ref=f15e155]:
+      - generic [ref=f15e156]:
+        - generic [ref=f15e157]:
+          - text: Ridgeline
+          - generic [ref=f15e159]: Plywood Co.
+        - paragraph [ref=f15e160]: Whether it's a single sheet or a full job list, send us the details and we'll follow up within one business day.
+      - generic [ref=f15e161]:
+        - generic [ref=f15e162]:
+          - paragraph [ref=f15e163]: Shop
+          - link "Browse categories" [ref=f15e164] [cursor=pointer]:
+            - /url: /categories
+          - link "Get a quote" [ref=f15e165] [cursor=pointer]:
+            - /url: /contact
+        - generic [ref=f15e166]:
+          - paragraph [ref=f15e167]: Yard
+          - paragraph [ref=f15e168]: Mon–Sat, 7am–5pm
+          - paragraph [ref=f15e169]: 221 Millwork Row, Fall City
+        - generic [ref=f15e170]:
+          - paragraph [ref=f15e171]: Admin
+          - link "Staff login" [ref=f15e172] [cursor=pointer]:
+            - /url: /admin/login
+    - paragraph [ref=f15e174]: © 2026 Ridgeline Plywood Co. All boards sold as-is, grain and all.

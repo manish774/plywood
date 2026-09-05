@@ -1,0 +1,121 @@
+- generic [ref=f3e2]:
+  - banner [ref=f3e3]:
+    - generic [ref=f3e4]:
+      - link "Ridgeline प्लाईवुड Co." [ref=f3e5] [cursor=pointer]:
+        - /url: /
+        - text: Ridgeline
+        - generic [ref=f3e7]: प्लाईवुड Co.
+      - navigation [ref=f3e8]:
+        - link "होम" [ref=f3e9] [cursor=pointer]:
+          - /url: /
+        - link "कैटेगरी" [ref=f3e11] [cursor=pointer]:
+          - /url: /categories
+        - link "संपर्क" [ref=f3e12] [cursor=pointer]:
+          - /url: /contact
+        - link "लॉगिन" [ref=f3e13] [cursor=pointer]:
+          - /url: /account
+        - button "अंग्रेज़ी में बदलें" [ref=f3e14] [cursor=pointer]: EN
+  - main [ref=f3e15]:
+    - generic [ref=f3e17]:
+      - generic [ref=f3e19]:
+        - generic [ref=f3e20]:
+          - paragraph [ref=f3e21]: यार्ड से सीधे प्लाईवुड और शीट गुड्स
+          - heading [level=1] [ref=f3e22]:
+            - text: सही कटाई।लंबे समय तक
+            - emphasis [ref=f3e23]: टिकने के लिए बना
+            - text: .
+          - paragraph [ref=f3e24]: मरीन, हार्डवुड, स्ट्रक्चरल और डेकोरेटिव प्लाईवुड — भरपूर स्टॉक में और सही दाम पर। कैटलॉग देखें या बताएं आप क्या बना रहे हैं, हम आपके लिए सही शीट ढूंढ देंगे।
+          - generic [ref=f3e25]:
+            - link "कैटेगरी देखें" [ref=f3e27] [cursor=pointer]:
+              - /url: /categories
+            - link "कोटेशन लें" [ref=f3e29] [cursor=pointer]:
+              - /url: /contact
+        - generic [aria-hidden] [ref=f3e30]:
+          - generic [ref=f3e31]: 18mm — BS 1088 Marine
+          - generic [ref=f3e32]: 15mm — Baltic Birch
+          - generic [ref=f3e33]: 12mm — CDX Structural
+          - generic [ref=f3e34]: 6mm — Decorative Veneer
+      - group "Sheet goods we stock" [ref=f3e35]:
+        - generic [ref=f3e36]:
+          - generic [ref=f3e37]: 18mm — BS 1088 Marine
+          - generic [ref=f3e38]: 15mm — Baltic Birch
+          - generic [ref=f3e39]: 12mm — CDX Structural
+          - generic [ref=f3e40]: 6mm — Decorative Veneer
+          - generic [aria-hidden] [ref=f3e41]: 18mm — BS 1088 Marine
+          - generic [aria-hidden] [ref=f3e42]: 15mm — Baltic Birch
+          - generic [aria-hidden] [ref=f3e43]: 12mm — CDX Structural
+          - generic [aria-hidden] [ref=f3e44]: 6mm — Decorative Veneer
+      - generic [ref=f3e45]:
+        - generic [ref=f3e46]:
+          - generic [ref=f3e47]: "0"
+          - generic [ref=f3e48]: स्टॉक में मौजूद कैटेगरी
+        - generic [ref=f3e49]:
+          - generic [ref=f3e50]: "0"
+          - generic [ref=f3e51]: उपलब्ध शीट के प्रकार
+        - generic [ref=f3e52]:
+          - generic [ref=f3e53]: "0"
+          - generic [ref=f3e54]: कितने दिन में कोटेशन मिलता है
+      - generic [ref=f3e56]:
+        - generic [ref=f3e57]:
+          - generic [ref=f3e58]:
+            - generic [ref=f3e59]: खास आइटम
+            - heading "कैटेगरी के हिसाब से खरीदें" [level=2] [ref=f3e60]
+          - link "सभी देखें" [ref=f3e61] [cursor=pointer]:
+            - /url: /categories
+        - generic [ref=f3e62]:
+          - status "कैटेगरी लोड हो रही हैं..." [ref=f3e63]
+          - paragraph [ref=f3e64]: कैटेगरी लोड हो रही हैं...
+      - generic [ref=f3e66]:
+        - generic [ref=f3e68]:
+          - generic [ref=f3e69]: यह कैसे काम करता है
+          - heading "ब्राउज़ करने से डिलीवरी तक, तीन आसान स्टेप" [level=2] [ref=f3e70]
+        - generic [ref=f3e71]:
+          - generic [ref=f3e72]:
+            - text: "01"
+            - heading "कैटलॉग देखें" [level=3] [ref=f3e73]
+            - paragraph [ref=f3e74]: कॉल करने से पहले कैटेगरी के हिसाब से देखें और असली जानकारी — मोटाई, साइज़, ग्रेड और ब्रांड — चेक करें।
+          - generic [ref=f3e75]:
+            - text: "02"
+            - heading "अपनी जरूरत बताएं" [level=3] [ref=f3e76]
+            - paragraph [ref=f3e77]: आप क्या बना रहे हैं, यह बताते हुए एक मैसेज भेजें। हम सही शीट बताएंगे और स्टॉक कन्फर्म करेंगे।
+          - generic [ref=f3e78]:
+            - text: "03"
+            - heading "पिकअप करें या डिलीवरी लें" [level=3] [ref=f3e79]
+            - paragraph [ref=f3e80]: यार्ड पर आ जाएं या डिलीवरी के बारे में पूछें — हम इसे तैयार रखेंगे।
+      - generic [ref=f3e82]:
+        - generic [ref=f3e84]:
+          - generic [ref=f3e85]: Ridgeline क्यों चुनें
+          - heading "शोरूम नहीं, यार्ड जैसा बनाया गया" [level=2] [ref=f3e86]
+        - generic [ref=f3e87]:
+          - generic [ref=f3e90]:
+            - heading "हर शीट की सही जानकारी" [level=3] [ref=f3e91]
+            - paragraph [ref=f3e92]: मोटाई, साइज़, ग्रेड और ब्रांड पहले से बताया जाता है — ट्रक में क्या आ रहा है, यह अंदाज़ा नहीं लगाना पड़ेगा।
+          - generic [ref=f3e95]:
+            - heading "भरपूर स्टॉक" [level=3] [ref=f3e96]
+            - paragraph [ref=f3e97]: मरीन से लेकर डेकोरेटिव वीनियर तक, सब स्टॉक में रहता है ताकि आपका काम रुके नहीं।
+          - generic [ref=f3e100]:
+            - heading "सीधी और सच्ची बात" [level=3] [ref=f3e101]
+            - paragraph [ref=f3e102]: बताइए आप क्या बना रहे हैं — हम सबसे महंगी नहीं, आपके लिए सही शीट बताएंगे।
+  - contentinfo [ref=f3e103]:
+    - generic [ref=f3e105]:
+      - generic [ref=f3e106]:
+        - generic [ref=f3e107]:
+          - text: Ridgeline
+          - generic [ref=f3e109]: प्लाईवुड Co.
+        - paragraph [ref=f3e110]: चाहे एक शीट चाहिए हो या पूरी जॉब लिस्ट, हमें जानकारी भेजें — हम 1 दिन के अंदर जवाब देंगे।
+      - generic [ref=f3e111]:
+        - generic [ref=f3e112]:
+          - paragraph [ref=f3e113]: दुकान
+          - link "कैटेगरी" [ref=f3e114] [cursor=pointer]:
+            - /url: /categories
+          - link "कोटेशन लें" [ref=f3e115] [cursor=pointer]:
+            - /url: /contact
+        - generic [ref=f3e116]:
+          - paragraph [ref=f3e117]: यार्ड
+          - paragraph [ref=f3e118]: सोम–शनि, सुबह 7 से शाम 5 बजे तक
+          - paragraph [ref=f3e119]: 221 Millwork Row, Fall City
+        - generic [ref=f3e120]:
+          - paragraph [ref=f3e121]: एडमिन
+          - link "स्टाफ लॉगिन" [ref=f3e122] [cursor=pointer]:
+            - /url: /admin/login
+    - paragraph [ref=f3e124]: © 2026 Ridgeline Plywood Co. सारे बोर्ड जैसे हैं वैसे ही बेचे जाते हैं, लकड़ी के दाने (grain) समेत।

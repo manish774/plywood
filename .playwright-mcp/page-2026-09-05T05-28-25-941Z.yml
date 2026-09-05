@@ -1,0 +1,121 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "Ridgeline Plywood Co." [ref=e5] [cursor=pointer]:
+        - /url: /
+        - text: Ridgeline
+        - generic [ref=e7]: Plywood Co.
+      - navigation [ref=e8]:
+        - link "Home" [ref=e9] [cursor=pointer]:
+          - /url: /
+        - link "Categories" [ref=e11] [cursor=pointer]:
+          - /url: /categories
+        - link "Contact" [ref=e12] [cursor=pointer]:
+          - /url: /contact
+        - link "Login" [ref=e13] [cursor=pointer]:
+          - /url: /account
+        - button "Switch to Hindi" [ref=e14] [cursor=pointer]: हिंदी
+  - main [ref=e15]:
+    - generic [ref=e17]:
+      - generic [ref=e19]:
+        - generic [ref=e20]:
+          - paragraph [ref=e21]: Yard-direct plywood & sheet goods
+          - heading [level=1] [ref=e22]:
+            - text: Cut true.Built to
+            - emphasis [ref=e23]: last
+            - text: .
+          - paragraph [ref=e24]: Marine, hardwood, structural and decorative plywood, stocked deep and priced straight. Browse the catalog or tell us what you're building and we'll find the right sheet for it.
+          - generic [ref=e25]:
+            - link "Browse categories" [ref=e27] [cursor=pointer]:
+              - /url: /categories
+            - link "Get a quote" [ref=e29] [cursor=pointer]:
+              - /url: /contact
+        - generic [aria-hidden] [ref=e30]:
+          - generic [ref=e31]: 18mm — BS 1088 Marine
+          - generic [ref=e32]: 15mm — Baltic Birch
+          - generic [ref=e33]: 12mm — CDX Structural
+          - generic [ref=e34]: 6mm — Decorative Veneer
+      - group "Sheet goods we stock" [ref=e35]:
+        - generic [ref=e36]:
+          - generic [ref=e37]: 18mm — BS 1088 Marine
+          - generic [ref=e38]: 15mm — Baltic Birch
+          - generic [ref=e39]: 12mm — CDX Structural
+          - generic [ref=e40]: 6mm — Decorative Veneer
+          - generic [aria-hidden] [ref=e41]: 18mm — BS 1088 Marine
+          - generic [aria-hidden] [ref=e42]: 15mm — Baltic Birch
+          - generic [aria-hidden] [ref=e43]: 12mm — CDX Structural
+          - generic [aria-hidden] [ref=e44]: 6mm — Decorative Veneer
+      - generic [ref=e45]:
+        - generic [ref=e46]:
+          - generic [ref=e47]: "0"
+          - generic [ref=e48]: Sheet categories stocked
+        - generic [ref=e49]:
+          - generic [ref=e50]: "0"
+          - generic [ref=e51]: Sheet types available
+        - generic [ref=e52]:
+          - generic [ref=e53]: "0"
+          - generic [ref=e54]: Business-day quote turnaround
+      - generic [ref=e56]:
+        - generic [ref=e57]:
+          - generic [ref=e58]:
+            - generic [ref=e59]: Featured
+            - heading "Shop by category" [level=2] [ref=e60]
+          - link "View all" [ref=e61] [cursor=pointer]:
+            - /url: /categories
+        - generic [ref=e62]:
+          - status "Loading categories..." [ref=e63]
+          - paragraph [ref=e64]: Loading categories...
+      - generic [ref=e66]:
+        - generic [ref=e68]:
+          - generic [ref=e69]: How it works
+          - heading "From browse to delivered, three steps" [level=2] [ref=e70]
+        - generic [ref=e71]:
+          - generic [ref=e72]:
+            - text: "01"
+            - heading "Browse the catalog" [level=3] [ref=e73]
+            - paragraph [ref=e74]: Filter by category and check real specs — thickness, size, grade and brand — before you ever call.
+          - generic [ref=e75]:
+            - text: "02"
+            - heading "Tell us the job" [level=3] [ref=e76]
+            - paragraph [ref=e77]: Send a quick message with what you're building. We'll match you to the right sheet and confirm stock.
+          - generic [ref=e78]:
+            - text: "03"
+            - heading "Pick up or arrange delivery" [level=3] [ref=e79]
+            - paragraph [ref=e80]: Swing by the yard or ask about delivery — either way, we'll have it staged and ready.
+      - generic [ref=e82]:
+        - generic [ref=e84]:
+          - generic [ref=e85]: Why Ridgeline
+          - heading "Built like the yard, not a showroom" [level=2] [ref=e86]
+        - generic [ref=e87]:
+          - generic [ref=e90]:
+            - heading "Real specs, every sheet" [level=3] [ref=e91]
+            - paragraph [ref=e92]: Thickness, size, grade and brand listed up front — no guessing what's arriving on the truck.
+          - generic [ref=e95]:
+            - heading "Stocked deep" [level=3] [ref=e96]
+            - paragraph [ref=e97]: Marine to decorative veneer, kept in stock so your job doesn't wait on a backorder.
+          - generic [ref=e100]:
+            - heading "Straight answers" [level=3] [ref=e101]
+            - paragraph [ref=e102]: Send a message with what you're building — we'll tell you the right sheet, not just the priciest one.
+  - contentinfo [ref=e103]:
+    - generic [ref=e105]:
+      - generic [ref=e106]:
+        - generic [ref=e107]:
+          - text: Ridgeline
+          - generic [ref=e109]: Plywood Co.
+        - paragraph [ref=e110]: Whether it's a single sheet or a full job list, send us the details and we'll follow up within one business day.
+      - generic [ref=e111]:
+        - generic [ref=e112]:
+          - paragraph [ref=e113]: Shop
+          - link "Categories" [ref=e114] [cursor=pointer]:
+            - /url: /categories
+          - link "Get a quote" [ref=e115] [cursor=pointer]:
+            - /url: /contact
+        - generic [ref=e116]:
+          - paragraph [ref=e117]: Yard
+          - paragraph [ref=e118]: Mon–Sat, 7am–5pm
+          - paragraph [ref=e119]: 221 Millwork Row, Fall City
+        - generic [ref=e120]:
+          - paragraph [ref=e121]: Admin
+          - link "Staff login" [ref=e122] [cursor=pointer]:
+            - /url: /admin/login
+    - paragraph [ref=e124]: © 2026 Ridgeline Plywood Co. All boards sold as-is, grain and all.

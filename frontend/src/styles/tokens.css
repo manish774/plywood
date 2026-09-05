@@ -1,59 +1,102 @@
 :root {
-  /* --- Ridgeline Plywood Co. design tokens --- */
+  /* --- Ridgeline Plywood Co. design tokens — neumorphic (soft UI) ---
+     Surfaces are flat, single-color fields; depth comes entirely from
+     paired light/dark box-shadows (see neumorphism.io), not borders. */
 
-  /* Surfaces */
-  --bg: #f3ecdc;          /* birch cream */
-  --bg-panel: #ffffff;    /* raised card surface */
-  --bg-alt: #e9ddc4;      /* darker birch panel / section band */
-  --bg-dark: #241c15;     /* walnut charcoal (admin shell, footer) */
-  --bg-dark-panel: #322619;
+  /* Surfaces — one neutral base per zone, everything floats via shadow */
+  --bg: #e0e0e0;
+  --bg-panel: #e0e0e0;
+  --bg-alt: #e0e0e0;
+  --bg-dark: #2f2f2f;      /* always-dark chrome: admin sidebar, footer, marquee */
+  --bg-dark-panel: #282828;
 
   /* Ink */
-  --ink: #241c15;         /* primary text */
-  --ink-soft: #6b5b48;    /* secondary text */
-  --ink-faint: #a4927a;   /* placeholder / tertiary */
-  --ink-on-dark: #f3ecdc;
-  --ink-on-dark-soft: #c8b9a2;
+  --ink: #33322f;
+  --ink-soft: #6d6b66;
+  --ink-faint: #9a9793;
+  --ink-on-dark: #e6e6e6;
+  --ink-on-dark-soft: #aaaaaa;
 
-  /* Accents */
-  --accent: #2f5fa8;      /* chalk-line blue - primary CTA / links */
+  /* Accents (unchanged brand hues, used as pops of color on top of the
+     neutral neumorphic surfaces — text, icons, chips, colored buttons) */
+  --accent: #2f5fa8;
   --accent-hover: #24487f;
-  --accent-soft: #dbe6f4;
-  --amber: #e2a233;       /* tape-measure amber - price / highlights */
-  --amber-hover: #c98a1f;
-  --danger: #c13b2a;      /* carpenter pencil red - delete / errors */
-  --danger-hover: #9c2e20;
+  --accent-soft: #d9e3f2;
+  --amber: #c9860b;
+  --amber-hover: #a86f09;
+  --danger: #b5362a;
+  --danger-hover: #942a20;
   --success: #3f7d4a;
 
-  /* Structure */
-  --line: #c7b79c;        /* hairline borders, ply-stripe light band */
-  --line-dark: #4a3c2c;
+  /* Hairline dividers — kept faint for tabular/list content where a shadow
+     alone wouldn't read; everything else relies on --shadow-* instead. */
+  --line: rgba(0, 0, 0, 0.1);
+  --line-dark: rgba(255, 255, 255, 0.08);
 
   /* Type */
   --font-display: "Big Shoulders Display", "Arial Narrow", sans-serif;
   --font-body: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 
-  /* Radius / shadow */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --shadow-card: 0 1px 2px rgba(36, 28, 21, 0.06), 0 8px 24px -12px rgba(36, 28, 21, 0.25);
-  --shadow-card-hover: 0 4px 8px rgba(36, 28, 21, 0.08), 0 16px 32px -12px rgba(36, 28, 21, 0.32);
+  /* Radius — soft, pillowy corners */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
 
   --container: 1200px;
+  --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* ---------- Neumorphic shadow system ---------- */
+  /* Light-shadow / dark-shadow pair for the main (light-mode) surface. */
+  --neu-light: #ffffff;
+  --neu-dark: #b8b8b8;
+
+  --shadow-raised-sm: 5px 5px 10px var(--neu-dark), -5px -5px 10px var(--neu-light);
+  --shadow-raised: 9px 9px 18px var(--neu-dark), -9px -9px 18px var(--neu-light);
+  --shadow-raised-lg: 18px 18px 46px var(--neu-dark), -18px -18px 46px var(--neu-light);
+  --shadow-pressed-sm: inset 3px 3px 7px var(--neu-dark), inset -3px -3px 7px var(--neu-light);
+  --shadow-pressed: inset 6px 6px 13px var(--neu-dark), inset -6px -6px 13px var(--neu-light);
+  --shadow-concave: inset 7px 7px 16px var(--neu-dark), inset -7px -7px 16px var(--neu-light);
+
+  /* Fixed dark-chrome pair — used by elements that are always dark
+     (admin sidebar, footer, login shell) regardless of color scheme. */
+  --neu-light-chrome: #3c3c3c;
+  --neu-dark-chrome: #1e1e1e;
+
+  --shadow-raised-chrome-sm: 4px 4px 9px var(--neu-dark-chrome), -4px -4px 9px var(--neu-light-chrome);
+  --shadow-raised-chrome: 8px 8px 17px var(--neu-dark-chrome), -8px -8px 17px var(--neu-light-chrome);
+  --shadow-raised-chrome-lg: 16px 16px 40px var(--neu-dark-chrome), -16px -16px 40px var(--neu-light-chrome);
+  --shadow-pressed-chrome-sm: inset 3px 3px 6px var(--neu-dark-chrome), inset -3px -3px 6px var(--neu-light-chrome);
+  --shadow-pressed-chrome: inset 6px 6px 12px var(--neu-dark-chrome), inset -6px -6px 12px var(--neu-light-chrome);
+
+  /* Legacy aliases kept so any missed call site still resolves sensibly. */
+  --shadow-card: var(--shadow-raised);
+  --shadow-card-hover: var(--shadow-raised-lg);
+  --shadow-elevated: var(--shadow-raised-lg);
+
+  --glass-bg: rgba(224, 224, 224, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-bg-dark: rgba(40, 40, 40, 0.55);
+  --glass-border-dark: rgba(255, 255, 255, 0.08);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #1c1712;
-    --bg-panel: #2a221a;
-    --bg-alt: #241d16;
-    --ink: #f1e8d8;
-    --ink-soft: #c3b39c;
-    --ink-faint: #8a7a64;
-    --line: #4a3c2c;
-    --accent-soft: #253248;
-    --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px -12px rgba(0, 0, 0, 0.5);
-    --shadow-card-hover: 0 4px 8px rgba(0, 0, 0, 0.35), 0 16px 32px -12px rgba(0, 0, 0, 0.6);
+    --bg: #262626;
+    --bg-panel: #262626;
+    --bg-alt: #262626;
+
+    --ink: #e4e2dd;
+    --ink-soft: #b0aca4;
+    --ink-faint: #7d786f;
+
+    --accent-soft: #23324a;
+    --line: rgba(255, 255, 255, 0.08);
+
+    --neu-light: #313131;
+    --neu-dark: #1a1a1a;
+
+    --glass-bg: rgba(38, 38, 38, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.08);
   }
 }

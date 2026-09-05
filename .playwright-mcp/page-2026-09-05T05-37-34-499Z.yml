@@ -1,0 +1,38 @@
+- generic [ref=f10e16]:
+  - complementary [ref=f10e17]:
+    - generic [ref=f10e18]:
+      - text: Ridgeline
+      - generic [ref=f10e20]: Admin
+    - navigation [ref=f10e21]:
+      - link "डैशबोर्ड" [ref=f10e22] [cursor=pointer]:
+        - /url: /admin
+      - link "कैटेगरी" [ref=f10e23] [cursor=pointer]:
+        - /url: /admin/categories
+      - link "आइटम" [ref=f10e24] [cursor=pointer]:
+        - /url: /admin/items
+      - link "मैसेज 1" [ref=f10e25] [cursor=pointer]:
+        - /url: /admin/inquiries
+        - text: मैसेज
+        - generic [ref=f10e26]: "1"
+    - button "EN" [ref=f10e27] [cursor=pointer]
+    - button "लॉग आउट" [ref=f10e28] [cursor=pointer]
+  - generic [ref=f10e30]:
+    - generic [ref=f10e32]:
+      - heading "डैशबोर्ड" [level=1] [ref=f10e33]
+      - paragraph [ref=f10e34]: वेबसाइट पर क्या दिखेगा, उसे मैनेज करें।
+    - generic [ref=f10e35]:
+      - link "3 कैटेगरी" [ref=f10e37] [cursor=pointer]:
+        - /url: /admin/categories
+        - generic [ref=f10e38]: "3"
+        - generic [ref=f10e39]: कैटेगरी
+      - link "2 आइटम" [ref=f10e41] [cursor=pointer]:
+        - /url: /admin/items
+        - generic [ref=f10e42]: "2"
+        - generic [ref=f10e43]: आइटम
+      - link "10 मैसेज" [ref=f10e45] [cursor=pointer]:
+        - /url: /admin/inquiries
+        - generic [ref=f10e46]: "10"
+        - generic [ref=f10e47]: मैसेज
+    - generic [ref=f10e48]:
+      - heading "शुरुआत कैसे करें" [level=3] [ref=f10e49]
+      - paragraph [ref=f10e50]: पहले एक कैटेगरी जोड़ें, फिर उसके अंदर आइटम जोड़ें — यहां जो आइटम बनाएंगे, वो तुरंत वेबसाइट पर दिखने लगेंगे।

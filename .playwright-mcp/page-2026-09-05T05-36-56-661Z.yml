@@ -1,0 +1,11 @@
+- generic [ref=f10e4]:
+  - generic [ref=f10e5]: Ridgeline
+  - paragraph [ref=f10e7]: प्लाईवुड शॉप के एडमिन पैनल के लिए स्टाफ लॉगिन।
+  - generic [ref=f10e8]:
+    - generic [ref=f10e9]:
+      - generic [ref=f10e10]: Email
+      - textbox "Email" [active] [ref=f10e11]
+    - generic [ref=f10e12]:
+      - generic [ref=f10e13]: Password
+      - textbox "Password" [ref=f10e14]
+    - button "साइन इन" [ref=f10e15] [cursor=pointer]

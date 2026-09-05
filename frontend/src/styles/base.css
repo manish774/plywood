@@ -7,6 +7,21 @@ html, body {
   margin: 0;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 body {
   background: var(--bg);
   color: var(--ink);
@@ -135,51 +150,59 @@ input, textarea, select {
   text-transform: uppercase;
   padding: 13px 28px;
   border-radius: var(--radius-sm);
-  border: 2px solid var(--ink);
-  background: var(--ink);
-  color: var(--ink-on-dark);
+  border: none;
+  background: var(--bg);
+  color: var(--ink);
   cursor: pointer;
-  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  box-shadow: var(--shadow-raised);
+  transition: box-shadow 0.15s ease, color 0.15s ease, transform 0.15s ease;
 }
 
 .btn:hover {
-  background: var(--accent);
-  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.btn:active {
+  box-shadow: var(--shadow-pressed);
+  transform: translateY(1px);
 }
 
 .btn-outline {
-  background: transparent;
-  color: var(--ink);
+  background: var(--bg);
+  color: var(--ink-soft);
+  box-shadow: var(--shadow-raised-sm);
 }
 
 .btn-outline:hover {
-  background: var(--ink);
-  color: var(--ink-on-dark);
+  color: var(--ink);
 }
 
 .btn-accent {
-  border-color: var(--accent);
+  color: #fff;
   background: var(--accent);
+  --neu-light: color-mix(in srgb, var(--accent) 55%, white 45%);
+  --neu-dark: color-mix(in srgb, var(--accent) 65%, black 35%);
 }
 
 .btn-accent:hover {
   background: var(--accent-hover);
-  border-color: var(--accent-hover);
 }
 
 .btn-danger {
-  border-color: var(--danger);
+  color: #fff;
   background: var(--danger);
+  --neu-light: color-mix(in srgb, var(--danger) 55%, white 45%);
+  --neu-dark: color-mix(in srgb, var(--danger) 65%, black 35%);
 }
 
 .btn-danger:hover {
   background: var(--danger-hover);
-  border-color: var(--danger-hover);
 }
 
 .btn:disabled {
   opacity: 0.55;
   cursor: not-allowed;
+  transform: none;
 }
 
 .btn-sm {
@@ -206,16 +229,27 @@ input, textarea, select {
 .field textarea,
 .field select {
   padding: 12px 14px;
-  border: 1.5px solid var(--line);
+  border: none;
   border-radius: var(--radius-sm);
   background: var(--bg-panel);
   color: var(--ink);
+  box-shadow: var(--shadow-pressed-sm);
+  transition: box-shadow 0.2s ease;
 }
 
 .field input:focus,
 .field textarea:focus,
 .field select:focus {
-  border-color: var(--accent);
+  box-shadow: var(--shadow-pressed-sm), 0 0 0 3px var(--accent-soft);
+}
+
+.field input[readonly] {
+  color: var(--ink-soft);
+  cursor: default;
+}
+
+.field input[readonly]:focus {
+  box-shadow: var(--shadow-pressed-sm);
 }
 
 .field-row {
@@ -228,4 +262,88 @@ input, textarea, select {
   .field-row {
     grid-template-columns: 1fr;
   }
+}
+
+/* ---------- Query status / reply (shared by public + admin) ---------- */
+
+.query-status {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  box-shadow: var(--shadow-raised-sm);
+}
+
+.query-status-pending {
+  background: var(--bg-panel);
+  color: var(--accent);
+}
+
+.query-status-acknowledged {
+  background: var(--bg-panel);
+  color: var(--success);
+}
+
+.query-card-reply {
+  margin-top: 14px;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-panel);
+  box-shadow: var(--shadow-concave);
+}
+
+.query-card-reply span {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-faint);
+  margin-bottom: 6px;
+}
+
+.query-card-reply p {
+  color: var(--ink-soft);
+}
+
+/* ---------- Premium chrome utilities ---------- */
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  transform-origin: 0% 50%;
+  background: linear-gradient(90deg, var(--amber), var(--accent));
+  z-index: 100;
+}
+
+/* Subtle fractal-noise grain — breaks up flat color fields the way a light
+   or dark hero panel would look on a premium site, without a real image asset. */
+.grain-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.text-gradient {
+  background: linear-gradient(100deg, var(--amber) 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glass-panel {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  box-shadow: var(--shadow-elevated);
 }

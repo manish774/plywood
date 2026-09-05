@@ -1,0 +1,48 @@
+- generic [ref=f4e2]:
+  - banner [ref=f4e3]:
+    - generic [ref=f4e4]:
+      - link "Ridgeline प्लाईवुड Co." [ref=f4e5] [cursor=pointer]:
+        - /url: /
+        - text: Ridgeline
+        - generic [ref=f4e7]: प्लाईवुड Co.
+      - navigation [ref=f4e8]:
+        - link "होम" [ref=f4e9] [cursor=pointer]:
+          - /url: /
+        - link "कैटेगरी" [ref=f4e10] [cursor=pointer]:
+          - /url: /categories
+        - link "संपर्क" [ref=f4e12] [cursor=pointer]:
+          - /url: /contact
+        - link "लॉगिन" [ref=f4e13] [cursor=pointer]:
+          - /url: /account
+        - button "अंग्रेज़ी में बदलें" [ref=f4e14] [cursor=pointer]: EN
+  - main [ref=f4e15]:
+    - generic [ref=f4e17]:
+      - generic [ref=f4e19]:
+        - heading "कैटेगरी" [level=1] [ref=f4e20]
+        - paragraph [ref=f4e21]: हमारे पास मौजूद हर तरह की शीट गुड्स — जिस काम के लिए बनी है उसी हिसाब से बाँटी गई हैं।
+      - generic [ref=f4e23]:
+        - status "कैटेगरी लोड हो रही हैं..." [ref=f4e24]
+        - paragraph [ref=f4e25]: कैटेगरी लोड हो रही हैं...
+  - contentinfo [ref=f4e26]:
+    - generic [ref=f4e28]:
+      - generic [ref=f4e29]:
+        - generic [ref=f4e30]:
+          - text: Ridgeline
+          - generic [ref=f4e32]: प्लाईवुड Co.
+        - paragraph [ref=f4e33]: चाहे एक शीट चाहिए हो या पूरी जॉब लिस्ट, हमें जानकारी भेजें — हम 1 दिन के अंदर जवाब देंगे।
+      - generic [ref=f4e34]:
+        - generic [ref=f4e35]:
+          - paragraph [ref=f4e36]: दुकान
+          - link "कैटेगरी" [ref=f4e37] [cursor=pointer]:
+            - /url: /categories
+          - link "कोटेशन लें" [ref=f4e38] [cursor=pointer]:
+            - /url: /contact
+        - generic [ref=f4e39]:
+          - paragraph [ref=f4e40]: यार्ड
+          - paragraph [ref=f4e41]: सोम–शनि, सुबह 7 से शाम 5 बजे तक
+          - paragraph [ref=f4e42]: 221 Millwork Row, Fall City
+        - generic [ref=f4e43]:
+          - paragraph [ref=f4e44]: एडमिन
+          - link "स्टाफ लॉगिन" [ref=f4e45] [cursor=pointer]:
+            - /url: /admin/login
+    - paragraph [ref=f4e47]: © 2026 Ridgeline Plywood Co. सारे बोर्ड जैसे हैं वैसे ही बेचे जाते हैं, लकड़ी के दाने (grain) समेत।

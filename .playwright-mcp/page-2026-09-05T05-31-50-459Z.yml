@@ -1,0 +1,80 @@
+- generic [ref=f8e3]:
+  - complementary [ref=f8e4]:
+    - generic [ref=f8e5]:
+      - text: Ridgeline
+      - generic [ref=f8e7]: Admin
+    - navigation [ref=f8e8]:
+      - link "Dashboard" [ref=f8e9] [cursor=pointer]:
+        - /url: /admin
+      - link "Categories" [ref=f8e10] [cursor=pointer]:
+        - /url: /admin/categories
+      - link "Items" [ref=f8e11] [cursor=pointer]:
+        - /url: /admin/items
+      - link "Inquiries" [ref=f8e12] [cursor=pointer]:
+        - /url: /admin/inquiries
+    - button "हिंदी" [ref=f8e13] [cursor=pointer]
+    - button "Log out" [ref=f8e14] [cursor=pointer]
+  - generic [ref=f8e16]:
+    - generic [ref=f8e17]:
+      - generic [ref=f8e18]:
+        - heading "Categories" [level=1] [ref=f8e19]
+        - paragraph [ref=f8e20]: Groups of plywood shown on the public site.
+      - button "+ Add category" [active] [ref=f8e21] [cursor=pointer]
+    - table [ref=f8e26]:
+      - rowgroup [ref=f8e27]:
+        - row [ref=f8e28]:
+          - columnheader [ref=f8e29]
+          - columnheader "Name" [ref=f8e30]
+          - columnheader "Description" [ref=f8e31]
+          - columnheader [ref=f8e32]
+      - rowgroup [ref=f8e33]:
+        - row [ref=f8e34]:
+          - cell [ref=f8e35]
+          - cell "Marine Plywood" [ref=f8e36]
+          - cell "Water-resistant plywood built for boats, docks and anywhere moisture is a constant threat." [ref=f8e37]
+          - cell [ref=f8e38]:
+            - generic [ref=f8e39]:
+              - button "Edit" [ref=f8e40] [cursor=pointer]
+              - button "Delete" [ref=f8e41] [cursor=pointer]
+        - row [ref=f8e42]:
+          - cell [ref=f8e43]
+          - cell "Hardwood Plywood" [ref=f8e44]
+          - cell "Furniture-grade panels faced in oak, birch and maple veneer for cabinetry and fine joinery." [ref=f8e45]
+          - cell [ref=f8e46]:
+            - generic [ref=f8e47]:
+              - button "Edit" [ref=f8e48] [cursor=pointer]
+              - button "Delete" [ref=f8e49] [cursor=pointer]
+        - row [ref=f8e50]:
+          - cell [ref=f8e51]
+          - cell "Structural Plywood" [ref=f8e52]
+          - cell "Rated sheathing for roofs, walls and floors where load-bearing strength matters most." [ref=f8e53]
+          - cell [ref=f8e54]:
+            - generic [ref=f8e55]:
+              - button "Edit" [ref=f8e56] [cursor=pointer]
+              - button "Delete" [ref=f8e57] [cursor=pointer]
+        - row [ref=f8e58]:
+          - cell [ref=f8e59]
+          - cell "Decorative Veneer" [ref=f8e60]
+          - cell "Book-matched veneer sheets for feature walls, doors and statement furniture pieces." [ref=f8e61]
+          - cell [ref=f8e62]:
+            - generic [ref=f8e63]:
+              - button "Edit" [ref=f8e64] [cursor=pointer]
+              - button "Delete" [ref=f8e65] [cursor=pointer]
+    - generic [ref=f8e67]:
+      - heading "Add category" [level=2] [ref=f8e68]
+      - generic [ref=f8e69]:
+        - generic [ref=f8e70]:
+          - generic [ref=f8e71]: Name
+          - textbox "Name" [ref=f8e72]:
+            - /placeholder: e.g. Marine Plywood
+        - generic [ref=f8e73]:
+          - generic [ref=f8e74]: Description
+          - textbox "Description" [ref=f8e75]:
+            - /placeholder: Short description shown on the public site
+        - generic [ref=f8e76]:
+          - generic [ref=f8e77]: Image URL
+          - textbox "Image URL" [ref=f8e78]:
+            - /placeholder: https://...
+        - generic [ref=f8e79]:
+          - button "Cancel" [ref=f8e80] [cursor=pointer]
+          - button "Save category" [ref=f8e81] [cursor=pointer]

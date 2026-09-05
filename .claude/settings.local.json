@@ -30,7 +30,20 @@
       "Bash(claude mcp *)",
       "Bash(git check-ignore *)",
       "Skill(schedule)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(python3 -m pip --version)",
+      "Read(//opt/homebrew/Cellar/python@3.14/3.14.6/bin/**)",
+      "Read(//opt/homebrew/bin/**)",
+      "Bash(ln -s ../Cellar/python@3.14/3.14.6/bin/pip3 /opt/homebrew/bin/pip)",
+      "Bash(pip --version)",
+      "Bash(awk '/^#+ *[Ii]nstall/{f=1} f{print} f && /^## / && !/[Ii]nstall/ && NR>1 && p{exit} {p=1}' README.md)",
+      "Bash(graphify *)",
+      "Bash(git clone *)",
+      "Bash(cp *)",
+      "Bash(git status *)",
+      "Bash(node -e \"require\\('./src/routes/auth.js'\\)\")"
     ]
   }
 }

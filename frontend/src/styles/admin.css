@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 240px 1fr;
   min-height: 100vh;
+  background: var(--bg-dark);
 }
 
 @media (max-width: 760px) {
@@ -54,11 +55,15 @@
 .admin-sidebar-nav {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 12px;
   flex: 1;
 }
 
 .admin-sidebar-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
   padding: 12px 14px;
   border-radius: var(--radius-sm);
   font-family: var(--font-mono);
@@ -66,35 +71,61 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--ink-on-dark-soft);
+  transition: box-shadow 0.15s ease, color 0.15s ease;
+}
+
+.admin-sidebar-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--danger);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: normal;
+  text-transform: none;
 }
 
 .admin-sidebar-link:hover {
-  background: var(--bg-dark-panel);
+  box-shadow: var(--shadow-raised-chrome-sm);
   color: var(--ink-on-dark);
 }
 
 .admin-sidebar-link-active {
-  background: var(--accent);
-  color: #fff;
+  box-shadow: var(--shadow-pressed-chrome-sm);
+  color: var(--ink-on-dark);
+}
+
+.admin-sidebar-link-active:hover {
+  box-shadow: var(--shadow-pressed-chrome-sm);
 }
 
 .admin-sidebar-logout {
   margin-top: 20px;
   padding: 12px 14px;
-  border: 1px solid var(--line-dark);
+  border: none;
   border-radius: var(--radius-sm);
-  background: transparent;
+  background: var(--bg-dark);
   color: var(--ink-on-dark-soft);
   font-family: var(--font-mono);
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   cursor: pointer;
+  box-shadow: var(--shadow-raised-chrome-sm);
+  transition: box-shadow 0.15s ease, color 0.15s ease;
 }
 
 .admin-sidebar-logout:hover {
-  border-color: var(--danger);
   color: var(--danger);
+}
+
+.admin-sidebar-logout:active {
+  box-shadow: var(--shadow-pressed-chrome-sm);
 }
 
 /* ---------- Content area ---------- */
@@ -102,6 +133,14 @@
   padding: 40px 44px 80px;
   max-width: 1100px;
   width: 100%;
+  background: var(--bg);
+  border-top-left-radius: var(--radius-lg);
+}
+
+@media (max-width: 760px) {
+  .admin-content {
+    border-top-left-radius: 0;
+  }
 }
 
 .admin-page-head {
@@ -135,10 +174,10 @@
 .admin-login-card {
   width: 100%;
   max-width: 400px;
-  background: var(--bg-panel);
+  background: var(--bg-dark);
   border-radius: var(--radius-md);
   padding: 40px 36px;
-  box-shadow: var(--shadow-card-hover);
+  box-shadow: var(--shadow-raised-chrome-lg);
 }
 
 .admin-login-brand {
@@ -149,26 +188,44 @@
   font-size: 1.6rem;
   font-weight: 800;
   text-transform: uppercase;
+  color: var(--ink-on-dark);
   margin-bottom: 8px;
 }
 
 .admin-login-card > p {
-  color: var(--ink-soft);
+  color: var(--ink-on-dark-soft);
   margin-bottom: 28px;
   font-size: 0.92rem;
+}
+
+.admin-login-card .field input {
+  background: var(--bg-dark);
+  color: var(--ink-on-dark);
+  box-shadow: var(--shadow-pressed-chrome-sm);
+}
+
+.admin-login-card .field label {
+  color: var(--ink-on-dark-soft);
 }
 
 .admin-login-card .btn {
   width: 100%;
   margin-top: 6px;
+  background: var(--bg-dark);
+  color: var(--ink-on-dark);
+  box-shadow: var(--shadow-raised-chrome);
+}
+
+.admin-login-card .btn:active {
+  box-shadow: var(--shadow-pressed-chrome);
 }
 
 .admin-login-hint {
   margin-top: 20px;
   font-family: var(--font-mono);
   font-size: 0.76rem;
-  color: var(--ink-faint);
-  border-top: 1px solid var(--line);
+  color: var(--ink-on-dark-soft);
+  border-top: 1px solid var(--line-dark);
   padding-top: 16px;
 }
 
@@ -176,16 +233,16 @@
 .stat-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
+  gap: 24px;
   margin-bottom: 44px;
 }
 
 .stat-card {
   background: var(--bg-panel);
-  border: 1px solid var(--line);
   border-radius: var(--radius-md);
   padding: 22px 24px;
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-raised);
+  transition: box-shadow 0.2s ease;
 }
 
 .stat-card .stat-value {
@@ -206,11 +263,10 @@
 /* ---------- Admin table ---------- */
 .admin-table-wrap {
   background: var(--bg-panel);
-  border: 1px solid var(--line);
   border-radius: var(--radius-md);
   overflow: hidden;
   overflow-x: auto;
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-raised);
 }
 
 table.admin-table {
@@ -227,8 +283,7 @@ table.admin-table {
   letter-spacing: 0.06em;
   color: var(--ink-soft);
   padding: 14px 20px;
-  background: var(--bg-alt);
-  border-bottom: 1px solid var(--line);
+  box-shadow: var(--shadow-concave);
 }
 
 .admin-table td {
@@ -247,6 +302,7 @@ table.admin-table {
   border-radius: var(--radius-sm);
   object-fit: cover;
   background: var(--bg-alt);
+  box-shadow: var(--shadow-pressed-sm);
 }
 
 .admin-table-actions {
@@ -265,11 +321,52 @@ table.admin-table {
   margin-top: 2px;
 }
 
+/* ---------- Admin inquiry cards ---------- */
+.admin-inquiry-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.admin-inquiry-card {
+  background: var(--bg-panel);
+  border-radius: var(--radius-md);
+  padding: 22px;
+  box-shadow: var(--shadow-raised);
+}
+
+.admin-inquiry-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.admin-inquiry-reply-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin-inquiry-reply-form textarea {
+  padding: 12px 14px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: var(--bg-panel);
+  color: var(--ink);
+  font-family: inherit;
+  box-shadow: var(--shadow-pressed-sm);
+}
+
+.admin-inquiry-reply-form button {
+  align-self: flex-start;
+}
+
 /* ---------- Modal / drawer form ---------- */
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(36, 28, 21, 0.5);
+  background: rgba(0, 0, 0, 0.45);
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -282,9 +379,9 @@ table.admin-table {
   width: 100%;
   max-width: 560px;
   background: var(--bg-panel);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   padding: 32px 32px 28px;
-  box-shadow: var(--shadow-card-hover);
+  box-shadow: var(--shadow-raised-lg);
 }
 
 .modal-panel h2 {

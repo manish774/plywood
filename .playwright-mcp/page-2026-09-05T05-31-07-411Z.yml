@@ -1,0 +1,75 @@
+- generic [ref=f6e2]:
+  - banner [ref=f6e3]:
+    - generic [ref=f6e4]:
+      - link "Ridgeline Plywood Co." [ref=f6e5] [cursor=pointer]:
+        - /url: /
+        - text: Ridgeline
+        - generic [ref=f6e7]: Plywood Co.
+      - navigation [ref=f6e8]:
+        - link "Home" [ref=f6e9] [cursor=pointer]:
+          - /url: /
+        - link "Categories" [ref=f6e10] [cursor=pointer]:
+          - /url: /categories
+        - link "Contact" [ref=f6e11] [cursor=pointer]:
+          - /url: /contact
+        - link "Login" [ref=f6e13] [cursor=pointer]:
+          - /url: /account
+        - button "Switch to Hindi" [ref=f6e14] [cursor=pointer]: हिंदी
+  - main [ref=f6e15]:
+    - generic [ref=f6e17]:
+      - generic [ref=f6e19]:
+        - heading "Get in touch" [level=1] [ref=f6e20]
+        - paragraph [ref=f6e21]: Tell us what you're building and what sheet goods you need — we'll get back to you with pricing and availability.
+      - generic [ref=f6e23]:
+        - generic [ref=f6e24]:
+          - heading "Ridgeline Plywood Co." [level=2] [ref=f6e25]
+          - paragraph [ref=f6e26]: Whether it's a single sheet or a full job list, send us the details and we'll follow up within one business day.
+          - generic [ref=f6e27]:
+            - generic [ref=f6e28]:
+              - generic [ref=f6e29]: Yard address
+              - text: 221 Millwork Row, Fall City
+            - generic [ref=f6e30]:
+              - generic [ref=f6e31]: Hours
+              - text: Mon–Sat, 7am–5pm
+            - generic [ref=f6e32]:
+              - generic [ref=f6e33]: Phone
+              - text: (555) 019-2044
+        - generic [ref=f6e34]:
+          - generic [ref=f6e35]:
+            - generic [ref=f6e36]:
+              - generic [ref=f6e37]: Name
+              - textbox "Name" [ref=f6e38]
+            - generic [ref=f6e39]:
+              - generic [ref=f6e40]: Phone
+              - textbox "Phone" [ref=f6e41]
+          - generic [ref=f6e42]:
+            - generic [ref=f6e43]: Email
+            - textbox "Email" [ref=f6e44]
+          - generic [ref=f6e45]:
+            - generic [ref=f6e46]: Message
+            - textbox "Message" [ref=f6e47]:
+              - /placeholder: What are you building, and what do you need?
+          - button "Send message" [ref=f6e48] [cursor=pointer]
+  - contentinfo [ref=f6e49]:
+    - generic [ref=f6e51]:
+      - generic [ref=f6e52]:
+        - generic [ref=f6e53]:
+          - text: Ridgeline
+          - generic [ref=f6e55]: Plywood Co.
+        - paragraph [ref=f6e56]: Whether it's a single sheet or a full job list, send us the details and we'll follow up within one business day.
+      - generic [ref=f6e57]:
+        - generic [ref=f6e58]:
+          - paragraph [ref=f6e59]: Shop
+          - link "Categories" [ref=f6e60] [cursor=pointer]:
+            - /url: /categories
+          - link "Get a quote" [ref=f6e61] [cursor=pointer]:
+            - /url: /contact
+        - generic [ref=f6e62]:
+          - paragraph [ref=f6e63]: Yard
+          - paragraph [ref=f6e64]: Mon–Sat, 7am–5pm
+          - paragraph [ref=f6e65]: 221 Millwork Row, Fall City
+        - generic [ref=f6e66]:
+          - paragraph [ref=f6e67]: Admin
+          - link "Staff login" [ref=f6e68] [cursor=pointer]:
+            - /url: /admin/login
+    - paragraph [ref=f6e70]: © 2026 Ridgeline Plywood Co. All boards sold as-is, grain and all.

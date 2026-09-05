@@ -135,3 +135,14 @@ curl -X POST http://localhost:5000/api/admin/login -H "Content-Type: application
 ```
 
 Full create/read/update/delete cycles for categories and items, plus the public/admin contact split and 400/401/404 error paths, were verified against a live MongoDB Atlas connection during development.
+
+## Deployment (Render, free tier)
+
+A `render.yaml` blueprint lives at the repo root and points at this directory (`rootDir: backend`).
+
+1. Push the repo to GitHub (Render deploys from a Git remote).
+2. In the Render dashboard: **New > Blueprint**, pick this repo. Render reads `render.yaml` and creates the `plywood-backend` web service (build: `npm install && npm run build`, start: `npm start`).
+3. On the service's **Environment** tab, fill in the values `render.yaml` leaves blank (`sync: false`): `MONGODB_URI`, `JWT_SECRET`, `ADMIN_NAME`, `ADMIN_EMAIL`, `ADMIN_PASSWORD`, `EMAIL_HOST`, `EMAIL_PORT`, `EMAIL_USER`, `EMAIL_PASS`, `EMAIL_FROM`, `OTP_EXPIRY_MINUTES` — same values as your local `.env`. Don't set `PORT`; Render injects its own and the server already reads `process.env.PORT`.
+4. Deploy. Render gives you a `https://plywood-backend.onrender.com`-style URL — use that as the frontend's API base URL.
+
+Free-tier caveat: the service spins down after 15 minutes of no traffic, so the first request after idle takes 30-50s to wake it back up. Fine for a small shop site; not for anything needing instant response every time.

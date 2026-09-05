@@ -1,0 +1,78 @@
+- generic [ref=f9e2]:
+  - banner [ref=f9e3]:
+    - generic [ref=f9e4]:
+      - link "Ridgeline प्लाईवुड Co." [ref=f9e5] [cursor=pointer]:
+        - /url: /
+        - text: Ridgeline
+        - generic [ref=f9e7]: प्लाईवुड Co.
+      - navigation [ref=f9e8]:
+        - link "होम" [ref=f9e9] [cursor=pointer]:
+          - /url: /
+        - link "कैटेगरी" [ref=f9e10] [cursor=pointer]:
+          - /url: /categories
+        - link "संपर्क" [ref=f9e12] [cursor=pointer]:
+          - /url: /contact
+        - link "लॉगिन" [ref=f9e13] [cursor=pointer]:
+          - /url: /account
+        - button "अंग्रेज़ी में बदलें" [ref=f9e14] [cursor=pointer]: EN
+  - main [ref=f9e15]:
+    - generic [ref=f9e94]:
+      - generic [ref=f9e95]:
+        - link "कैटेगरी" [ref=f9e96] [cursor=pointer]:
+          - /url: /categories
+        - generic [ref=f9e97]: /
+        - link "New ply nnnn" [ref=f9e98] [cursor=pointer]:
+          - /url: /categories/6a9ba619121a23fe4e04fd3f
+        - generic [ref=f9e99]: /
+        - generic [ref=f9e100]: mere itd,hg
+      - generic [ref=f9e101]:
+        - generic [ref=f9e102]:
+          - img "mere itd,hg" [ref=f9e104]
+          - generic [ref=f9e105]:
+            - button [ref=f9e106] [cursor=pointer]
+            - button [ref=f9e107] [cursor=pointer]
+        - generic [ref=f9e108]:
+          - text: New ply nnnn
+          - heading "mere itd,hg" [level=1] [ref=f9e109]
+          - generic [ref=f9e110]:
+            - text: ₹76.00
+            - generic [ref=f9e111]: हर शीट पर
+          - paragraph [ref=f9e112]: kljhgfd
+          - generic [ref=f9e113]:
+            - generic [ref=f9e114]:
+              - term [ref=f9e115]: मोटाई
+              - definition [ref=f9e116]: "6"
+            - generic [ref=f9e117]:
+              - term [ref=f9e118]: शीट का साइज़
+              - definition [ref=f9e119]: "2"
+            - generic [ref=f9e120]:
+              - term [ref=f9e121]: ग्रेड
+              - definition [ref=f9e122]: "2"
+            - generic [ref=f9e123]:
+              - term [ref=f9e124]: ब्रांड
+              - definition [ref=f9e125]: "2"
+          - link "इस शीट के बारे में पूछें" [ref=f9e127] [cursor=pointer]:
+            - /url: /contact
+  - contentinfo [ref=f9e26]:
+    - generic [ref=f9e28]:
+      - generic [ref=f9e29]:
+        - generic [ref=f9e30]:
+          - text: Ridgeline
+          - generic [ref=f9e32]: प्लाईवुड Co.
+        - paragraph [ref=f9e33]: चाहे एक शीट चाहिए हो या पूरी जॉब लिस्ट, हमें जानकारी भेजें — हम 1 दिन के अंदर जवाब देंगे।
+      - generic [ref=f9e34]:
+        - generic [ref=f9e35]:
+          - paragraph [ref=f9e36]: दुकान
+          - link "कैटेगरी" [ref=f9e37] [cursor=pointer]:
+            - /url: /categories
+          - link "कोटेशन लें" [ref=f9e38] [cursor=pointer]:
+            - /url: /contact
+        - generic [ref=f9e39]:
+          - paragraph [ref=f9e40]: यार्ड
+          - paragraph [ref=f9e41]: सोम–शनि, सुबह 7 से शाम 5 बजे तक
+          - paragraph [ref=f9e42]: 221 Millwork Row, Fall City
+        - generic [ref=f9e43]:
+          - paragraph [ref=f9e44]: एडमिन
+          - link "स्टाफ लॉगिन" [ref=f9e45] [cursor=pointer]:
+            - /url: /admin/login
+    - paragraph [ref=f9e47]: © 2026 Ridgeline Plywood Co. सारे बोर्ड जैसे हैं वैसे ही बेचे जाते हैं, लकड़ी के दाने (grain) समेत।

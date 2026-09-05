@@ -1,0 +1,23 @@
+- generic [ref=f11e3]:
+  - complementary [ref=f11e4]:
+    - generic [ref=f11e5]:
+      - text: Ridgeline
+      - generic [ref=f11e7]: Admin
+    - navigation [ref=f11e8]:
+      - link "डैशबोर्ड" [ref=f11e9] [cursor=pointer]:
+        - /url: /admin
+      - link "कैटेगरी" [ref=f11e10] [cursor=pointer]:
+        - /url: /admin/categories
+      - link "आइटम" [ref=f11e11] [cursor=pointer]:
+        - /url: /admin/items
+      - link "मैसेज" [ref=f11e12] [cursor=pointer]:
+        - /url: /admin/inquiries
+    - button "EN" [ref=f11e13] [cursor=pointer]
+    - button "लॉग आउट" [ref=f11e14] [cursor=pointer]
+  - generic [ref=f11e16]:
+    - generic [ref=f11e18]:
+      - heading "मैसेज" [level=1] [ref=f11e19]
+      - paragraph [ref=f11e20]: कॉन्टैक्ट फॉर्म से आए ग्राहकों के मैसेज।
+    - generic [ref=f11e21]:
+      - status "मैसेज लोड हो रहे हैं..." [ref=f11e22]
+      - paragraph [ref=f11e23]: मैसेज लोड हो रहे हैं...

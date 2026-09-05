@@ -1,0 +1,67 @@
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import Parallax from "./Parallax";
+import { staggerContainer, fadeUp } from "../motionVariants";
+import { useLanguage } from "../../i18n/useLanguage";
+import { listCategories } from "../../api/categories";
+import type { Category } from "../../types/models";
+import { SITE } from "../../config/site";
+
+export default function Footer() {
+  const { t } = useLanguage();
+  const [categories, setCategories] = useState<Category[]>([]);
+
+  useEffect(() => {
+    listCategories()
+      .then((cats) => setCategories(cats.slice(0, 5)))
+      .catch(() => setCategories([]));
+  }, []);
+
+  return (
+    <footer className="site-footer">
+      <Parallax range={24} className="ply-stripe-horizontal site-footer-stripe" />
+      <motion.div
+        className="container site-footer-inner"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <motion.div variants={fadeUp}>
+          <div className="navbar-logo navbar-logo-dark">
+            <span className="navbar-logo-mark" aria-hidden="true" />
+            {SITE.shortName}
+            <span className="navbar-logo-sub">{t("nav.logoSub")}</span>
+          </div>
+          <p className="site-footer-tag">{t("contact.companyCopy")}</p>
+        </motion.div>
+
+        <motion.div className="site-footer-links" variants={fadeUp}>
+          <div>
+            <p className="eyebrow site-footer-heading">{t("nav.footerShop")}</p>
+            <Link to="/categories">{t("nav.footerBrowseHeading")}</Link>
+            {categories.map((cat) => (
+              <Link key={cat._id} to={`/categories/${cat._id}`}>
+                {cat.name}
+              </Link>
+            ))}
+            <Link to="/contact">{t("common.getQuote")}</Link>
+          </div>
+          <div>
+            <p className="eyebrow site-footer-heading">{t("nav.footerYard")}</p>
+            <p>{t("contact.hoursValue")}</p>
+            <p>{t("contact.yardAddressValue")}</p>
+          </div>
+          <div>
+            <p className="eyebrow site-footer-heading">{t("nav.footerAdmin")}</p>
+            <Link to="/admin/login">{t("nav.footerStaffLogin")}</Link>
+          </div>
+        </motion.div>
+      </motion.div>
+      <div className="container">
+        <p className="site-footer-fine">{t("nav.footerFine", { year: new Date().getFullYear() })}</p>
+      </div>
+    </footer>
+  );
+}

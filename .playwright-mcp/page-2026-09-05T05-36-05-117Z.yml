@@ -1,0 +1,57 @@
+- generic [ref=f9e2]:
+  - banner [ref=f9e3]:
+    - generic [ref=f9e4]:
+      - link "Ridgeline प्लाईवुड Co." [ref=f9e5] [cursor=pointer]:
+        - /url: /
+        - text: Ridgeline
+        - generic [ref=f9e7]: प्लाईवुड Co.
+      - navigation [ref=f9e8]:
+        - link "होम" [ref=f9e9] [cursor=pointer]:
+          - /url: /
+        - link "कैटेगरी" [ref=f9e10] [cursor=pointer]:
+          - /url: /categories
+        - link "संपर्क" [ref=f9e12] [cursor=pointer]:
+          - /url: /contact
+        - link "लॉगिन" [ref=f9e13] [cursor=pointer]:
+          - /url: /account
+        - button "अंग्रेज़ी में बदलें" [ref=f9e14] [cursor=pointer]: EN
+  - main [ref=f9e15]:
+    - generic [ref=f9e73]:
+      - generic [ref=f9e75]:
+        - generic [ref=f9e76]:
+          - link "कैटेगरी" [ref=f9e77] [cursor=pointer]:
+            - /url: /categories
+          - generic [ref=f9e78]: /
+          - generic [ref=f9e79]: New ply nnnn
+        - heading "New ply nnnn" [level=1] [ref=f9e80]
+        - paragraph [ref=f9e81]: uiytdfs
+      - link "mere itd,hg kljhgfd 6 हर शीट पर ₹76.00" [ref=f9e84] [cursor=pointer]:
+        - generic [ref=f9e86]:
+          - heading "mere itd,hg" [level=3] [ref=f9e88]
+          - paragraph [ref=f9e89]: kljhgfd
+          - generic [ref=f9e90]:
+            - generic [ref=f9e91]: 6 हर शीट पर
+            - generic [ref=f9e92]: ₹76.00
+  - contentinfo [ref=f9e26]:
+    - generic [ref=f9e28]:
+      - generic [ref=f9e29]:
+        - generic [ref=f9e30]:
+          - text: Ridgeline
+          - generic [ref=f9e32]: प्लाईवुड Co.
+        - paragraph [ref=f9e33]: चाहे एक शीट चाहिए हो या पूरी जॉब लिस्ट, हमें जानकारी भेजें — हम 1 दिन के अंदर जवाब देंगे।
+      - generic [ref=f9e34]:
+        - generic [ref=f9e35]:
+          - paragraph [ref=f9e36]: दुकान
+          - link "कैटेगरी" [ref=f9e37] [cursor=pointer]:
+            - /url: /categories
+          - link "कोटेशन लें" [ref=f9e38] [cursor=pointer]:
+            - /url: /contact
+        - generic [ref=f9e39]:
+          - paragraph [ref=f9e40]: यार्ड
+          - paragraph [ref=f9e41]: सोम–शनि, सुबह 7 से शाम 5 बजे तक
+          - paragraph [ref=f9e42]: 221 Millwork Row, Fall City
+        - generic [ref=f9e43]:
+          - paragraph [ref=f9e44]: एडमिन
+          - link "स्टाफ लॉगिन" [ref=f9e45] [cursor=pointer]:
+            - /url: /admin/login
+    - paragraph [ref=f9e47]: © 2026 Ridgeline Plywood Co. सारे बोर्ड जैसे हैं वैसे ही बेचे जाते हैं, लकड़ी के दाने (grain) समेत।
