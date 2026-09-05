@@ -26,10 +26,10 @@ export interface LanguageContextValue {
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 function getInitialLang(): Lang {
-  if (typeof window === "undefined") return "en";
+  if (typeof window === "undefined") return "hi";
 
   const storedLang = window.localStorage.getItem("plywood-lang");
-  return storedLang === "hi" ? "hi" : "en";
+  return storedLang === "en" ? "en" : "hi";
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
