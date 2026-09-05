@@ -112,7 +112,7 @@ export default function BannerCarousel({ t }: { t: LanguageContextValue["t"] }) 
         <div className="banner-dots" role="tablist" aria-label="Banner slides">
           {slides.map((slide, i) => (
             <button
-              key={slide.title}
+              key={i}
               type="button"
               role="tab"
               aria-selected={i === index}

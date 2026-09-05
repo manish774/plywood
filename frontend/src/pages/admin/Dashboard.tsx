@@ -52,7 +52,7 @@ export default function Dashboard() {
           { label: t("admin.dashboardCards.inquiries"), value: stats.inquiries, to: "/admin/inquiries" },
         ].map((s, i) => (
           <motion.div
-            key={s.label}
+            key={i}
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 260, damping: 24, delay: i * 0.06 }}

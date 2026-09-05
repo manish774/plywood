@@ -26,7 +26,7 @@ export default function ValueProps({ t }: { t: LanguageContextValue["t"] }) {
         viewport={{ once: true, amount: 0.4 }}
       >
         {props.map((prop, i) => (
-          <motion.div className="value-prop" key={prop.title} variants={fadeUp}>
+          <motion.div className="value-prop" key={i} variants={fadeUp}>
             <span className="value-prop-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
                 {icons[i % icons.length]}
