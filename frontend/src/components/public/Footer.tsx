@@ -7,6 +7,7 @@ import { useLanguage } from "../../i18n/useLanguage";
 import { listCategories } from "../../api/categories";
 import type { Category } from "../../types/models";
 import { SITE } from "../../config/site";
+import SwastikIcon from "../icons/SwastikIcon";
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -30,7 +31,7 @@ export default function Footer() {
       >
         <motion.div variants={fadeUp}>
           <div className="navbar-logo navbar-logo-dark">
-            <span className="navbar-logo-mark" aria-hidden="true" />
+            <SwastikIcon className="navbar-logo-mark" />
             {SITE.shortName}
             <span className="navbar-logo-sub">{t("nav.logoSub")}</span>
           </div>

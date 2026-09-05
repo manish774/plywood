@@ -4,6 +4,7 @@ import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useLanguage } from "../../i18n/useLanguage";
 import { useUserAuth } from "../../context/UserAuthContext";
 import { SITE } from "../../config/site";
+import SwastikIcon from "../icons/SwastikIcon";
 
 interface NavbarLink {
   to: string;
@@ -47,7 +48,7 @@ export default function Navbar() {
     <header className={"navbar" + (scrolled ? " navbar-scrolled" : "")}>
       <div className="container navbar-inner">
         <NavLink to="/" className="navbar-logo" onClick={() => setOpen(false)}>
-          <span className="navbar-logo-mark" aria-hidden="true" />
+          <SwastikIcon className="navbar-logo-mark" />
           {SITE.shortName}
           <span className="navbar-logo-sub">{t("nav.logoSub")}</span>
         </NavLink>

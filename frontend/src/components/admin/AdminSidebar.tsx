@@ -3,6 +3,7 @@ import { useAuth } from "../../context/AuthContext";
 import { useInquiries } from "../../context/InquiriesContext";
 import { useLanguage } from "../../i18n/useLanguage";
 import { SITE } from "../../config/site";
+import SwastikIcon from "../icons/SwastikIcon";
 
 interface SidebarLink {
   to: string;
@@ -32,7 +33,7 @@ export default function AdminSidebar() {
   return (
     <aside className="admin-sidebar">
       <div className="admin-sidebar-brand">
-        <span className="navbar-logo-mark" aria-hidden="true" />
+        <SwastikIcon className="navbar-logo-mark" />
         {SITE.shortName}
         <span className="navbar-logo-sub">Admin</span>
       </div>

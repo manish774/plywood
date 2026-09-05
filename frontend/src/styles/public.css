@@ -63,23 +63,8 @@
 .navbar-logo-mark {
   width: 22px;
   height: 22px;
-  border-radius: 3px;
   flex-shrink: 0;
-  background-image: repeating-linear-gradient(
-    to bottom,
-    var(--ink) 0,
-    var(--ink) 3px,
-    var(--bg) 3px,
-    var(--bg) 6px,
-    var(--amber) 6px,
-    var(--amber) 7px,
-    var(--bg) 7px,
-    var(--bg) 10px,
-    var(--accent) 10px,
-    var(--accent) 11px,
-    var(--bg) 11px,
-    var(--bg) 14px
-  );
+  object-fit: contain;
 }
 
 .navbar-logo-sub {

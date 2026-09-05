@@ -5,6 +5,7 @@ import { useAuth } from "../../context/AuthContext";
 import { getErrorMessage } from "../../utils/errors";
 import { useLanguage } from "../../i18n/useLanguage";
 import { SITE } from "../../config/site";
+import SwastikIcon from "../../components/icons/SwastikIcon";
 import "../../styles/admin.css";
 
 export default function Login() {
@@ -41,7 +42,7 @@ export default function Login() {
         transition={{ type: "spring", stiffness: 260, damping: 22 }}
       >
         <div className="admin-login-brand">
-          <span className="navbar-logo-mark" aria-hidden="true" />
+          <SwastikIcon className="navbar-logo-mark" />
           {SITE.shortName}
         </div>
         <p>{t("admin.loginSubtitle")}</p>
