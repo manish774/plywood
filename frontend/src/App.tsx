@@ -4,6 +4,7 @@ import { UserAuthProvider } from "./context/UserAuthContext";
 import ProtectedRoute from "./components/admin/ProtectedRoute";
 import UserProtectedRoute from "./components/public/UserProtectedRoute";
 import { LanguageProvider } from "./i18n/useLanguage";
+import ScrollToTop from "./components/ScrollToTop";
 
 import PublicLayout from "./layouts/PublicLayout";
 import Home from "./pages/public/Home";
@@ -27,6 +28,7 @@ export default function App() {
     <LanguageProvider>
       <AuthProvider>
         <UserAuthProvider>
+          <ScrollToTop />
           <Routes>
             {/* Public site */}
             <Route element={<PublicLayout />}>
