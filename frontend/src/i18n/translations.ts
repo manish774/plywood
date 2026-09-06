@@ -1,5 +1,3 @@
-import { SITE } from "../config/site";
-
 const en = {
   nav: {
       home: "Home",
@@ -10,7 +8,6 @@ const en = {
       toggle: "हिंदी",
       toggleAria: "Switch to Hindi",
       burgerAria: "Toggle menu",
-      logoSub: SITE.tagline,
       admin: "Admin",
       footerShop: "Shop",
       footerYard: "Yard",
@@ -18,7 +15,7 @@ const en = {
       footerStaffLogin: "Staff login",
       footerHours: "Hours",
       footerAddress: "Yard address",
-      footerFine: `© {year} ${SITE.name}. All boards sold as-is, grain and all.`,
+      footerFine: "© {year} {shopName}. All boards sold as-is, grain and all.",
       announcement:
         "Same-day dispatch on in-stock sheets — ask about delivery to your job site.",
       footerBrowseHeading: "Browse categories",
@@ -32,6 +29,7 @@ const en = {
       save: "Save",
       saveItem: "Save item",
       saveCategory: "Save category",
+      saveSettings: "Save changes",
       delete: "Delete",
       edit: "Edit",
       add: "Add",
@@ -48,6 +46,7 @@ const en = {
       sendMessage: "Send message",
       sending: "Sending...",
       askAboutSheet: "Ask about this sheet",
+      askOnWhatsapp: "Ask on WhatsApp",
       browseCategories: "Browse categories",
       getQuote: "Get a quote",
       viewAll: "View all",
@@ -75,6 +74,9 @@ const en = {
       couldNotLoadItem: "Could not load this item.",
       couldNotSaveCategory: "Could not save category.",
       couldNotSaveItem: "Could not save item.",
+      couldNotLoadSettings: "Could not load settings.",
+      couldNotSaveSettings: "Could not save settings.",
+      settingsSaved: "Settings updated.",
       couldNotDeleteCategory: "Could not delete category.",
       couldNotDeleteItem: "Could not delete item.",
       couldNotSendMessage: "Could not send your message. Please try again.",
@@ -180,7 +182,7 @@ const en = {
           cta: "Browse categories",
         },
       ],
-      whyRidgeline: `Why ${SITE.shortName}`,
+      whyRidgeline: "Why {shopName}",
       builtLike: "Built like the yard, not a showroom",
       features: [
         {
@@ -249,15 +251,11 @@ const en = {
       pageTitle: "Get in touch",
       pageDescription:
         "Tell us what you're building and what sheet goods you need — we'll get back to you with pricing and availability.",
-      companyName: SITE.name,
       companyCopy:
         "Whether it's a single sheet or a full job list, send us the details and we'll follow up within one business day.",
       yardAddressLabel: "Yard address",
       hoursLabel: "Hours",
       phoneLabel: "Phone",
-      yardAddressValue: SITE.address,
-      hoursValue: "Mon–Sat, 7am–5pm",
-      phoneValue: "(555) 019-2044",
       successMessage: "Thanks — your message is in. We'll be in touch soon.",
       placeholder: "What are you building, and what do you need?",
     },
@@ -287,7 +285,7 @@ const en = {
       empty: "No queries yet",
       emptyMessage: "Messages you send through the contact form will show up here.",
       couldNotLoad: "Could not load your queries.",
-      replyLabel: `Reply from ${SITE.shortName}`,
+      replyLabel: "Reply from {shopName}",
       status: {
         pending: "Pending",
         acknowledged: "Replied",
@@ -313,6 +311,20 @@ const en = {
       manageInquiriesTitle: "Inquiries",
       manageInquiriesDescription:
         "Messages submitted through the public contact form.",
+      customizationTitle: "Customization",
+      customizationDescription:
+        "Update your shop's branding and contact details shown across the site.",
+      shopNameLabel: "Shop name",
+      shortNameLabel: "Short name (logo)",
+      taglineLabel: "Tagline (logo subtitle)",
+      logoUrlLabel: "Logo image URL",
+      logoUrlHint: "Leave blank to use the default Swastik logo mark.",
+      addressLabel: "Address",
+      mapUrlLabel: "Google Maps link",
+      whatsappNumberLabel: "WhatsApp number",
+      whatsappNumberHint: "Digits only, with country code (e.g. 91XXXXXXXXXX).",
+      phoneNumberLabel: "Phone number",
+      hoursLabel: "Business hours",
       loginTitle: "Staff sign-in for the plywood shop admin panel.",
       loginSubtitle: "Staff sign-in for the plywood shop admin panel.",
       loginEmail: "Email",
@@ -350,7 +362,6 @@ const hi: TranslationDict = {
       toggle: "EN",
       toggleAria: "अंग्रेज़ी में बदलें",
       burgerAria: "मेनू खोलें",
-      logoSub: SITE.tagline,
       admin: "एडमिन",
       footerShop: "दुकान",
       footerYard: "यार्ड",
@@ -358,7 +369,7 @@ const hi: TranslationDict = {
       footerStaffLogin: "स्टाफ लॉगिन",
       footerHours: "समय",
       footerAddress: "यार्ड का पता",
-      footerFine: `© {year} ${SITE.name}. सारे बोर्ड जैसे हैं वैसे ही बेचे जाते हैं, लकड़ी के दाने (grain) समेत।`,
+      footerFine: "© {year} {shopName}. सारे बोर्ड जैसे हैं वैसे ही बेचे जाते हैं, लकड़ी के दाने (grain) समेत।",
       announcement:
         "स्टॉक में मौजूद शीट्स की सेम-डे डिस्पैच — डिलीवरी के बारे में पूछें।",
       footerBrowseHeading: "कैटेगरी देखें",
@@ -372,6 +383,7 @@ const hi: TranslationDict = {
       save: "सेव करें",
       saveItem: "आइटम सेव करें",
       saveCategory: "कैटेगरी सेव करें",
+      saveSettings: "बदलाव सेव करें",
       delete: "डिलीट करें",
       edit: "एडिट करें",
       add: "जोड़ें",
@@ -388,6 +400,7 @@ const hi: TranslationDict = {
       sendMessage: "मैसेज भेजें",
       sending: "भेजा जा रहा है...",
       askAboutSheet: "इस शीट के बारे में पूछें",
+      askOnWhatsapp: "व्हाट्सएप पर पूछें",
       browseCategories: "कैटेगरी देखें",
       getQuote: "कोटेशन लें",
       viewAll: "सभी देखें",
@@ -413,6 +426,9 @@ const hi: TranslationDict = {
       couldNotLoadItem: "यह आइटम लोड नहीं हो सका।",
       couldNotSaveCategory: "कैटेगरी सेव नहीं हो सकी।",
       couldNotSaveItem: "आइटम सेव नहीं हो सका।",
+      couldNotLoadSettings: "सेटिंग्स लोड नहीं हो सकीं।",
+      couldNotSaveSettings: "सेटिंग्स सेव नहीं हो सकीं।",
+      settingsSaved: "सेटिंग्स अपडेट हो गईं।",
       couldNotDeleteCategory: "कैटेगरी डिलीट नहीं हो सकी।",
       couldNotDeleteItem: "आइटम डिलीट नहीं हो सका।",
       couldNotSendMessage:
@@ -519,7 +535,7 @@ const hi: TranslationDict = {
           cta: "कैटेगरी देखें",
         },
       ],
-      whyRidgeline: `${SITE.shortName} क्यों चुनें`,
+      whyRidgeline: "{shopName} क्यों चुनें",
       builtLike: "शोरूम नहीं, यार्ड जैसा बनाया गया",
       features: [
         {
@@ -588,15 +604,11 @@ const hi: TranslationDict = {
       pageTitle: "हमसे संपर्क करें",
       pageDescription:
         "बताइए आप क्या बना रहे हैं और किस तरह की शीट गुड्स चाहिए — हम कीमत और उपलब्धता के साथ आपसे संपर्क करेंगे।",
-      companyName: SITE.name,
       companyCopy:
         "चाहे एक शीट चाहिए हो या पूरी जॉब लिस्ट, हमें जानकारी भेजें — हम 1 दिन के अंदर जवाब देंगे।",
       yardAddressLabel: "यार्ड का पता",
       hoursLabel: "समय",
       phoneLabel: "फोन",
-      yardAddressValue: SITE.address,
-      hoursValue: "सोम–शनि, सुबह 7 से शाम 5 बजे तक",
-      phoneValue: "(555) 019-2044",
       successMessage:
         "धन्यवाद — आपका मैसेज मिल गया है। हम जल्दी ही संपर्क करेंगे।",
       placeholder: "आप क्या बना रहे हैं, और आपको क्या चाहिए?",
@@ -627,7 +639,7 @@ const hi: TranslationDict = {
       empty: "अभी कोई मैसेज नहीं",
       emptyMessage: "कॉन्टैक्ट फॉर्म से भेजे मैसेज यहाँ दिखेंगे।",
       couldNotLoad: "आपके मैसेज लोड नहीं हो सके।",
-      replyLabel: `${SITE.shortName} का जवाब`,
+      replyLabel: "{shopName} का जवाब",
       status: {
         pending: "पेंडिंग",
         acknowledged: "जवाब मिल गया",
@@ -653,6 +665,20 @@ const hi: TranslationDict = {
       manageInquiriesTitle: "मैसेज",
       manageInquiriesDescription:
         "कॉन्टैक्ट फॉर्म से आए ग्राहकों के मैसेज।",
+      customizationTitle: "कस्टमाइज़ेशन",
+      customizationDescription:
+        "अपनी दुकान की ब्रांडिंग और संपर्क जानकारी अपडेट करें, जो पूरी वेबसाइट पर दिखती है।",
+      shopNameLabel: "दुकान का नाम",
+      shortNameLabel: "छोटा नाम (लोगो)",
+      taglineLabel: "टैगलाइन (लोगो सबटाइटल)",
+      logoUrlLabel: "लोगो इमेज URL",
+      logoUrlHint: "खाली छोड़ने पर डिफ़ॉल्ट स्वस्तिक लोगो दिखेगा।",
+      addressLabel: "पता",
+      mapUrlLabel: "गूगल मैप्स लिंक",
+      whatsappNumberLabel: "व्हाट्सएप नंबर",
+      whatsappNumberHint: "केवल अंक, कंट्री कोड के साथ (जैसे 91XXXXXXXXXX)।",
+      phoneNumberLabel: "फोन नंबर",
+      hoursLabel: "दुकान का समय",
       loginTitle: "प्लाईवुड शॉप के एडमिन पैनल के लिए स्टाफ लॉगिन।",
       loginSubtitle: "प्लाईवुड शॉप के एडमिन पैनल के लिए स्टाफ लॉगिन।",
       loginEmail: "ईमेल",

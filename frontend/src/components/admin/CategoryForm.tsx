@@ -1,6 +1,7 @@
 import { useState, type ChangeEvent, type FormEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "../../i18n/useLanguage";
+import { WrenchLoader } from "../Loaders";
 import type { Category, CategoryInput } from "../../types/models";
 
 interface CategoryFormState {
@@ -99,6 +100,7 @@ export default function CategoryForm({ open, initial, busy, error, onSubmit, onC
                   {t("common.cancel")}
                 </button>
                 <button type="submit" className="btn btn-accent" disabled={busy}>
+                  {busy && <WrenchLoader />}
                   {busy ? t("common.saving") : t("common.saveCategory")}
                 </button>
               </div>

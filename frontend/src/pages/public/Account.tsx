@@ -5,6 +5,7 @@ import { useUserAuth } from "../../context/UserAuthContext";
 import Parallax from "../../components/public/Parallax";
 import { getErrorMessage } from "../../utils/errors";
 import { useLanguage } from "../../i18n/useLanguage";
+import { WrenchLoader } from "../../components/Loaders";
 
 const emptyRegisterForm = { name: "", email: "", phone: "" };
 
@@ -196,6 +197,7 @@ export default function Account() {
                 whileTap={{ scale: 0.96 }}
                 style={{ width: "100%" }}
               >
+                {status === "busy" && <WrenchLoader />}
                 {status === "busy" ? t("account.sendingOtp") : t("account.registerButton")}
               </motion.button>
             </form>
@@ -221,6 +223,7 @@ export default function Account() {
                 whileTap={{ scale: 0.96 }}
                 style={{ width: "100%" }}
               >
+                {status === "busy" && <WrenchLoader />}
                 {status === "busy" ? t("account.sendingOtp") : t("account.loginButton")}
               </motion.button>
             </form>
@@ -250,6 +253,7 @@ export default function Account() {
                 whileTap={{ scale: 0.96 }}
                 style={{ width: "100%" }}
               >
+                {status === "busy" && <WrenchLoader />}
                 {status === "busy" ? t("account.verifying") : t("account.verifyButton")}
               </motion.button>
               <button type="button" className="account-resend" onClick={handleResend}>

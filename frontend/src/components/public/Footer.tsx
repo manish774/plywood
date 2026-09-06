@@ -4,13 +4,14 @@ import { motion } from "framer-motion";
 import Parallax from "./Parallax";
 import { staggerContainer, fadeUp } from "../motionVariants";
 import { useLanguage } from "../../i18n/useLanguage";
+import { useSettings } from "../../context/SettingsContext";
 import { listCategories } from "../../api/categories";
 import type { Category } from "../../types/models";
-import { SITE } from "../../config/site";
 import SwastikIcon from "../icons/SwastikIcon";
 
 export default function Footer() {
   const { t } = useLanguage();
+  const { settings } = useSettings();
   const [categories, setCategories] = useState<Category[]>([]);
 
   useEffect(() => {
@@ -31,9 +32,13 @@ export default function Footer() {
       >
         <motion.div variants={fadeUp}>
           <div className="navbar-logo navbar-logo-dark">
-            <SwastikIcon className="navbar-logo-mark" />
-            {SITE.shortName}
-            <span className="navbar-logo-sub">{t("nav.logoSub")}</span>
+            {settings.logoUrl ? (
+              <img src={settings.logoUrl} alt="" className="navbar-logo-mark" />
+            ) : (
+              <SwastikIcon className="navbar-logo-mark" />
+            )}
+            {settings.shortName}
+            <span className="navbar-logo-sub">{settings.tagline}</span>
           </div>
           <p className="site-footer-tag">{t("contact.companyCopy")}</p>
         </motion.div>
@@ -51,8 +56,10 @@ export default function Footer() {
           </div>
           <div>
             <p className="eyebrow site-footer-heading">{t("nav.footerYard")}</p>
-            <p>{t("contact.hoursValue")}</p>
-            <p>{t("contact.yardAddressValue")}</p>
+            <p>{settings.hours}</p>
+            <a href={settings.mapUrl} target="_blank" rel="noopener noreferrer">
+              {settings.address}
+            </a>
           </div>
           <div>
             <p className="eyebrow site-footer-heading">{t("nav.footerAdmin")}</p>
@@ -61,7 +68,9 @@ export default function Footer() {
         </motion.div>
       </motion.div>
       <div className="container">
-        <p className="site-footer-fine">{t("nav.footerFine", { year: new Date().getFullYear() })}</p>
+        <p className="site-footer-fine">
+          {t("nav.footerFine", { year: new Date().getFullYear(), shopName: settings.shopName })}
+        </p>
       </div>
     </footer>
   );

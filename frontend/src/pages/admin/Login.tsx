@@ -4,13 +4,15 @@ import { motion } from "framer-motion";
 import { useAuth } from "../../context/AuthContext";
 import { getErrorMessage } from "../../utils/errors";
 import { useLanguage } from "../../i18n/useLanguage";
-import { SITE } from "../../config/site";
+import { useSettings } from "../../context/SettingsContext";
 import SwastikIcon from "../../components/icons/SwastikIcon";
+import { WrenchLoader } from "../../components/Loaders";
 import "../../styles/admin.css";
 
 export default function Login() {
   const { login } = useAuth();
   const { t } = useLanguage();
+  const { settings } = useSettings();
   const navigate = useNavigate();
   const location = useLocation();
   const [email, setEmail] = useState("");
@@ -42,8 +44,12 @@ export default function Login() {
         transition={{ type: "spring", stiffness: 260, damping: 22 }}
       >
         <div className="admin-login-brand">
-          <SwastikIcon className="navbar-logo-mark" />
-          {SITE.shortName}
+          {settings.logoUrl ? (
+            <img src={settings.logoUrl} alt="" className="navbar-logo-mark" />
+          ) : (
+            <SwastikIcon className="navbar-logo-mark" />
+          )}
+          {settings.shortName}
         </div>
         <p>{t("admin.loginSubtitle")}</p>
 
@@ -85,6 +91,7 @@ export default function Login() {
             disabled={busy}
             whileTap={{ scale: 0.97 }}
           >
+            {busy && <WrenchLoader />}
             {busy ? t("common.signingIn") : t("common.signIn")}
           </motion.button>
         </form>

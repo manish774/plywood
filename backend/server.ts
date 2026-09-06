@@ -9,6 +9,7 @@ import itemRoutes from './src/routes/items';
 import contactRoutes from './src/routes/contact';
 import adminRoutes from './src/routes/admin';
 import authRoutes from './src/routes/auth';
+import settingsRoutes from './src/routes/settings';
 import { errorHandler, notFound } from './src/middleware/errorHandler';
 
 const app = express();
@@ -25,6 +26,7 @@ app.use('/api/items', itemRoutes);
 app.use('/api/contact', contactRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/settings', settingsRoutes);
 
 app.use(notFound);
 app.use(errorHandler);

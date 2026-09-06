@@ -6,11 +6,13 @@ import Parallax from "../../components/public/Parallax";
 import { LoadingBlock, ErrorBlock, EmptyBlock } from "../../components/public/StateBlock";
 import { getErrorMessage } from "../../utils/errors";
 import { useLanguage } from "../../i18n/useLanguage";
+import { useSettings } from "../../context/SettingsContext";
 import type { Contact } from "../../types/models";
 
 export default function MyQueries() {
   const { user, logout } = useUserAuth();
   const { t } = useLanguage();
+  const { settings } = useSettings();
   const [queries, setQueries] = useState<Contact[] | null>(null);
   const [error, setError] = useState("");
 
@@ -69,7 +71,7 @@ export default function MyQueries() {
                 <p className="query-card-message">{q.message}</p>
                 {q.status === "acknowledged" && q.adminReply && (
                   <div className="query-card-reply">
-                    <span>{t("myQueries.replyLabel")}</span>
+                    <span>{t("myQueries.replyLabel", { shopName: settings.shortName })}</span>
                     <p>{q.adminReply}</p>
                   </div>
                 )}

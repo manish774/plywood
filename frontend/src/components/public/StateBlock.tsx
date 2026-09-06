@@ -1,4 +1,5 @@
 import { useLanguage } from "../../i18n/useLanguage";
+import { GearLoader } from "../Loaders";
 
 interface LoadingBlockProps {
   label?: string;
@@ -10,7 +11,7 @@ export function LoadingBlock({ label }: LoadingBlockProps) {
 
   return (
     <div className="state-block">
-      <div className="spinner" role="status" aria-label={displayLabel} />
+      <GearLoader label={displayLabel} />
       <p>{displayLabel}</p>
     </div>
   );

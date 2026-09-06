@@ -2,13 +2,16 @@ import { useEffect, useState, type ChangeEvent } from "react";
 import { motion } from "framer-motion";
 import { listInquiries, acknowledgeInquiry } from "../../api/contact";
 import { LoadingBlock, ErrorBlock, EmptyBlock } from "../../components/public/StateBlock";
+import { WrenchLoader } from "../../components/Loaders";
 import { getErrorMessage } from "../../utils/errors";
 import { useLanguage } from "../../i18n/useLanguage";
 import { useInquiries } from "../../context/InquiriesContext";
+import { useSettings } from "../../context/SettingsContext";
 import type { Contact } from "../../types/models";
 
 export default function Inquiries() {
   const { t } = useLanguage();
+  const { settings } = useSettings();
   const { refresh: refreshPendingCount } = useInquiries();
   const [inquiries, setInquiries] = useState<Contact[] | null>(null);
   const [error, setError] = useState("");
@@ -98,7 +101,7 @@ export default function Inquiries() {
 
               {inq.status === "acknowledged" ? (
                 <div className="query-card-reply">
-                  <span>{t("myQueries.replyLabel")}</span>
+                  <span>{t("myQueries.replyLabel", { shopName: settings.shortName })}</span>
                   <p>{inq.adminReply}</p>
                 </div>
               ) : (
@@ -120,6 +123,7 @@ export default function Inquiries() {
                     disabled={busyId === inq._id || !(replyDrafts[inq._id] || "").trim()}
                     onClick={() => handleAcknowledge(inq._id)}
                   >
+                    {busyId === inq._id && <WrenchLoader />}
                     {busyId === inq._id ? t("admin.acknowledging") : t("admin.acknowledge")}
                   </button>
                 </div>

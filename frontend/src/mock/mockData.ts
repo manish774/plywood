@@ -15,6 +15,8 @@ import type {
   Item,
   ItemInput,
   MessageResponse,
+  Settings,
+  SettingsInput,
   User,
   VerifyOtpResponse,
 } from "../types/models";
@@ -29,154 +31,368 @@ let categories: Category[] = [
     _id: "cat-1",
     name: "Marine Plywood",
     description:
-      "Water-resistant plywood built for boats, docks and anywhere moisture is a constant threat.",
+      "BWP (IS:710) grade waterproof plywood built to survive Jharkhand's monsoon humidity — for kitchens, bathrooms and outdoor cabinetry.",
     image:
       "https://images.unsplash.com/photo-1601058268499-e52658b8bb88?w=800&q=80",
   },
   {
     _id: "cat-2",
-    name: "Hardwood Plywood",
+    name: "Commercial Plywood",
     description:
-      "Furniture-grade panels faced in oak, birch and maple veneer for cabinetry and fine joinery.",
+      "MR grade (IS:303) general-purpose plywood for everyday furniture, wardrobes and interior fit-outs at a value price.",
     image:
       "https://images.unsplash.com/photo-1517646287270-a5a9ca602e5c?w=800&q=80",
   },
   {
     _id: "cat-3",
-    name: "Structural Plywood",
+    name: "Block Board",
     description:
-      "Rated sheathing for roofs, walls and floors where load-bearing strength matters most.",
+      "Lightweight wood-strip core boards for wardrobe shutters, partitions and long panels where solid plywood would be overkill.",
     image:
       "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80",
   },
   {
     _id: "cat-4",
-    name: "Decorative Veneer",
+    name: "Flush Doors",
     description:
-      "Book-matched veneer sheets for feature walls, doors and statement furniture pieces.",
+      "Factory-finished flush doors in laminate and veneer finishes, ready to hang for home and office interiors.",
+    image:
+      "https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?w=800&q=80",
+  },
+  {
+    _id: "cat-5",
+    name: "Decorative Laminates",
+    description:
+      "Sunmica-style laminate sheets in glossy, matte and textured finishes to dress up furniture, wardrobes and counters.",
     image:
       "https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=800&q=80",
+  },
+  {
+    _id: "cat-6",
+    name: "Decorative Veneer",
+    description:
+      "Natural wood veneer sheets for feature walls, panelling and premium furniture faces.",
+    image:
+      "https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=800&q=80",
   },
 ];
 
 let items: StoredItem[] = [
+  // Marine Plywood
   {
     _id: "item-1",
-    name: "BS 1088 Marine Ply 18mm",
+    name: "CenturyPly Sainik 710 Marine Plywood 19mm",
     description:
-      "Premium okoume-faced marine plywood, void-free core, WBP glue bond. The standard choice for hulls and wet environments.",
-    price: 84.5,
+      "ISI-marked BWP (IS:710) grade marine plywood with a phenol-bonded core. Fully boiling-waterproof — the shop's top pick for kitchens and bathroom units.",
+    price: 5800,
     category: "cat-1",
     images: [
       "https://images.unsplash.com/photo-1601058268499-e52658b8bb88?w=1000&q=80",
     ],
     specifications: {
-      thickness: "18mm",
-      size: "2440 x 1220mm",
-      grade: "BS 1088",
-      brand: "Ridgeline Marine",
+      thickness: "19mm",
+      size: "2440 x 1220mm (8x4 ft)",
+      grade: "BWP - IS:710",
+      brand: "CenturyPly",
     },
   },
   {
     _id: "item-2",
-    name: "Marine Ply 12mm",
+    name: "Greenply Marine Gold BWP Plywood 18mm",
     description:
-      "Lighter-duty marine grade panel for cabin interiors and lightweight boat builds.",
-    price: 58.0,
+      "Termite and borer resistant marine-grade plywood with a hardwood core, built for long-term moisture exposure.",
+    price: 5200,
     category: "cat-1",
     images: [
       "https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=1000&q=80",
     ],
     specifications: {
-      thickness: "12mm",
-      size: "2440 x 1220mm",
-      grade: "BS 1088",
-      brand: "Ridgeline Marine",
+      thickness: "18mm",
+      size: "2440 x 1220mm (8x4 ft)",
+      grade: "BWP - IS:710",
+      brand: "Greenply",
     },
   },
   {
     _id: "item-3",
-    name: "Birch Faced Plywood 15mm",
+    name: "Kitply Marine Plus Plywood 12mm",
     description:
-      "Baltic birch core with a clear birch face veneer both sides. A cabinetmaker favorite for its stable, void-free edges.",
-    price: 76.25,
+      "Mid-thickness marine plywood suited to bathroom cabinets, outdoor shutters and utility furniture.",
+    price: 3600,
+    category: "cat-1",
+    images: [
+      "https://images.unsplash.com/photo-1601058268499-e52658b8bb88?w=1000&q=80",
+    ],
+    specifications: {
+      thickness: "12mm",
+      size: "2440 x 1220mm (8x4 ft)",
+      grade: "BWP - IS:710",
+      brand: "Kitply",
+    },
+  },
+
+  // Commercial Plywood
+  {
+    _id: "item-4",
+    name: "Greenply Ecotec MR Grade Plywood 19mm",
+    description:
+      "Moisture-resistant (IS:303) commercial plywood for wardrobes, cabinets and general carpentry work.",
+    price: 3000,
     category: "cat-2",
     images: [
       "https://images.unsplash.com/photo-1517646287270-a5a9ca602e5c?w=1000&q=80",
     ],
     specifications: {
-      thickness: "15mm",
-      size: "2440 x 1220mm",
-      grade: "B/BB",
-      brand: "Nordic Birch Co.",
-    },
-  },
-  {
-    _id: "item-4",
-    name: "Oak Veneer Plywood 18mm",
-    description:
-      "Red oak veneer over a hardwood core, pre-sanded and ready to finish. Ideal for visible cabinetry faces.",
-    price: 92.0,
-    category: "cat-2",
-    images: [
-      "https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=1000&q=80",
-    ],
-    specifications: {
-      thickness: "18mm",
-      size: "2440 x 1220mm",
-      grade: "A/B",
-      brand: "Heritage Hardwoods",
+      thickness: "19mm",
+      size: "2440 x 1220mm (8x4 ft)",
+      grade: "MR - IS:303",
+      brand: "Greenply",
     },
   },
   {
     _id: "item-5",
-    name: "CDX Structural Sheathing 12mm",
+    name: "CenturyPly Sainik 303 Commercial Plywood 12mm",
     description:
-      "Construction-grade structural plywood rated for roof decking, wall sheathing and subfloors.",
-    price: 41.75,
+      "Everyday-use commercial plywood with a strong core and smooth face, ready for painting or laminate finishing.",
+    price: 2400,
+    category: "cat-2",
+    images: [
+      "https://images.unsplash.com/photo-1517646287270-a5a9ca602e5c?w=1000&q=80",
+    ],
+    specifications: {
+      thickness: "12mm",
+      size: "2440 x 1220mm (8x4 ft)",
+      grade: "MR - IS:303",
+      brand: "CenturyPly",
+    },
+  },
+  {
+    _id: "item-6",
+    name: "Archidply MR Commercial Plywood 6mm",
+    description:
+      "Thin-panel commercial plywood for backing panels, drawer bottoms and light partition work.",
+    price: 1450,
+    category: "cat-2",
+    images: [
+      "https://images.unsplash.com/photo-1517646287270-a5a9ca602e5c?w=1000&q=80",
+    ],
+    specifications: {
+      thickness: "6mm",
+      size: "2440 x 1220mm (8x4 ft)",
+      grade: "MR - IS:303",
+      brand: "Archidply",
+    },
+  },
+
+  // Block Board
+  {
+    _id: "item-7",
+    name: "Duro Gold Block Board 25mm",
+    description:
+      "Seasoned wood-strip core block board for wardrobe shutters and table tops needing a lightweight, screw-holding panel.",
+    price: 3100,
     category: "cat-3",
     images: [
       "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1000&q=80",
     ],
     specifications: {
-      thickness: "12mm",
-      size: "2440 x 1220mm",
-      grade: "CDX",
-      brand: "Ridgeline Structural",
+      thickness: "25mm",
+      size: "2440 x 1220mm (8x4 ft)",
+      grade: "BWR - IS:1659",
+      brand: "Duro",
     },
   },
   {
-    _id: "item-6",
-    name: "T&G Flooring Ply 22mm",
+    _id: "item-8",
+    name: "Archidply Platinum Block Board 19mm",
     description:
-      "Tongue-and-groove structural flooring panel engineered for stiff, squeak-free subfloors.",
-    price: 63.9,
+      "Balanced-core block board for partitions, false ceilings and long wardrobe panels.",
+    price: 2600,
     category: "cat-3",
+    images: [
+      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1000&q=80",
+    ],
+    specifications: {
+      thickness: "19mm",
+      size: "2440 x 1220mm (8x4 ft)",
+      grade: "BWR - IS:1659",
+      brand: "Archidply",
+    },
+  },
+  {
+    _id: "item-9",
+    name: "CenturyPly Sainik Block Board 19mm",
+    description:
+      "Termite-resistant block board built for wardrobe and cabinet carcasses where full plywood weight isn't needed.",
+    price: 2850,
+    category: "cat-3",
+    images: [
+      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1000&q=80",
+    ],
+    specifications: {
+      thickness: "19mm",
+      size: "2440 x 1220mm (8x4 ft)",
+      grade: "BWR - IS:1659",
+      brand: "CenturyPly",
+    },
+  },
+
+  // Flush Doors
+  {
+    _id: "item-10",
+    name: "CenturyPly Century Flush Door (Laminated) 32mm",
+    description:
+      "Solid-core flush door with factory-laminated finish on both faces — ready to hang for bedrooms and offices.",
+    price: 4500,
+    category: "cat-4",
     images: [
       "https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?w=1000&q=80",
     ],
     specifications: {
-      thickness: "22mm",
-      size: "2440 x 590mm",
-      grade: "T&G",
-      brand: "Ridgeline Structural",
+      thickness: "32mm",
+      size: "2100 x 900mm (7x3 ft)",
+      grade: "Solid Core",
+      brand: "CenturyPly",
     },
   },
   {
-    _id: "item-7",
-    name: "Walnut Decorative Veneer Panel",
+    _id: "item-11",
+    name: "Greenply Decorative Veneer Flush Door 35mm",
     description:
-      "Book-matched American walnut veneer panel for feature walls and statement joinery.",
-    price: 118.0,
+      "Premium flush door with a natural veneer face, pre-fit for polishing — a popular choice for main entry doors.",
+    price: 5200,
     category: "cat-4",
+    images: [
+      "https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?w=1000&q=80",
+    ],
+    specifications: {
+      thickness: "35mm",
+      size: "2100 x 900mm (7x3 ft)",
+      grade: "Solid Core",
+      brand: "Greenply",
+    },
+  },
+  {
+    _id: "item-12",
+    name: "Kitply Moulded Flush Door 30mm",
+    description:
+      "Budget-friendly moulded-skin flush door for internal rooms, stores and utility spaces.",
+    price: 3800,
+    category: "cat-4",
+    images: [
+      "https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?w=1000&q=80",
+    ],
+    specifications: {
+      thickness: "30mm",
+      size: "2100 x 750mm (7x2.5 ft)",
+      grade: "Hollow Core",
+      brand: "Kitply",
+    },
+  },
+
+  // Decorative Laminates
+  {
+    _id: "item-13",
+    name: "Merino Laminate Sheet — High Gloss 1mm",
+    description:
+      "High-gloss decorative laminate sheet for wardrobe shutters, kitchen cabinets and modular furniture.",
+    price: 1450,
+    category: "cat-5",
+    images: [
+      "https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=1000&q=80",
+    ],
+    specifications: {
+      thickness: "1mm",
+      size: "2440 x 1220mm (8x4 ft)",
+      grade: "HPL - High Gloss",
+      brand: "Merino",
+    },
+  },
+  {
+    _id: "item-14",
+    name: "Greenlam Laminate Sheet — Matte Finish 1mm",
+    description:
+      "Fingerprint-resistant matte laminate for a contemporary, low-maintenance furniture surface.",
+    price: 1650,
+    category: "cat-5",
+    images: [
+      "https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=1000&q=80",
+    ],
+    specifications: {
+      thickness: "1mm",
+      size: "2440 x 1220mm (8x4 ft)",
+      grade: "HPL - Matte",
+      brand: "Greenlam",
+    },
+  },
+  {
+    _id: "item-15",
+    name: "Stylam Textured Laminate Sheet 0.8mm",
+    description:
+      "Wood-grain textured laminate for a natural look on wardrobes, doors and office furniture at an economical price.",
+    price: 950,
+    category: "cat-5",
+    images: [
+      "https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=1000&q=80",
+    ],
+    specifications: {
+      thickness: "0.8mm",
+      size: "2440 x 1220mm (8x4 ft)",
+      grade: "HPL - Textured",
+      brand: "Stylam",
+    },
+  },
+
+  // Decorative Veneer
+  {
+    _id: "item-16",
+    name: "Archidply Natural Teak Veneer Sheet 4mm",
+    description:
+      "Book-matched natural teak veneer for feature walls, doors and premium cabinetry faces.",
+    price: 3200,
+    category: "cat-6",
     images: [
       "https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=1000&q=80",
     ],
     specifications: {
-      thickness: "6mm",
-      size: "2440 x 1220mm",
-      grade: "AA",
-      brand: "Heritage Hardwoods",
+      thickness: "4mm",
+      size: "2440 x 1220mm (8x4 ft)",
+      grade: "Natural - AA",
+      brand: "Archidply",
+    },
+  },
+  {
+    _id: "item-17",
+    name: "Greenply Walnut Veneer Sheet 4mm",
+    description:
+      "Rich dark walnut veneer sheet for statement furniture pieces and TV unit panelling.",
+    price: 3800,
+    category: "cat-6",
+    images: [
+      "https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=1000&q=80",
+    ],
+    specifications: {
+      thickness: "4mm",
+      size: "2440 x 1220mm (8x4 ft)",
+      grade: "Natural - AA",
+      brand: "Greenply",
+    },
+  },
+  {
+    _id: "item-18",
+    name: "CenturyPly Oak Veneer Sheet 3mm",
+    description:
+      "Light oak veneer sheet, pre-sanded and ready to polish — a favourite for modern wardrobe interiors.",
+    price: 2900,
+    category: "cat-6",
+    images: [
+      "https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=1000&q=80",
+    ],
+    specifications: {
+      thickness: "3mm",
+      size: "2440 x 1220mm (8x4 ft)",
+      grade: "Natural - A",
+      brand: "CenturyPly",
     },
   },
 ];
@@ -209,7 +425,30 @@ let inquirySeq = 1;
 let mockUser: User | null = null;
 let mockOtp: string | null = null;
 
+let settings: Settings = {
+  _id: "settings-1",
+  shopName: "Swastik Plywood And Decor",
+  shortName: "Swastik",
+  tagline: "Plywood And Decor",
+  logoUrl: "",
+  address: "Ranchi - Ramgarh Rd, Ormanjhi, Ranchi, Jharkhand 835219",
+  mapUrl: "https://maps.app.goo.gl/FZTYgzruo6NTY3ML9",
+  whatsappNumber: "919031440979",
+  phone: "+91 90314 40979",
+  hours: "Mon–Sat, 7am–5pm",
+};
+
 export const mockApi = {
+  async getSettings(): Promise<Settings> {
+    await delay();
+    return { ...settings };
+  },
+  async updateSettings(data: SettingsInput): Promise<Settings> {
+    await delay();
+    settings = { ...settings, ...data };
+    return { ...settings };
+  },
+
   async listCategories(): Promise<Category[]> {
     await delay();
     return categories.map((c) => ({ ...c }));
@@ -325,7 +564,7 @@ export const mockApi = {
 
   async login(email: string, password: string): Promise<AdminLoginResponse> {
     await delay();
-    if (email === "admin@ridgeline.test" && password === "plywood123") {
+    if (email === "admin@swastikplywood.test" && password === "plywood123") {
       return { token: "mock-jwt-token-for-local-dev" };
     }
     throw apiError(401, "Invalid email or password");

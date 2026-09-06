@@ -5,7 +5,10 @@ import { getItem } from "../../api/items";
 import { LoadingBlock, ErrorBlock } from "../../components/public/StateBlock";
 import { getErrorMessage } from "../../utils/errors";
 import { useLanguage } from "../../i18n/useLanguage";
+import { useSettings } from "../../context/SettingsContext";
 import { staggerContainer, fadeUp } from "../../components/motionVariants";
+import { buildItemWhatsAppUrl } from "../../utils/whatsapp";
+import WhatsAppIcon from "../../components/icons/WhatsAppIcon";
 import type { Item, ItemSpecifications } from "../../types/models";
 
 export default function ItemDetail() {
@@ -14,6 +17,7 @@ export default function ItemDetail() {
   const [error, setError] = useState("");
   const [activeImage, setActiveImage] = useState(0);
   const { t } = useLanguage();
+  const { settings } = useSettings();
   const specLabels = t("itemDetail.specLabels");
 
   const load = () => {
@@ -135,7 +139,7 @@ export default function ItemDetail() {
             </motion.dl>
           )}
 
-          <div style={{ marginTop: 32 }}>
+          <div className="item-actions" style={{ marginTop: 32 }}>
             <Link
               to="/contact"
               state={{ itemName: item.name, itemId: item._id }}
@@ -143,6 +147,15 @@ export default function ItemDetail() {
             >
               {t("common.askAboutSheet")}
             </Link>
+            <a
+              href={buildItemWhatsAppUrl(item, settings.whatsappNumber)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-whatsapp"
+            >
+              <WhatsAppIcon />
+              {t("common.askOnWhatsapp")}
+            </a>
           </div>
         </motion.div>
       </div>

@@ -119,3 +119,22 @@ export interface VerifyOtpResponse {
   token: string;
   user: User;
 }
+
+// Singleton shop settings, editable from the admin Customization tab.
+export interface Settings {
+  _id: string;
+  shopName: string;
+  shortName: string;
+  tagline: string;
+  logoUrl: string;
+  address: string;
+  mapUrl: string;
+  whatsappNumber: string;
+  phone: string;
+  hours: string;
+  createdAt?: string;
+  updatedAt?: string;
+}
+
+// Body accepted by PUT /settings.
+export type SettingsInput = Partial<Omit<Settings, "_id" | "createdAt" | "updatedAt">>;

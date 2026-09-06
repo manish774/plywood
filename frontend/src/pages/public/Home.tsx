@@ -13,6 +13,7 @@ import { LoadingBlock, ErrorBlock, EmptyBlock } from "../../components/public/St
 import { staggerContainer, clipReveal, fadeUp } from "../../components/motionVariants";
 import { getErrorMessage } from "../../utils/errors";
 import { useLanguage, type LanguageContextValue } from "../../i18n/useLanguage";
+import { useSettings } from "../../context/SettingsContext";
 import type { Category, Item } from "../../types/models";
 
 function HeroStack({ labels }: { labels: string[] }) {
@@ -123,6 +124,7 @@ export default function Home() {
   const [items, setItems] = useState<Item[]>([]);
   const [error, setError] = useState("");
   const { t } = useLanguage();
+  const { settings } = useSettings();
   const sheetLabels = t("home.sheetLabels");
   const featureItems = t("home.features");
   const processSteps = t("home.process");
@@ -285,7 +287,7 @@ export default function Home() {
         <div className="container">
           <div className="section-head">
             <div>
-              <span className="eyebrow">{t("home.whyRidgeline")}</span>
+              <span className="eyebrow">{t("home.whyRidgeline", { shopName: settings.shortName })}</span>
               <motion.h2 variants={clipReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.6 }}>
                 {t("home.builtLike")}
               </motion.h2>

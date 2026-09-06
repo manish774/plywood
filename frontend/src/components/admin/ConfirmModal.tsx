@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "../../i18n/useLanguage";
+import { WrenchLoader } from "../Loaders";
 
 interface ConfirmModalProps {
   open: boolean;
@@ -46,6 +47,7 @@ export default function ConfirmModal({
                 {t("common.cancel")}
               </button>
               <button className="btn btn-danger" onClick={onConfirm} disabled={busy}>
+                {busy && <WrenchLoader />}
                 {busy ? t("common.deleteBusy") : confirmLabel || t("common.deleteConfirm")}
               </button>
             </div>

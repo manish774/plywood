@@ -6,6 +6,8 @@ import Parallax from "../../components/public/Parallax";
 import { getErrorMessage } from "../../utils/errors";
 import { useLanguage } from "../../i18n/useLanguage";
 import { useUserAuth } from "../../context/UserAuthContext";
+import { useSettings } from "../../context/SettingsContext";
+import { WrenchLoader } from "../../components/Loaders";
 
 const emptyForm = { name: "", email: "", phone: "", message: "", itemName: "", itemId: "" };
 
@@ -16,6 +18,7 @@ export default function Contact() {
   const [status, setStatus] = useState<ContactStatus>("idle");
   const [error, setError] = useState("");
   const { t } = useLanguage();
+  const { settings } = useSettings();
   const { user } = useUserAuth();
   const location = useLocation();
   const incomingItem = location.state as { itemName?: string; itemId?: string } | null;
@@ -76,20 +79,22 @@ export default function Contact() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ type: "spring", stiffness: 220, damping: 24 }}
           >
-            <h2>{t("contact.companyName")}</h2>
+            <h2>{settings.shopName}</h2>
             <p>{t("contact.companyCopy")}</p>
             <div className="contact-info-list">
               <div className="contact-info-item">
                 <span>{t("contact.yardAddressLabel")}</span>
-                {t("contact.yardAddressValue")}
+                <a href={settings.mapUrl} target="_blank" rel="noopener noreferrer">
+                  {settings.address}
+                </a>
               </div>
               <div className="contact-info-item">
                 <span>{t("contact.hoursLabel")}</span>
-                {t("contact.hoursValue")}
+                {settings.hours}
               </div>
               <div className="contact-info-item">
                 <span>{t("contact.phoneLabel")}</span>
-                {t("contact.phoneValue")}
+                {settings.phone}
               </div>
             </div>
           </motion.div>
@@ -219,6 +224,7 @@ export default function Contact() {
               whileHover={{ y: -2 }}
               style={{ width: "100%" }}
             >
+              {status === "busy" && <WrenchLoader />}
               {status === "busy" ? t("common.sending") : t("common.sendMessage")}
             </motion.button>
           </motion.form>

@@ -2,7 +2,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { useInquiries } from "../../context/InquiriesContext";
 import { useLanguage } from "../../i18n/useLanguage";
-import { SITE } from "../../config/site";
+import { useSettings } from "../../context/SettingsContext";
 import SwastikIcon from "../icons/SwastikIcon";
 
 interface SidebarLink {
@@ -17,12 +17,14 @@ export default function AdminSidebar() {
   const navigate = useNavigate();
   const { lang, setLang, t } = useLanguage();
   const { pendingCount } = useInquiries();
+  const { settings } = useSettings();
 
   const links: SidebarLink[] = [
     { to: "/admin", label: t("admin.dashboardTitle"), end: true },
     { to: "/admin/categories", label: t("admin.manageCategoriesTitle") },
     { to: "/admin/items", label: t("admin.manageItemsTitle") },
     { to: "/admin/inquiries", label: t("admin.manageInquiriesTitle"), badge: pendingCount },
+    { to: "/admin/customization", label: t("admin.customizationTitle") },
   ];
 
   const handleLogout = () => {
@@ -33,8 +35,12 @@ export default function AdminSidebar() {
   return (
     <aside className="admin-sidebar">
       <div className="admin-sidebar-brand">
-        <SwastikIcon className="navbar-logo-mark" />
-        {SITE.shortName}
+        {settings.logoUrl ? (
+          <img src={settings.logoUrl} alt="" className="navbar-logo-mark" />
+        ) : (
+          <SwastikIcon className="navbar-logo-mark" />
+        )}
+        {settings.shortName}
         <span className="navbar-logo-sub">Admin</span>
       </div>
       <nav className="admin-sidebar-nav">

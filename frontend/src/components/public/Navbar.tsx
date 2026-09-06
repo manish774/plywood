@@ -3,7 +3,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useLanguage } from "../../i18n/useLanguage";
 import { useUserAuth } from "../../context/UserAuthContext";
-import { SITE } from "../../config/site";
+import { useSettings } from "../../context/SettingsContext";
 import SwastikIcon from "../icons/SwastikIcon";
 
 interface NavbarLink {
@@ -18,6 +18,7 @@ export default function Navbar() {
   const { lang, setLang, t } = useLanguage();
   const { scrollY } = useScroll();
   const { isAuthenticated, logout } = useUserAuth();
+  const { settings } = useSettings();
   const navigate = useNavigate();
 
   useMotionValueEvent(scrollY, "change", (y) => {
@@ -48,9 +49,13 @@ export default function Navbar() {
     <header className={"navbar" + (scrolled ? " navbar-scrolled" : "")}>
       <div className="container navbar-inner">
         <NavLink to="/" className="navbar-logo" onClick={() => setOpen(false)}>
-          <SwastikIcon className="navbar-logo-mark" />
-          {SITE.shortName}
-          <span className="navbar-logo-sub">{t("nav.logoSub")}</span>
+          {settings.logoUrl ? (
+            <img src={settings.logoUrl} alt="" className="navbar-logo-mark" />
+          ) : (
+            <SwastikIcon className="navbar-logo-mark" />
+          )}
+          {settings.shortName}
+          <span className="navbar-logo-sub">{settings.tagline}</span>
         </NavLink>
 
         <nav className="navbar-links navbar-links-desktop">
