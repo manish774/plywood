@@ -314,6 +314,7 @@ const en = {
       customizationTitle: "Customization",
       customizationDescription:
         "Update your shop's branding and contact details shown across the site.",
+      previewLabel: "Live preview",
       shopNameLabel: "Shop name",
       shortNameLabel: "Short name (logo)",
       taglineLabel: "Tagline (logo subtitle)",
@@ -668,6 +669,7 @@ const hi: TranslationDict = {
       customizationTitle: "कस्टमाइज़ेशन",
       customizationDescription:
         "अपनी दुकान की ब्रांडिंग और संपर्क जानकारी अपडेट करें, जो पूरी वेबसाइट पर दिखती है।",
+      previewLabel: "लाइव प्रीव्यू",
       shopNameLabel: "दुकान का नाम",
       shortNameLabel: "छोटा नाम (लोगो)",
       taglineLabel: "टैगलाइन (लोगो सबटाइटल)",

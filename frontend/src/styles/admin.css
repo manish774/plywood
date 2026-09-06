@@ -409,3 +409,72 @@ table.admin-table {
 .confirm-panel .modal-actions {
   justify-content: center;
 }
+
+/* ---------- Customization: form + live preview ---------- */
+.customization-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 640px) 320px;
+  gap: 40px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .customization-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.settings-preview {
+  position: sticky;
+  top: 24px;
+}
+
+.settings-preview-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  margin-bottom: 10px;
+}
+
+.settings-preview-card {
+  background: var(--bg-panel);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-raised);
+}
+
+.settings-preview-header {
+  background: var(--bg-dark);
+  padding: 18px 20px;
+}
+
+.settings-preview-body {
+  padding: 20px;
+}
+
+.settings-preview-body h3 {
+  font-size: 1.1rem;
+  margin-bottom: 14px;
+}
+
+.settings-preview-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+  padding: 8px 0;
+  border-top: 1px solid var(--line);
+}
+
+.settings-preview-icon {
+  flex-shrink: 0;
+}
+
+.settings-preview-whatsapp {
+  margin-top: 18px;
+  width: 100%;
+  cursor: default;
+}
