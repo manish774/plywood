@@ -11,6 +11,10 @@ interface SettingsBody {
   whatsappNumber?: string;
   phone?: string;
   hours?: string;
+  instagramUrl?: string;
+  facebookUrl?: string;
+  ownerName?: string;
+  ownerPhone?: string;
 }
 
 // There is exactly one settings document; create it (with schema defaults)
@@ -39,13 +43,31 @@ async function updateSettings(req: Request<unknown, unknown, SettingsBody>, res:
     whatsappNumber,
     phone,
     hours,
+    instagramUrl,
+    facebookUrl,
+    ownerName,
+    ownerPhone,
   } = req.body;
 
   await getOrCreateSettings();
 
   const settings = await Settings.findOneAndUpdate(
     {},
-    { shopName, shortName, tagline, logoUrl, address, mapUrl, whatsappNumber, phone, hours },
+    {
+      shopName,
+      shortName,
+      tagline,
+      logoUrl,
+      address,
+      mapUrl,
+      whatsappNumber,
+      phone,
+      hours,
+      instagramUrl,
+      facebookUrl,
+      ownerName,
+      ownerPhone,
+    },
     { new: true, runValidators: true, omitUndefined: true }
   );
 

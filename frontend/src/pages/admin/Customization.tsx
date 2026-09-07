@@ -127,6 +127,40 @@ export default function Customization() {
               <input id="set-hours" name="hours" value={form.hours || ""} onChange={handleChange} />
             </div>
 
+            <div className="field-row">
+              <div className="field">
+                <label htmlFor="set-ownerName">{t("admin.ownerNameLabel")}</label>
+                <input id="set-ownerName" name="ownerName" value={form.ownerName || ""} onChange={handleChange} />
+              </div>
+              <div className="field">
+                <label htmlFor="set-ownerPhone">{t("admin.ownerPhoneLabel")}</label>
+                <input id="set-ownerPhone" name="ownerPhone" value={form.ownerPhone || ""} onChange={handleChange} />
+              </div>
+            </div>
+
+            <div className="field-row">
+              <div className="field">
+                <label htmlFor="set-instagramUrl">{t("admin.instagramUrlLabel")}</label>
+                <input
+                  id="set-instagramUrl"
+                  name="instagramUrl"
+                  value={form.instagramUrl || ""}
+                  onChange={handleChange}
+                  placeholder="https://instagram.com/..."
+                />
+              </div>
+              <div className="field">
+                <label htmlFor="set-facebookUrl">{t("admin.facebookUrlLabel")}</label>
+                <input
+                  id="set-facebookUrl"
+                  name="facebookUrl"
+                  value={form.facebookUrl || ""}
+                  onChange={handleChange}
+                  placeholder="https://facebook.com/..."
+                />
+              </div>
+            </div>
+
             <button type="submit" className="btn btn-accent" disabled={busy}>
               {busy && <WrenchLoader />}
               {busy ? t("common.saving") : t("common.saveSettings")}

@@ -132,6 +132,10 @@ export interface Settings {
   whatsappNumber: string;
   phone: string;
   hours: string;
+  instagramUrl: string;
+  facebookUrl: string;
+  ownerName: string;
+  ownerPhone: string;
   createdAt?: string;
   updatedAt?: string;
 }

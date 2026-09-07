@@ -1,6 +1,8 @@
 import { useLanguage } from "../../i18n/useLanguage";
 import SwastikIcon from "../icons/SwastikIcon";
 import WhatsAppIcon from "../icons/WhatsAppIcon";
+import InstagramIcon from "../icons/InstagramIcon";
+import FacebookIcon from "../icons/FacebookIcon";
 import type { SettingsInput } from "../../types/models";
 
 interface SettingsPreviewProps {
@@ -49,11 +51,29 @@ export default function SettingsPreview({ form }: SettingsPreviewProps) {
             </span>
             <span>{form.phone || "—"}</span>
           </div>
+          {(form.ownerName || form.ownerPhone) && (
+            <div className="settings-preview-row">
+              <span className="settings-preview-icon" aria-hidden="true">
+                👤
+              </span>
+              <span>
+                {form.ownerName || "—"}
+                {form.ownerPhone ? ` · ${form.ownerPhone}` : ""}
+              </span>
+            </div>
+          )}
 
           <a className="btn btn-whatsapp btn-sm settings-preview-whatsapp" onClick={(e) => e.preventDefault()} href="#">
             <WhatsAppIcon />
             {t("common.askOnWhatsapp")}
           </a>
+
+          {(form.instagramUrl || form.facebookUrl) && (
+            <div className="settings-preview-social">
+              {form.instagramUrl && <InstagramIcon className="settings-preview-social-icon" />}
+              {form.facebookUrl && <FacebookIcon className="settings-preview-social-icon" />}
+            </div>
+          )}
         </div>
       </div>
     </div>

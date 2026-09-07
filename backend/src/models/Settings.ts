@@ -12,6 +12,10 @@ export interface ISettings extends Document {
   whatsappNumber: string;
   phone: string;
   hours: string;
+  instagramUrl: string;
+  facebookUrl: string;
+  ownerName: string;
+  ownerPhone: string;
 }
 
 const settingsSchema = new Schema<ISettings>(
@@ -25,6 +29,10 @@ const settingsSchema = new Schema<ISettings>(
     whatsappNumber: { type: String, trim: true, default: '919031440979' },
     phone: { type: String, trim: true, default: '+91 90314 40979' },
     hours: { type: String, trim: true, default: 'Mon–Sat, 7am–5pm' },
+    instagramUrl: { type: String, trim: true, default: '' },
+    facebookUrl: { type: String, trim: true, default: '' },
+    ownerName: { type: String, trim: true, default: '' },
+    ownerPhone: { type: String, trim: true, default: '' },
   },
   { timestamps: true }
 );

@@ -478,3 +478,15 @@ table.admin-table {
   width: 100%;
   cursor: default;
 }
+
+.settings-preview-social {
+  display: flex;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.settings-preview-social-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--ink-soft);
+}

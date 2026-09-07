@@ -13,4 +13,8 @@ export const DEFAULT_SETTINGS = {
   whatsappNumber: "919031440979",
   phone: "+91 90314 40979",
   hours: "Mon–Sat, 7am–5pm",
+  instagramUrl: "",
+  facebookUrl: "",
+  ownerName: "",
+  ownerPhone: "",
 };

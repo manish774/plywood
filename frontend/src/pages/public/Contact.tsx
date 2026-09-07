@@ -96,6 +96,14 @@ export default function Contact() {
                 <span>{t("contact.phoneLabel")}</span>
                 {settings.phone}
               </div>
+              {(settings.ownerName || settings.ownerPhone) && (
+                <div className="contact-info-item">
+                  <span>{t("contact.ownerLabel")}</span>
+                  {settings.ownerName}
+                  {settings.ownerName && settings.ownerPhone ? " · " : ""}
+                  {settings.ownerPhone}
+                </div>
+              )}
             </div>
           </motion.div>
 

@@ -8,6 +8,8 @@ import { useSettings } from "../../context/SettingsContext";
 import { listCategories } from "../../api/categories";
 import type { Category } from "../../types/models";
 import SwastikIcon from "../icons/SwastikIcon";
+import InstagramIcon from "../icons/InstagramIcon";
+import FacebookIcon from "../icons/FacebookIcon";
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -41,6 +43,32 @@ export default function Footer() {
             <span className="navbar-logo-sub">{settings.tagline}</span>
           </div>
           <p className="site-footer-tag">{t("contact.companyCopy")}</p>
+          {(settings.instagramUrl || settings.facebookUrl) && (
+            <div className="site-footer-social">
+              {settings.instagramUrl && (
+                <a
+                  href={settings.instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={t("nav.footerInstagram")}
+                  className="site-footer-social-link"
+                >
+                  <InstagramIcon />
+                </a>
+              )}
+              {settings.facebookUrl && (
+                <a
+                  href={settings.facebookUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={t("nav.footerFacebook")}
+                  className="site-footer-social-link"
+                >
+                  <FacebookIcon />
+                </a>
+              )}
+            </div>
+          )}
         </motion.div>
 
         <motion.div className="site-footer-links" variants={fadeUp}>

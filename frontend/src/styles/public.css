@@ -206,6 +206,34 @@
   color: var(--ink-on-dark-soft);
 }
 
+.site-footer-social {
+  display: flex;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.site-footer-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--ink-on-dark-soft);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.site-footer-social-link svg {
+  width: 17px;
+  height: 17px;
+}
+
+.site-footer-social-link:hover {
+  background: var(--amber);
+  color: var(--ink-on-dark);
+}
+
 .site-footer-links {
   display: flex;
   gap: 56px;
