@@ -56,9 +56,6 @@ export default function Customization() {
       ) : (
         <div className="customization-layout">
           <form onSubmit={handleSubmit}>
-            {saved && <div className="form-feedback form-feedback-success">{t("common.settingsSaved")}</div>}
-            {error && <div className="form-feedback form-feedback-error">{error}</div>}
-
             <div className="field-row">
               <div className="field">
                 <label htmlFor="set-shopName">{t("admin.shopNameLabel")}</label>
@@ -161,10 +158,14 @@ export default function Customization() {
               </div>
             </div>
 
-            <button type="submit" className="btn btn-accent" disabled={busy}>
-              {busy && <WrenchLoader />}
-              {busy ? t("common.saving") : t("common.saveSettings")}
-            </button>
+            <div className="customization-actions">
+              {saved && <div className="form-feedback form-feedback-success">{t("common.settingsSaved")}</div>}
+              {error && <div className="form-feedback form-feedback-error">{error}</div>}
+              <button type="submit" className="btn btn-accent" disabled={busy}>
+                {busy && <WrenchLoader />}
+                {busy ? t("common.saving") : t("common.saveSettings")}
+              </button>
+            </div>
           </form>
 
           <SettingsPreview form={form} />

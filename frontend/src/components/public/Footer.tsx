@@ -43,6 +43,9 @@ export default function Footer() {
             <span className="navbar-logo-sub">{settings.tagline}</span>
           </div>
           <p className="site-footer-tag">{t("contact.companyCopy")}</p>
+          {settings.ownerName && (
+            <p className="site-footer-owner">{t("nav.footerOwnedBy", { name: settings.ownerName })}</p>
+          )}
           {(settings.instagramUrl || settings.facebookUrl) && (
             <div className="site-footer-social">
               {settings.instagramUrl && (

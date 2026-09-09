@@ -206,9 +206,15 @@
   color: var(--ink-on-dark-soft);
 }
 
+.site-footer-owner {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: var(--ink-on-dark-soft);
+}
+
 .site-footer-social {
   display: flex;
-  gap: 14px;
+  gap: 16px;
   margin-top: 16px;
 }
 
@@ -216,22 +222,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--ink-on-dark-soft);
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
 
 .site-footer-social-link svg {
-  width: 17px;
-  height: 17px;
+  width: 30px;
+  height: 30px;
 }
 
 .site-footer-social-link:hover {
-  background: var(--amber);
-  color: var(--ink-on-dark);
+  transform: translateY(-2px) scale(1.08);
+  filter: brightness(1.1);
 }
 
 .site-footer-links {
