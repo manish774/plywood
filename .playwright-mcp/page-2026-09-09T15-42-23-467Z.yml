@@ -1,0 +1,24 @@
+- generic [ref=f15e3]:
+  - complementary [ref=f15e4]:
+    - generic [ref=f15e5]:
+      - img "Swastik symbol" [ref=f15e6]
+      - text: Swastik
+      - generic [ref=f15e7]: Admin
+    - navigation [ref=f15e8]:
+      - link "डैशबोर्ड" [ref=f15e9] [cursor=pointer]:
+        - /url: /admin
+      - link "कैटेगरी" [ref=f15e10] [cursor=pointer]:
+        - /url: /admin/categories
+      - link "आइटम" [ref=f15e11] [cursor=pointer]:
+        - /url: /admin/items
+      - link "मैसेज" [ref=f15e12] [cursor=pointer]:
+        - /url: /admin/inquiries
+      - link "कस्टमाइज़ेशन" [ref=f15e13] [cursor=pointer]:
+        - /url: /admin/customization
+    - button "EN" [ref=f15e14] [cursor=pointer]
+    - button "लॉग आउट" [ref=f15e15] [cursor=pointer]
+  - generic [ref=f15e17]:
+    - generic [ref=f15e19]:
+      - heading "कस्टमाइज़ेशन" [level=1] [ref=f15e20]
+      - paragraph [ref=f15e21]: अपनी दुकान की ब्रांडिंग और संपर्क जानकारी अपडेट करें, जो पूरी वेबसाइट पर दिखती है।
+    - paragraph [ref=f15e22]: लोड हो रहा है...

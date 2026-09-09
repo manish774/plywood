@@ -1,0 +1,154 @@
+- generic [ref=f14e2]:
+  - generic [ref=f14e3]: स्टॉक में मौजूद शीट्स की सेम-डे डिस्पैच — डिलीवरी के बारे में पूछें।
+  - banner [ref=f14e5]:
+    - generic [ref=f14e6]:
+      - link "Swastik symbol Swastik Plywood And Decor" [ref=f14e7] [cursor=pointer]:
+        - /url: /
+        - img "Swastik symbol" [ref=f14e8]
+        - text: Swastik
+        - generic [ref=f14e9]: Plywood And Decor
+      - navigation [ref=f14e10]:
+        - link "होम" [ref=f14e11] [cursor=pointer]:
+          - /url: /
+        - link "कैटेगरी" [ref=f14e13] [cursor=pointer]:
+          - /url: /categories
+        - link "संपर्क" [ref=f14e14] [cursor=pointer]:
+          - /url: /contact
+        - link "लॉगिन" [ref=f14e15] [cursor=pointer]:
+          - /url: /account
+        - button "अंग्रेज़ी में बदलें" [ref=f14e16] [cursor=pointer]: EN
+        - link "कोटेशन लें" [ref=f14e17] [cursor=pointer]:
+          - /url: /contact
+  - main [ref=f14e18]:
+    - generic [ref=f14e20]:
+      - generic [ref=f14e22]:
+        - generic [ref=f14e25]:
+          - paragraph [ref=f14e26]: इस हफ़्ते का स्टॉक
+          - heading "मरीन प्लाईवुड, ताज़ा स्टॉक में आया" [level=2] [ref=f14e27]
+          - paragraph [ref=f14e28]: BS 1088 शीट 12mm–18mm में — आज ही पिकअप या डिलीवरी के लिए तैयार।
+          - link "कैटेगरी देखें" [ref=f14e30] [cursor=pointer]:
+            - /url: /categories
+        - button "Previous slide" [ref=f14e31] [cursor=pointer]
+        - button "Next slide" [ref=f14e34] [cursor=pointer]
+        - tablist "Banner slides" [ref=f14e37]:
+          - tab "Go to slide 1" [selected] [ref=f14e38] [cursor=pointer]
+          - tab "Go to slide 2" [ref=f14e39] [cursor=pointer]
+          - tab "Go to slide 3" [ref=f14e40] [cursor=pointer]
+          - tab "Go to slide 4" [ref=f14e41] [cursor=pointer]
+      - generic [ref=f14e43]:
+        - generic [ref=f14e44]:
+          - paragraph [ref=f14e45]: यार्ड से सीधे प्लाईवुड और शीट गुड्स
+          - heading [level=1] [ref=f14e46]:
+            - text: सही कटाई।लंबे समय तक
+            - emphasis [ref=f14e47]: टिकने के लिए बना
+            - text: .
+          - paragraph [ref=f14e48]: मरीन, हार्डवुड, स्ट्रक्चरल और डेकोरेटिव प्लाईवुड — भरपूर स्टॉक में और सही दाम पर। कैटलॉग देखें या बताएं आप क्या बना रहे हैं, हम आपके लिए सही शीट ढूंढ देंगे।
+          - generic [ref=f14e49]:
+            - link "कैटेगरी देखें" [ref=f14e51] [cursor=pointer]:
+              - /url: /categories
+            - link "कोटेशन लें" [ref=f14e53] [cursor=pointer]:
+              - /url: /contact
+        - generic [aria-hidden] [ref=f14e54]:
+          - generic [ref=f14e55]: 18mm — BS 1088 Marine
+          - generic [ref=f14e56]: 15mm — Baltic Birch
+          - generic [ref=f14e57]: 12mm — CDX Structural
+          - generic [ref=f14e58]: 6mm — Decorative Veneer
+      - generic [ref=f14e60]:
+        - generic [ref=f14e61]:
+          - heading "सेम-डे डिस्पैच" [level=3] [ref=f14e65]
+          - paragraph [ref=f14e66]: स्टॉक में मौजूद शीट उसी दिन भेज दी जाती है जिस दिन ऑर्डर करें।
+        - generic [ref=f14e67]:
+          - heading "असली स्टॉक, सही स्पेसिफिकेशन" [level=3] [ref=f14e71]
+          - paragraph [ref=f14e72]: मोटाई, ग्रेड और ब्रांड जैसा बताया गया वैसा ही मिलेगा — ट्रक से उतरने पर कोई सरप्राइज़ नहीं।
+        - generic [ref=f14e73]:
+          - heading "वारंटी वाले बोर्ड" [level=3] [ref=f14e77]
+          - paragraph [ref=f14e78]: हम जो भी बोर्ड बेचते हैं, उस पर कंपनी की वारंटी लागू होती है।
+        - generic [ref=f14e79]:
+          - heading "साफ-सुथरी कीमत" [level=3] [ref=f14e83]
+          - paragraph [ref=f14e84]: जो कीमत दिखेगी वही देनी होगी — यार्ड की कोई छुपी हुई फीस नहीं।
+      - group "Sheet goods we stock" [ref=f14e85]:
+        - generic [ref=f14e86]:
+          - generic [ref=f14e87]: 18mm — BS 1088 Marine
+          - generic [ref=f14e88]: 15mm — Baltic Birch
+          - generic [ref=f14e89]: 12mm — CDX Structural
+          - generic [ref=f14e90]: 6mm — Decorative Veneer
+          - generic [aria-hidden] [ref=f14e91]: 18mm — BS 1088 Marine
+          - generic [aria-hidden] [ref=f14e92]: 15mm — Baltic Birch
+          - generic [aria-hidden] [ref=f14e93]: 12mm — CDX Structural
+          - generic [aria-hidden] [ref=f14e94]: 6mm — Decorative Veneer
+      - generic [ref=f14e95]:
+        - generic [ref=f14e96]:
+          - generic [ref=f14e97]: "0"
+          - generic [ref=f14e98]: स्टॉक में मौजूद कैटेगरी
+        - generic [ref=f14e99]:
+          - generic [ref=f14e100]: "0"
+          - generic [ref=f14e101]: उपलब्ध शीट के प्रकार
+        - generic [ref=f14e102]:
+          - generic [ref=f14e103]: "0"
+          - generic [ref=f14e104]: कितने दिन में कोटेशन मिलता है
+      - generic [ref=f14e106]:
+        - generic [ref=f14e107]:
+          - generic [ref=f14e108]:
+            - generic [ref=f14e109]: खास आइटम
+            - heading "कैटेगरी के हिसाब से खरीदें" [level=2] [ref=f14e110]
+          - link "सभी देखें" [ref=f14e111] [cursor=pointer]:
+            - /url: /categories
+        - generic [ref=f14e112]:
+          - status "कैटेगरी लोड हो रही हैं..." [ref=f14e113]
+          - paragraph [ref=f14e118]: कैटेगरी लोड हो रही हैं...
+      - generic [ref=f14e120]:
+        - generic [ref=f14e122]:
+          - generic [ref=f14e123]: यह कैसे काम करता है
+          - heading "ब्राउज़ करने से डिलीवरी तक, तीन आसान स्टेप" [level=2] [ref=f14e124]
+        - generic [ref=f14e125]:
+          - generic [ref=f14e126]:
+            - text: "01"
+            - heading "कैटलॉग देखें" [level=3] [ref=f14e127]
+            - paragraph [ref=f14e128]: कॉल करने से पहले कैटेगरी के हिसाब से देखें और असली जानकारी — मोटाई, साइज़, ग्रेड और ब्रांड — चेक करें।
+          - generic [ref=f14e129]:
+            - text: "02"
+            - heading "अपनी जरूरत बताएं" [level=3] [ref=f14e130]
+            - paragraph [ref=f14e131]: आप क्या बना रहे हैं, यह बताते हुए एक मैसेज भेजें। हम सही शीट बताएंगे और स्टॉक कन्फर्म करेंगे।
+          - generic [ref=f14e132]:
+            - text: "03"
+            - heading "पिकअप करें या डिलीवरी लें" [level=3] [ref=f14e133]
+            - paragraph [ref=f14e134]: यार्ड पर आ जाएं या डिलीवरी के बारे में पूछें — हम इसे तैयार रखेंगे।
+      - generic [ref=f14e136]:
+        - generic [ref=f14e138]:
+          - generic [ref=f14e139]: Swastik क्यों चुनें
+          - heading "शोरूम नहीं, यार्ड जैसा बनाया गया" [level=2] [ref=f14e140]
+        - generic [ref=f14e141]:
+          - generic [ref=f14e144]:
+            - heading "हर शीट की सही जानकारी" [level=3] [ref=f14e145]
+            - paragraph [ref=f14e146]: मोटाई, साइज़, ग्रेड और ब्रांड पहले से बताया जाता है — ट्रक में क्या आ रहा है, यह अंदाज़ा नहीं लगाना पड़ेगा।
+          - generic [ref=f14e149]:
+            - heading "भरपूर स्टॉक" [level=3] [ref=f14e150]
+            - paragraph [ref=f14e151]: मरीन से लेकर डेकोरेटिव वीनियर तक, सब स्टॉक में रहता है ताकि आपका काम रुके नहीं।
+          - generic [ref=f14e154]:
+            - heading "सीधी और सच्ची बात" [level=3] [ref=f14e155]
+            - paragraph [ref=f14e156]: बताइए आप क्या बना रहे हैं — हम सबसे महंगी नहीं, आपके लिए सही शीट बताएंगे।
+  - contentinfo [ref=f14e157]:
+    - generic [ref=f14e159]:
+      - generic [ref=f14e160]:
+        - generic [ref=f14e161]:
+          - img "Swastik symbol" [ref=f14e162]
+          - text: Swastik
+          - generic [ref=f14e163]: Plywood And Decor
+        - paragraph [ref=f14e164]: चाहे एक शीट चाहिए हो या पूरी जॉब लिस्ट, हमें जानकारी भेजें — हम 1 दिन के अंदर जवाब देंगे।
+      - generic [ref=f14e165]:
+        - generic [ref=f14e166]:
+          - paragraph [ref=f14e167]: दुकान
+          - link "कैटेगरी देखें" [ref=f14e168] [cursor=pointer]:
+            - /url: /categories
+          - link "कोटेशन लें" [ref=f14e169] [cursor=pointer]:
+            - /url: /contact
+        - generic [ref=f14e170]:
+          - paragraph [ref=f14e171]: यार्ड
+          - paragraph [ref=f14e172]: Mon–Sat, 7am–5pm
+          - link "Ranchi - Ramgarh Rd, Ormanjhi, Ranchi, Jharkhand 835219" [ref=f14e173] [cursor=pointer]:
+            - /url: https://maps.app.goo.gl/FZTYgzruo6NTY3ML9
+        - generic [ref=f14e174]:
+          - paragraph [ref=f14e175]: एडमिन
+          - link "स्टाफ लॉगिन" [ref=f14e176] [cursor=pointer]:
+            - /url: /admin/login
+    - paragraph [ref=f14e178]: © 2026 Swastik Plywood And Decor. सारे बोर्ड जैसे हैं वैसे ही बेचे जाते हैं, लकड़ी के दाने (grain) समेत।
