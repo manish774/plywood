@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { listMyInquiries } from "../../api/contact";
 import { useUserAuth } from "../../context/UserAuthContext";
+import Seo from "../../components/Seo";
 import Parallax from "../../components/public/Parallax";
 import { LoadingBlock, ErrorBlock, EmptyBlock } from "../../components/public/StateBlock";
 import { getErrorMessage } from "../../utils/errors";
@@ -27,6 +28,8 @@ export default function MyQueries() {
 
   return (
     <div>
+      <Seo title={`${t("myQueries.pageTitle")} | ${settings.shopName}`} description="" path="/my-queries" noindex />
+
       <div className="page-header">
         <Parallax range={40} className="grain-overlay" />
         <motion.div

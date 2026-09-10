@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { getItem } from "../../api/items";
+import Seo, { SITE_URL } from "../../components/Seo";
 import { LoadingBlock, ErrorBlock } from "../../components/public/StateBlock";
 import { getErrorMessage } from "../../utils/errors";
 import { useLanguage } from "../../i18n/useLanguage";
@@ -34,9 +35,22 @@ export default function ItemDetail() {
 
   useEffect(load, [id]);
 
+  // Rendered in every branch below (including the loading/error states) so
+  // the tab title/meta never falls back to the previous route's — or the
+  // static index.html default's — copy while this page is settling.
+  const fallbackSeo = (
+    <Seo
+      title={`${t("itemDetail.pageTitle")} | ${settings.shopName}`}
+      description={t("seo.defaultDescription", { shopName: settings.shopName })}
+      path={`/items/${id || ""}`}
+      noindex
+    />
+  );
+
   if (!item && !error) {
     return (
       <div className="container section">
+        {fallbackSeo}
         <LoadingBlock label={t("common.loadingItem")} />
       </div>
     );
@@ -45,6 +59,7 @@ export default function ItemDetail() {
   if (error) {
     return (
       <div className="container section">
+        {fallbackSeo}
         <ErrorBlock message={error} onRetry={load} />
       </div>
     );
@@ -56,8 +71,57 @@ export default function ItemDetail() {
   const category =
     item.category && typeof item.category === "object" ? item.category : null;
 
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: item.name,
+    description: item.description,
+    image: images.length ? images : undefined,
+    category: category?.name,
+    brand: item.specifications?.brand ? { "@type": "Brand", name: item.specifications.brand } : undefined,
+    offers:
+      typeof item.price === "number"
+        ? {
+            "@type": "Offer",
+            priceCurrency: "INR",
+            price: item.price,
+            availability: "https://schema.org/InStock",
+            url: `${SITE_URL}/items/${item._id}`,
+          }
+        : undefined,
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: t("itemDetail.breadcrumbCategories"), item: `${SITE_URL}/categories` },
+      ...(category
+        ? [{ "@type": "ListItem", position: 2, name: category.name, item: `${SITE_URL}/categories/${category._id}` }]
+        : []),
+      { "@type": "ListItem", position: category ? 3 : 2, name: item.name, item: `${SITE_URL}/items/${item._id}` },
+    ],
+  };
+
   return (
     <div className="container section">
+      <Seo
+        title={t("seo.itemTitle", {
+          name: item.name,
+          category: category?.name || t("itemDetail.pageTitle"),
+          shopName: settings.shopName,
+        })}
+        description={t("seo.itemDescription", {
+          name: item.name,
+          shopName: settings.shopName,
+          description: item.description || "",
+        })}
+        path={`/items/${item._id}`}
+        image={images[0]}
+        type="product"
+        structuredData={[productSchema, breadcrumbSchema]}
+      />
+
       <div className="breadcrumb">
         <Link to="/categories">{t("itemDetail.breadcrumbCategories")}</Link>
         <span>/</span>

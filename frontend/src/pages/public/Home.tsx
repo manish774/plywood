@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { listCategories } from "../../api/categories";
 import { listItems } from "../../api/items";
+import Seo, { SITE_URL } from "../../components/Seo";
 import CategoryCard from "../../components/public/CategoryCard";
 import Counter from "../../components/public/Counter";
 import Marquee from "../../components/public/Marquee";
@@ -159,8 +160,34 @@ export default function Home() {
     new Set(items.map((item) => item.specifications?.brand).filter((b): b is string => Boolean(b)))
   );
 
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "HomeGoodsStore",
+    name: settings.shopName,
+    image: settings.logoUrl || undefined,
+    url: SITE_URL,
+    telephone: settings.phone,
+    priceRange: "₹₹",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: settings.address,
+      addressLocality: "Ormanjhi",
+      addressRegion: "Jharkhand",
+      addressCountry: "IN",
+    },
+    sameAs: [settings.instagramUrl, settings.facebookUrl].filter(Boolean),
+  };
+
   return (
     <div>
+      <Seo
+        title={t("seo.homeTitle", { shopName: settings.shopName })}
+        description={t("seo.homeDescription", { shopName: settings.shopName })}
+        keywords={t("seo.defaultKeywords")}
+        path="/"
+        structuredData={localBusinessSchema}
+      />
+
       <BannerCarousel t={t} />
 
       <Hero sheetLabels={sheetLabels} t={t} />

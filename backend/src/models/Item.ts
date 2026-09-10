@@ -24,6 +24,8 @@ export interface IItem extends Document {
   category: Types.ObjectId;
   images: string[];
   specifications: ISpecifications;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 const itemSchema = new Schema<IItem>(

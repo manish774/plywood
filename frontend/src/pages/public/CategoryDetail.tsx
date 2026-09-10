@@ -3,12 +3,14 @@ import { Link, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { getCategory } from "../../api/categories";
 import { listItems } from "../../api/items";
+import Seo, { SITE_URL } from "../../components/Seo";
 import ItemCard from "../../components/public/ItemCard";
 import Parallax from "../../components/public/Parallax";
 import { LoadingBlock, ErrorBlock, EmptyBlock } from "../../components/public/StateBlock";
 import { staggerContainer } from "../../components/motionVariants";
 import { getErrorMessage } from "../../utils/errors";
 import { useLanguage } from "../../i18n/useLanguage";
+import { useSettings } from "../../context/SettingsContext";
 import type { Category, Item } from "../../types/models";
 
 export default function CategoryDetail() {
@@ -17,6 +19,7 @@ export default function CategoryDetail() {
   const [items, setItems] = useState<Item[] | null>(null);
   const [error, setError] = useState("");
   const { t } = useLanguage();
+  const { settings } = useSettings();
 
   const load = () => {
     if (!id) return;
@@ -33,8 +36,36 @@ export default function CategoryDetail() {
 
   useEffect(load, [id]);
 
+  const breadcrumbSchema = category
+    ? {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: t("categoryDetail.breadcrumb"), item: `${SITE_URL}/categories` },
+          { "@type": "ListItem", position: 2, name: category.name, item: `${SITE_URL}/categories/${category._id}` },
+        ],
+      }
+    : undefined;
+
   return (
     <div>
+      <Seo
+        title={
+          category
+            ? t("seo.categoryTitle", { name: category.name, shopName: settings.shopName })
+            : t("seo.categoriesTitle", { shopName: settings.shopName })
+        }
+        description={
+          category?.description ||
+          (category
+            ? t("seo.categoryDescription", { name: category.name, shopName: settings.shopName })
+            : t("seo.categoriesDescription", { shopName: settings.shopName }))
+        }
+        path={`/categories/${id || ""}`}
+        image={category?.image}
+        structuredData={breadcrumbSchema}
+      />
+
       <div className="page-header">
         <Parallax range={40} className="grain-overlay" />
         <motion.div

@@ -1,18 +1,21 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { listCategories } from "../../api/categories";
+import Seo from "../../components/Seo";
 import CategoryCard from "../../components/public/CategoryCard";
 import Parallax from "../../components/public/Parallax";
 import { LoadingBlock, ErrorBlock, EmptyBlock } from "../../components/public/StateBlock";
 import { staggerContainer, fadeUp } from "../../components/motionVariants";
 import { getErrorMessage } from "../../utils/errors";
 import { useLanguage } from "../../i18n/useLanguage";
+import { useSettings } from "../../context/SettingsContext";
 import type { Category } from "../../types/models";
 
 export default function Categories() {
   const [categories, setCategories] = useState<Category[] | null>(null);
   const [error, setError] = useState("");
   const { t } = useLanguage();
+  const { settings } = useSettings();
 
   const load = () => {
     setError("");
@@ -25,6 +28,13 @@ export default function Categories() {
 
   return (
     <div>
+      <Seo
+        title={t("seo.categoriesTitle", { shopName: settings.shopName })}
+        description={t("seo.categoriesDescription", { shopName: settings.shopName })}
+        keywords={t("seo.defaultKeywords")}
+        path="/categories"
+      />
+
       <div className="page-header">
         <Parallax range={40} className="grain-overlay" />
         <motion.div

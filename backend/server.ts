@@ -10,6 +10,8 @@ import contactRoutes from './src/routes/contact';
 import adminRoutes from './src/routes/admin';
 import authRoutes from './src/routes/auth';
 import settingsRoutes from './src/routes/settings';
+import { getSitemap } from './src/controllers/sitemapController';
+import asyncHandler from './src/middleware/asyncHandler';
 import { errorHandler, notFound } from './src/middleware/errorHandler';
 
 const app = express();
@@ -20,6 +22,10 @@ app.use(express.json());
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok' });
 });
+
+// Served from the API host and linked from the frontend's robots.txt —
+// search engines follow cross-origin sitemap references just fine.
+app.get('/sitemap.xml', asyncHandler(getSitemap));
 
 app.use('/api/categories', categoryRoutes);
 app.use('/api/items', itemRoutes);

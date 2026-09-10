@@ -26,7 +26,7 @@ export default function ItemCard({ item }: { item: Item }) {
       <div className="ply-card-body">
         {item.images?.[0] && (
           <div className="ply-card-media">
-            <img src={item.images[0]} alt="" loading="lazy" />
+            <img src={item.images[0]} alt={item.name} loading="lazy" />
           </div>
         )}
         <h3>{item.name}</h3>

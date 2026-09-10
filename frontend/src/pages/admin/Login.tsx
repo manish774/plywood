@@ -5,6 +5,7 @@ import { useAuth } from "../../context/AuthContext";
 import { getErrorMessage } from "../../utils/errors";
 import { useLanguage } from "../../i18n/useLanguage";
 import { useSettings } from "../../context/SettingsContext";
+import Seo from "../../components/Seo";
 import SwastikIcon from "../../components/icons/SwastikIcon";
 import { WrenchLoader } from "../../components/Loaders";
 import "../../styles/admin.css";
@@ -37,6 +38,8 @@ export default function Login() {
 
   return (
     <div className="admin-login-wrap">
+      <Seo title={`${t("admin.loginSubtitle")} | ${settings.shopName}`} description="" path="/admin/login" noindex />
+
       <motion.div
         className="admin-login-card"
         initial={{ opacity: 0, y: 24, scale: 0.97 }}

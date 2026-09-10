@@ -355,6 +355,28 @@ const en = {
       replyPlaceholder: "Write a reply for the customer...",
       hasAccount: "has an account",
     },
+    seo: {
+      defaultTitle: "{shopName} | Ply, Plywood & Decorative Laminates in Ormanjhi, Ranchi",
+      defaultDescription:
+        "{shopName} is a trusted plywood shop in Ormanjhi, Ranchi, Jharkhand — shop ply, plywood, decorative veneer, laminates, flush doors, block board and commercial plywood at the best prices.",
+      defaultKeywords:
+        "plywood ranchi, ply shop ranchi, plywood ormanjhi, plywood ormanjhi ranchi, decorative laminates ranchi, flush doors ranchi, block board ranchi, veneer ranchi, plywood decors, best plywood shop jharkhand, commercial plywood ranchi",
+      homeTitle: "{shopName} | Best Plywood & Ply Shop in Ormanjhi, Ranchi",
+      homeDescription:
+        "Looking for quality ply or plywood in Ormanjhi, Ranchi? {shopName} stocks decorative veneer, laminates, flush doors, block board and commercial plywood — visit our yard or ask for a quote today.",
+      categoriesTitle: "Plywood Categories – Veneer, Laminates, Flush Doors & More | {shopName}, Ranchi",
+      categoriesDescription:
+        "Browse every plywood category in stock at {shopName}, Ormanjhi, Ranchi — decorative veneer, laminates, flush doors, block board, commercial plywood and more.",
+      categoryTitle: "{name} in Ormanjhi, Ranchi | {shopName}",
+      categoryDescription:
+        "Shop {name} at {shopName} in Ormanjhi, Ranchi. Quality plywood sheets at the best prices — ask us for a quote.",
+      itemTitle: "{name} – {category} in Ranchi | {shopName}",
+      itemDescription: "{name}, available at {shopName}, Ormanjhi, Ranchi. {description}",
+      contactTitle: "Contact Us – Plywood Shop in Ormanjhi, Ranchi | {shopName}",
+      contactDescription:
+        "Get in touch with {shopName} in Ormanjhi, Ranchi for plywood, ply, laminates and decorative veneer enquiries — call, WhatsApp, or visit our yard.",
+      notFoundTitle: "Page Not Found | {shopName}",
+    },
 };
 
 // Both locales are checked against the `en` dictionary's structure — any
@@ -717,6 +739,28 @@ const hi: TranslationDict = {
       couldNotAcknowledge: "आपका जवाब नहीं भेजा जा सका। कृपया दोबारा कोशिश करें।",
       replyPlaceholder: "ग्राहक के लिए जवाब लिखें...",
       hasAccount: "का अकाउंट है",
+    },
+    seo: {
+      defaultTitle: "{shopName} | ओरमांझी, रांची में प्लाई, प्लाईवुड और डेकोरेटिव लैमिनेट्स",
+      defaultDescription:
+        "{shopName}, ओरमांझी, रांची, झारखंड की भरोसेमंद प्लाईवुड दुकान है — यहां प्लाई, प्लाईवुड, डेकोरेटिव वीनियर, लैमिनेट्स, फ्लश डोर, ब्लॉक बोर्ड और कमर्शियल प्लाईवुड सबसे अच्छी कीमत पर मिलता है।",
+      defaultKeywords:
+        "प्लाईवुड रांची, प्लाई शॉप रांची, प्लाईवुड ओरमांझी, डेकोरेटिव लैमिनेट्स रांची, फ्लश डोर रांची, ब्लॉक बोर्ड रांची, वीनियर रांची, प्लाईवुड डेकोर, बेस्ट प्लाईवुड शॉप झारखंड",
+      homeTitle: "{shopName} | ओरमांझी, रांची की बेस्ट प्लाईवुड और प्लाई शॉप",
+      homeDescription:
+        "ओरमांझी, रांची में अच्छी क्वालिटी की प्लाई या प्लाईवुड चाहिए? {shopName} में डेकोरेटिव वीनियर, लैमिनेट्स, फ्लश डोर, ब्लॉक बोर्ड और कमर्शियल प्लाईवुड मिलता है — आज ही यार्ड पर आएं या कोटेशन मांगें।",
+      categoriesTitle: "प्लाईवुड कैटेगरी – वीनियर, लैमिनेट्स, फ्लश डोर और भी बहुत कुछ | {shopName}, रांची",
+      categoriesDescription:
+        "{shopName}, ओरमांझी, रांची में मौजूद हर प्लाईवुड कैटेगरी देखें — डेकोरेटिव वीनियर, लैमिनेट्स, फ्लश डोर, ब्लॉक बोर्ड, कमर्शियल प्लाईवुड और भी बहुत कुछ।",
+      categoryTitle: "{name} — ओरमांझी, रांची | {shopName}",
+      categoryDescription:
+        "{shopName}, ओरमांझी, रांची में {name} खरीदें। बेहतरीन क्वालिटी की प्लाईवुड शीट सबसे अच्छी कीमत पर — कोटेशन के लिए पूछें।",
+      itemTitle: "{name} – {category} | रांची | {shopName}",
+      itemDescription: "{name}, {shopName}, ओरमांझी, रांची में उपलब्ध है। {description}",
+      contactTitle: "संपर्क करें – ओरमांझी, रांची की प्लाईवुड शॉप | {shopName}",
+      contactDescription:
+        "प्लाईवुड, प्लाई, लैमिनेट्स और डेकोरेटिव वीनियर से जुड़ी पूछताछ के लिए {shopName}, ओरमांझी, रांची से संपर्क करें — कॉल करें, व्हाट्सएप करें, या यार्ड पर आएं।",
+      notFoundTitle: "पेज नहीं मिला | {shopName}",
     },
 };
 

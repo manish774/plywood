@@ -26,7 +26,7 @@ export default function CategoryCard({ category }: { category: Category }) {
       <div className="ply-card-body">
         {category.image && (
           <div className="ply-card-media">
-            <img src={category.image} alt="" loading="lazy" />
+            <img src={category.image} alt={category.name} loading="lazy" />
           </div>
         )}
         <h3>{category.name}</h3>

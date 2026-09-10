@@ -29,3 +29,5 @@ services:
         sync: false
       - key: OTP_EXPIRY_MINUTES
         sync: false
+      - key: FRONTEND_URL
+        sync: false

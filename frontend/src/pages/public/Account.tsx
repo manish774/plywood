@@ -3,8 +3,10 @@ import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useUserAuth } from "../../context/UserAuthContext";
 import Parallax from "../../components/public/Parallax";
+import Seo from "../../components/Seo";
 import { getErrorMessage } from "../../utils/errors";
 import { useLanguage } from "../../i18n/useLanguage";
+import { useSettings } from "../../context/SettingsContext";
 import { WrenchLoader } from "../../components/Loaders";
 
 const emptyRegisterForm = { name: "", email: "", phone: "" };
@@ -16,6 +18,7 @@ type AccountStatus = "idle" | "busy" | "error";
 export default function Account() {
   const { isAuthenticated, register, login, verifyOtp, resendOtp } = useUserAuth();
   const { t } = useLanguage();
+  const { settings } = useSettings();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -98,6 +101,8 @@ export default function Account() {
 
   return (
     <div>
+      <Seo title={`${t("account.pageTitle")} | ${settings.shopName}`} description="" path="/account" noindex />
+
       <div className="page-header">
         <Parallax range={40} className="grain-overlay" />
         <motion.div

@@ -2,6 +2,7 @@ import { useEffect, useState, type ChangeEvent, type FormEvent } from "react";
 import { useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { submitContact } from "../../api/contact";
+import Seo from "../../components/Seo";
 import Parallax from "../../components/public/Parallax";
 import { getErrorMessage } from "../../utils/errors";
 import { useLanguage } from "../../i18n/useLanguage";
@@ -58,6 +59,12 @@ export default function Contact() {
 
   return (
     <div>
+      <Seo
+        title={t("seo.contactTitle", { shopName: settings.shopName })}
+        description={t("seo.contactDescription", { shopName: settings.shopName })}
+        path="/contact"
+      />
+
       <div className="page-header">
         <Parallax range={40} className="grain-overlay" />
         <motion.div
