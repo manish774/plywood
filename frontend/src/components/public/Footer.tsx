@@ -93,6 +93,7 @@ export default function Footer() {
           <div>
             <p className="eyebrow site-footer-heading">{t("nav.footerYard")}</p>
             <p>{settings.hours}</p>
+            {settings.phone && <a href={`tel:${settings.phone.replace(/[^\d+]/g, "")}`}>{settings.phone}</a>}
             <a href={settings.mapUrl} target="_blank" rel="noopener noreferrer">
               {settings.address}
             </a>
