@@ -62,6 +62,16 @@ export default function SettingsPreview({ form }: SettingsPreviewProps) {
               </span>
             </div>
           )}
+          {Boolean(form.googleRatingValue) && (
+            <div className="settings-preview-row">
+              <span className="settings-preview-icon" aria-hidden="true">
+                ⭐
+              </span>
+              <span>
+                {form.googleRatingValue?.toFixed(1)} · {form.googleReviewCount || 0} Google reviews
+              </span>
+            </div>
+          )}
 
           <a className="btn btn-whatsapp btn-sm settings-preview-whatsapp" onClick={(e) => e.preventDefault()} href="#">
             <WhatsAppIcon />

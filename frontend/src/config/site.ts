@@ -17,4 +17,6 @@ export const DEFAULT_SETTINGS = {
   facebookUrl: "",
   ownerName: "",
   ownerPhone: "",
+  googleRatingValue: 5,
+  googleReviewCount: 5,
 };

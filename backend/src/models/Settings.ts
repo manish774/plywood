@@ -16,6 +16,8 @@ export interface ISettings extends Document {
   facebookUrl: string;
   ownerName: string;
   ownerPhone: string;
+  googleRatingValue: number;
+  googleReviewCount: number;
 }
 
 const settingsSchema = new Schema<ISettings>(
@@ -33,6 +35,13 @@ const settingsSchema = new Schema<ISettings>(
     facebookUrl: { type: String, trim: true, default: '' },
     ownerName: { type: String, trim: true, default: '' },
     ownerPhone: { type: String, trim: true, default: '' },
+    // Pulled from the shop's Google Business Profile — shown as a stat on
+    // the homepage and fed into the LocalBusiness JSON-LD's aggregateRating
+    // so Google search results can render it as a star rating. Kept
+    // editable here rather than hardcoded since real ratings/counts change
+    // as new reviews come in.
+    googleRatingValue: { type: Number, min: 0, max: 5, default: 5 },
+    googleReviewCount: { type: Number, min: 0, default: 5 },
   },
   { timestamps: true }
 );

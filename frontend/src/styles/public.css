@@ -650,6 +650,18 @@
   color: var(--ink-soft);
 }
 
+.stat-rating {
+  transition: opacity 0.2s ease;
+}
+
+.stat-rating:hover {
+  opacity: 0.75;
+}
+
+.stat-rating .stat-number {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+}
+
 /* ---------- Process / how it works ---------- */
 .process-grid {
   display: grid;

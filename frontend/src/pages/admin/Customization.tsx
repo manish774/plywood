@@ -28,6 +28,12 @@ export default function Customization() {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
   };
 
+  const handleNumberChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setSaved(false);
+    const value = e.target.value === "" ? undefined : Number(e.target.value);
+    setForm((f) => ({ ...f, [e.target.name]: value }));
+  };
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setBusy(true);
@@ -154,6 +160,35 @@ export default function Customization() {
                   value={form.facebookUrl || ""}
                   onChange={handleChange}
                   placeholder="https://facebook.com/..."
+                />
+              </div>
+            </div>
+
+            <div className="field-row">
+              <div className="field">
+                <label htmlFor="set-googleRatingValue">{t("admin.googleRatingLabel")}</label>
+                <input
+                  id="set-googleRatingValue"
+                  name="googleRatingValue"
+                  type="number"
+                  min={0}
+                  max={5}
+                  step={0.1}
+                  value={form.googleRatingValue ?? ""}
+                  onChange={handleNumberChange}
+                />
+                <small>{t("admin.googleRatingHint")}</small>
+              </div>
+              <div className="field">
+                <label htmlFor="set-googleReviewCount">{t("admin.googleReviewCountLabel")}</label>
+                <input
+                  id="set-googleReviewCount"
+                  name="googleReviewCount"
+                  type="number"
+                  min={0}
+                  step={1}
+                  value={form.googleReviewCount ?? ""}
+                  onChange={handleNumberChange}
                 />
               </div>
             </div>

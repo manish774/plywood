@@ -15,6 +15,8 @@ interface SettingsBody {
   facebookUrl?: string;
   ownerName?: string;
   ownerPhone?: string;
+  googleRatingValue?: number;
+  googleReviewCount?: number;
 }
 
 // There is exactly one settings document; create it (with schema defaults)
@@ -47,6 +49,8 @@ async function updateSettings(req: Request<unknown, unknown, SettingsBody>, res:
     facebookUrl,
     ownerName,
     ownerPhone,
+    googleRatingValue,
+    googleReviewCount,
   } = req.body;
 
   await getOrCreateSettings();
@@ -67,6 +71,8 @@ async function updateSettings(req: Request<unknown, unknown, SettingsBody>, res:
       facebookUrl,
       ownerName,
       ownerPhone,
+      googleRatingValue,
+      googleReviewCount,
     },
     { new: true, runValidators: true, omitUndefined: true }
   );

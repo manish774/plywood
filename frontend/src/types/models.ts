@@ -136,6 +136,8 @@ export interface Settings {
   facebookUrl: string;
   ownerName: string;
   ownerPhone: string;
+  googleRatingValue: number;
+  googleReviewCount: number;
   createdAt?: string;
   updatedAt?: string;
 }

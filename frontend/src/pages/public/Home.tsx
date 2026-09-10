@@ -175,7 +175,15 @@ export default function Home() {
       addressRegion: "Jharkhand",
       addressCountry: "IN",
     },
-    sameAs: [settings.instagramUrl, settings.facebookUrl].filter(Boolean),
+    sameAs: [settings.instagramUrl, settings.facebookUrl, settings.mapUrl].filter(Boolean),
+    aggregateRating: settings.googleReviewCount
+      ? {
+          "@type": "AggregateRating",
+          ratingValue: settings.googleRatingValue,
+          reviewCount: settings.googleReviewCount,
+          bestRating: 5,
+        }
+      : undefined,
   };
 
   return (
@@ -215,6 +223,21 @@ export default function Home() {
           </span>
           <span className="stat-label">{stats.turnaround}</span>
         </div>
+        {Boolean(settings.googleReviewCount) && (
+          <a
+            className="stat stat-rating"
+            href={settings.mapUrl || undefined}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span className="stat-number">
+              ⭐ {settings.googleRatingValue.toFixed(1)}
+            </span>
+            <span className="stat-label">
+              {t("home.googleRating", { count: settings.googleReviewCount })}
+            </span>
+          </a>
+        )}
       </section>
 
       <section className="section">
