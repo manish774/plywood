@@ -440,6 +440,8 @@ let settings: Settings = {
   facebookUrl: "",
   ownerName: "",
   ownerPhone: "",
+  googleRatingValue: 5,
+  googleReviewCount: 5,
 };
 
 export const mockApi = {
