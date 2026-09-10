@@ -1,4 +1,4 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { useInquiries } from "../../context/InquiriesContext";
 import { useLanguage } from "../../i18n/useLanguage";
@@ -34,7 +34,7 @@ export default function AdminSidebar() {
 
   return (
     <aside className="admin-sidebar">
-      <div className="admin-sidebar-brand">
+      <Link to="/" className="admin-sidebar-brand" title={t("admin.viewSite")}>
         {settings.logoUrl ? (
           <img src={settings.logoUrl} alt="" className="navbar-logo-mark" />
         ) : (
@@ -42,7 +42,7 @@ export default function AdminSidebar() {
         )}
         {settings.shortName}
         <span className="navbar-logo-sub">Admin</span>
-      </div>
+      </Link>
       <nav className="admin-sidebar-nav">
         {links.map((link) => (
           <NavLink

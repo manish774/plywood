@@ -1,0 +1,13 @@
+- generic [ref=f9e4]:
+  - generic [ref=f9e5]:
+    - img "Swastik symbol" [ref=f9e6]
+    - text: Swastik
+  - paragraph [ref=f9e7]: प्लाईवुड शॉप के एडमिन पैनल के लिए स्टाफ लॉगिन।
+  - generic [ref=f9e8]:
+    - generic [ref=f9e9]:
+      - generic [ref=f9e10]: Email
+      - textbox "Email" [active] [ref=f9e11]
+    - generic [ref=f9e12]:
+      - generic [ref=f9e13]: Password
+      - textbox "Password" [ref=f9e14]
+    - button "साइन इन" [ref=f9e15] [cursor=pointer]

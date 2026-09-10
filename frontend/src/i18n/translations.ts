@@ -298,6 +298,7 @@ const en = {
       },
     },
     admin: {
+      viewSite: "View website",
       dashboardTitle: "Dashboard",
       dashboardDescription: "Manage what shows up on the public site.",
       dashboardCards: {
@@ -688,6 +689,7 @@ const hi: TranslationDict = {
       },
     },
     admin: {
+      viewSite: "वेबसाइट देखें",
       dashboardTitle: "डैशबोर्ड",
       dashboardDescription:
         "वेबसाइट पर क्या दिखेगा, उसे मैनेज करें।",
