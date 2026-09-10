@@ -15,6 +15,11 @@ export default function Footer() {
   const { t } = useLanguage();
   const { settings } = useSettings();
   const [categories, setCategories] = useState<Category[]>([]);
+  // No API key required — this is the classic "output=embed" query form,
+  // built from the shop's own address so it stays in sync if that changes.
+  const mapEmbedSrc = settings.address
+    ? `https://www.google.com/maps?q=${encodeURIComponent(settings.address)}&z=15&output=embed`
+    : "";
 
   useEffect(() => {
     listCategories()
@@ -91,6 +96,15 @@ export default function Footer() {
             <a href={settings.mapUrl} target="_blank" rel="noopener noreferrer">
               {settings.address}
             </a>
+            {mapEmbedSrc && (
+              <iframe
+                className="site-footer-map"
+                src={mapEmbedSrc}
+                title={t("nav.viewOnMap")}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            )}
           </div>
           <div>
             <p className="eyebrow site-footer-heading">{t("nav.footerAdmin")}</p>

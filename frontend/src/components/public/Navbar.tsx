@@ -5,6 +5,7 @@ import { useLanguage } from "../../i18n/useLanguage";
 import { useUserAuth } from "../../context/UserAuthContext";
 import { useSettings } from "../../context/SettingsContext";
 import SwastikIcon from "../icons/SwastikIcon";
+import MapPinIcon from "../icons/MapPinIcon";
 
 interface NavbarLink {
   to: string;
@@ -95,6 +96,18 @@ export default function Navbar() {
           >
             {t("nav.toggle")}
           </button>
+          {settings.mapUrl && (
+            <a
+              href={settings.mapUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="navbar-map-link"
+              aria-label={t("nav.viewOnMap")}
+              title={t("nav.viewOnMap")}
+            >
+              <MapPinIcon />
+            </a>
+          )}
           <Link to="/contact" className="btn btn-accent btn-sm">
             {t("common.getQuote")}
           </Link>
@@ -141,6 +154,18 @@ export default function Navbar() {
           <button className="navbar-lang-switch-mobile" type="button" onClick={toggleLanguage}>
             {t("nav.toggle")}
           </button>
+          {settings.mapUrl && (
+            <a
+              href={settings.mapUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="navbar-link-mobile navbar-map-link-mobile"
+              onClick={() => setOpen(false)}
+            >
+              <MapPinIcon />
+              {t("nav.viewOnMap")}
+            </a>
+          )}
           <Link to="/contact" className="btn btn-accent" style={{ margin: "4px 24px 16px" }} onClick={() => setOpen(false)}>
             {t("common.getQuote")}
           </Link>

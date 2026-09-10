@@ -18,6 +18,7 @@ const en = {
       footerOwnedBy: "Owned & operated by {name}",
       footerInstagram: "Follow us on Instagram",
       footerFacebook: "Follow us on Facebook",
+      viewOnMap: "View on Google Maps",
       footerFine: "© {year} {shopName}. All boards sold as-is, grain and all.",
       announcement:
         "Same-day dispatch on in-stock sheets — ask about delivery to your job site.",
@@ -142,12 +143,12 @@ const en = {
       inquiryTableReceived: "Received",
     },
     home: {
-      eyebrow: "Yard-direct plywood & sheet goods",
+      eyebrow: "Ormanjhi, Ranchi's trusted plywood & ply shop",
       heroTitleLine1: "Cut true.",
       heroTitleLine2: "Built to",
       heroTitleLine2Accent: "last",
       heroLede:
-        "Marine, hardwood, structural and decorative plywood, stocked deep and priced straight. Browse the catalog or tell us what you're building and we'll find the right sheet for it.",
+        "Marine, hardwood, structural and decorative plywood, stocked deep and priced straight, right here in Ormanjhi, Ranchi. Browse the catalog or tell us what you're building and we'll find the right sheet for it.",
       featured: "Featured",
       shopByCategory: "Shop by category",
       googleRating: "{count} Google reviews",
@@ -360,14 +361,14 @@ const en = {
       hasAccount: "has an account",
     },
     seo: {
-      defaultTitle: "{shopName} | Ply, Plywood & Decorative Laminates in Ormanjhi, Ranchi",
+      defaultTitle: "{shopName} | Best Plywood & Ply Shop in Ormanjhi, Ranchi",
       defaultDescription:
         "{shopName} is a trusted plywood shop in Ormanjhi, Ranchi, Jharkhand — shop ply, plywood, decorative veneer, laminates, flush doors, block board and commercial plywood at the best prices.",
       defaultKeywords:
-        "plywood ranchi, ply shop ranchi, plywood ormanjhi, plywood ormanjhi ranchi, decorative laminates ranchi, flush doors ranchi, block board ranchi, veneer ranchi, plywood decors, best plywood shop jharkhand, commercial plywood ranchi",
+        "plywood ranchi, ply shop ranchi, ply shop, plywood shop near me, plywood ormanjhi, plywood ormanjhi ranchi, best plywood shop in ormanjhi ranchi, best plywood shop ranchi, best ply shop ranchi, plywood dealer ranchi, plywood supplier ranchi, plywood wholesaler ranchi, waterproof plywood ranchi, marine plywood ranchi, bwp plywood ranchi, mr grade plywood ranchi, decorative laminates ranchi, laminate sheets ranchi, sunmica ranchi, decorative veneer ranchi, flush doors ranchi, flush door shop ranchi, block board ranchi, commercial plywood ranchi, furniture plywood ranchi, interior plywood jharkhand, plywood decors, plywood and decor ormanjhi, best plywood shop jharkhand, plywood shop jharkhand",
       homeTitle: "{shopName} | Best Plywood & Ply Shop in Ormanjhi, Ranchi",
       homeDescription:
-        "Looking for quality ply or plywood in Ormanjhi, Ranchi? {shopName} stocks decorative veneer, laminates, flush doors, block board and commercial plywood — visit our yard or ask for a quote today.",
+        "Looking for the best plywood or ply shop in Ormanjhi, Ranchi? {shopName} stocks decorative veneer, laminates, flush doors, block board, waterproof (BWP) and commercial plywood — visit our yard or ask for a quote today.",
       categoriesTitle: "Plywood Categories – Veneer, Laminates, Flush Doors & More | {shopName}, Ranchi",
       categoriesDescription:
         "Browse every plywood category in stock at {shopName}, Ormanjhi, Ranchi — decorative veneer, laminates, flush doors, block board, commercial plywood and more.",
@@ -407,6 +408,7 @@ const hi: TranslationDict = {
       footerOwnedBy: "मालिक: {name}",
       footerInstagram: "इंस्टाग्राम पर फॉलो करें",
       footerFacebook: "फेसबुक पर फॉलो करें",
+      viewOnMap: "गूगल मैप्स पर देखें",
       footerFine: "© {year} {shopName}. सारे बोर्ड जैसे हैं वैसे ही बेचे जाते हैं, लकड़ी के दाने (grain) समेत।",
       announcement:
         "स्टॉक में मौजूद शीट्स की सेम-डे डिस्पैच — डिलीवरी के बारे में पूछें।",
@@ -530,12 +532,12 @@ const hi: TranslationDict = {
       inquiryTableReceived: "मिला",
     },
     home: {
-      eyebrow: "यार्ड से सीधे प्लाईवुड और शीट गुड्स",
+      eyebrow: "ओरमांझी, रांची की भरोसेमंद प्लाईवुड और प्लाई शॉप",
       heroTitleLine1: "सही कटाई।",
       heroTitleLine2: "लंबे समय तक",
       heroTitleLine2Accent: "टिकने के लिए बना",
       heroLede:
-        "मरीन, हार्डवुड, स्ट्रक्चरल और डेकोरेटिव प्लाईवुड — भरपूर स्टॉक में और सही दाम पर। कैटलॉग देखें या बताएं आप क्या बना रहे हैं, हम आपके लिए सही शीट ढूंढ देंगे।",
+        "मरीन, हार्डवुड, स्ट्रक्चरल और डेकोरेटिव प्लाईवुड — ओरमांझी, रांची में ही भरपूर स्टॉक में और सही दाम पर। कैटलॉग देखें या बताएं आप क्या बना रहे हैं, हम आपके लिए सही शीट ढूंढ देंगे।",
       featured: "खास आइटम",
       shopByCategory: "कैटेगरी के हिसाब से खरीदें",
       googleRating: "{count} गूगल समीक्षाएं",
@@ -753,10 +755,10 @@ const hi: TranslationDict = {
       defaultDescription:
         "{shopName}, ओरमांझी, रांची, झारखंड की भरोसेमंद प्लाईवुड दुकान है — यहां प्लाई, प्लाईवुड, डेकोरेटिव वीनियर, लैमिनेट्स, फ्लश डोर, ब्लॉक बोर्ड और कमर्शियल प्लाईवुड सबसे अच्छी कीमत पर मिलता है।",
       defaultKeywords:
-        "प्लाईवुड रांची, प्लाई शॉप रांची, प्लाईवुड ओरमांझी, डेकोरेटिव लैमिनेट्स रांची, फ्लश डोर रांची, ब्लॉक बोर्ड रांची, वीनियर रांची, प्लाईवुड डेकोर, बेस्ट प्लाईवुड शॉप झारखंड",
+        "प्लाईवुड रांची, प्लाई शॉप रांची, प्लाई शॉप, प्लाईवुड शॉप नियर मी, प्लाईवुड ओरमांझी, बेस्ट प्लाईवुड शॉप ओरमांझी रांची, बेस्ट प्लाईवुड शॉप रांची, बेस्ट प्लाई शॉप रांची, प्लाईवुड डीलर रांची, वाटरप्रूफ प्लाईवुड रांची, मरीन प्लाईवुड रांची, बीडब्ल्यूपी प्लाईवुड रांची, डेकोरेटिव लैमिनेट्स रांची, लैमिनेट शीट रांची, सनमाइका रांची, वीनियर रांची, फ्लश डोर रांची, ब्लॉक बोर्ड रांची, कमर्शियल प्लाईवुड रांची, फर्नीचर प्लाईवुड रांची, प्लाईवुड डेकोर, बेस्ट प्लाईवुड शॉप झारखंड",
       homeTitle: "{shopName} | ओरमांझी, रांची की बेस्ट प्लाईवुड और प्लाई शॉप",
       homeDescription:
-        "ओरमांझी, रांची में अच्छी क्वालिटी की प्लाई या प्लाईवुड चाहिए? {shopName} में डेकोरेटिव वीनियर, लैमिनेट्स, फ्लश डोर, ब्लॉक बोर्ड और कमर्शियल प्लाईवुड मिलता है — आज ही यार्ड पर आएं या कोटेशन मांगें।",
+        "ओरमांझी, रांची में बेस्ट प्लाई या प्लाईवुड शॉप ढूंढ रहे हैं? {shopName} में डेकोरेटिव वीनियर, लैमिनेट्स, फ्लश डोर, ब्लॉक बोर्ड, वाटरप्रूफ (BWP) और कमर्शियल प्लाईवुड मिलता है — आज ही यार्ड पर आएं या कोटेशन मांगें।",
       categoriesTitle: "प्लाईवुड कैटेगरी – वीनियर, लैमिनेट्स, फ्लश डोर और भी बहुत कुछ | {shopName}, रांची",
       categoriesDescription:
         "{shopName}, ओरमांझी, रांची में मौजूद हर प्लाईवुड कैटेगरी देखें — डेकोरेटिव वीनियर, लैमिनेट्स, फ्लश डोर, ब्लॉक बोर्ड, कमर्शियल प्लाईवुड और भी बहुत कुछ।",
