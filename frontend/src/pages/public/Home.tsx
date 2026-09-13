@@ -13,6 +13,8 @@ import FeaturedRow from "../../components/public/FeaturedRow";
 import PinnedProcess from "../../components/public/PinnedProcess";
 import ScrollTiltReveal from "../../components/public/ScrollTiltReveal";
 import { LoadingBlock, ErrorBlock, EmptyBlock } from "../../components/public/StateBlock";
+import FestivalBackground from "../../components/festival/FestivalBackground";
+import { useFestivalTheme } from "../../components/festival/useFestivalTheme";
 import { staggerContainer, clipReveal } from "../../components/motionVariants";
 import { getErrorMessage } from "../../utils/errors";
 import { useLanguage, type LanguageContextValue } from "../../i18n/useLanguage";
@@ -59,6 +61,7 @@ function Hero({ sheetLabels, t }: HeroProps) {
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], [0, 80]);
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.3]);
+  const { theme: festivalTheme } = useFestivalTheme();
 
   const handleMouseMove = (e: MouseEvent<HTMLElement>) => {
     const rect = heroRef.current?.getBoundingClientRect();
@@ -69,6 +72,7 @@ function Hero({ sheetLabels, t }: HeroProps) {
 
   return (
     <section className="hero" ref={heroRef} onMouseMove={handleMouseMove}>
+      {festivalTheme && <FestivalBackground theme={festivalTheme} variant="hero" />}
       <div className="hero-spotlight" ref={spotlightRef} />
       <div className="grain-overlay" />
       <motion.div className="container hero-inner" style={{ y, opacity }}>

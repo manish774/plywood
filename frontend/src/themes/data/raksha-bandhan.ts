@@ -1,0 +1,125 @@
+import type { FestivalTheme } from "../types";
+
+const rakshaBandhan: FestivalTheme = {
+  id: "raksha-bandhan",
+  nameEn: "Raksha Bandhan",
+  nameHi: "रक्षा बंधन",
+  taglineEn: "The Thread of Protection",
+  taglineHi: "रक्षा का धागा",
+  dateRangeEn: "July to August (Full Moon of Shravana)",
+  dateRangeHi: "जुलाई से अगस्त (श्रावण पूर्णिमा)",
+
+  colors: {
+    primary: "#e0435f",
+    primaryDark: "#a82c44",
+    soft: "#fbdbe2",
+    textOnPrimary: "#fff",
+    accent: "#e0a52e",
+    accentDark: "#b17f1d",
+    glow: "#ffb6c1",
+    gradientFrom: "#7a1f3d",
+    gradientTo: "#e0435f",
+    gradientAngle: 135,
+  },
+
+  icons: [
+    {
+      id: "rakhi",
+      viewBox: "0 0 64 64",
+      label: "Rakhi thread with tassel",
+      shapes: [
+        { tag: "circle", attrs: { cx: 32, cy: 26, r: 14, fill: "none", stroke: "#e0a52e", strokeWidth: 4 } },
+        { tag: "circle", attrs: { cx: 32, cy: 12, r: 2.2, fill: "#fff6df" } },
+        { tag: "circle", attrs: { cx: 46, cy: 26, r: 2.2, fill: "#fff6df" } },
+        { tag: "circle", attrs: { cx: 18, cy: 26, r: 2.2, fill: "#fff6df" } },
+        { tag: "circle", attrs: { cx: 32, cy: 26, r: 6, fill: "#e0435f" } },
+        { tag: "circle", attrs: { cx: 32, cy: 26, r: 2.5, fill: "#fff6df" } },
+        { tag: "line", attrs: { x1: 26, y1: 39, x2: 23, y2: 54, stroke: "#e0a52e", strokeWidth: 2, strokeLinecap: "round" } },
+        { tag: "line", attrs: { x1: 32, y1: 40, x2: 32, y2: 56, stroke: "#e0435f", strokeWidth: 2, strokeLinecap: "round" } },
+        { tag: "line", attrs: { x1: 38, y1: 39, x2: 41, y2: 54, stroke: "#e0a52e", strokeWidth: 2, strokeLinecap: "round" } },
+        { tag: "circle", attrs: { cx: 23, cy: 54, r: 1.8, fill: "#e0a52e" } },
+        { tag: "circle", attrs: { cx: 32, cy: 56, r: 1.8, fill: "#e0435f" } },
+        { tag: "circle", attrs: { cx: 41, cy: 54, r: 1.8, fill: "#e0a52e" } },
+      ],
+    },
+    {
+      id: "ladoo",
+      viewBox: "0 0 64 64",
+      label: "Ladoo sweet",
+      shapes: [
+        { tag: "circle", attrs: { cx: 32, cy: 34, r: 18, fill: "#e0a52e" } },
+        { tag: "circle", attrs: { cx: 22, cy: 26, r: 3, fill: "#c9861a" } },
+        { tag: "circle", attrs: { cx: 40, cy: 24, r: 2.6, fill: "#c9861a" } },
+        { tag: "circle", attrs: { cx: 44, cy: 38, r: 3, fill: "#c9861a" } },
+        { tag: "circle", attrs: { cx: 30, cy: 46, r: 2.6, fill: "#c9861a" } },
+        { tag: "circle", attrs: { cx: 18, cy: 38, r: 2.4, fill: "#c9861a" } },
+        { tag: "ellipse", attrs: { cx: 25, cy: 25, rx: 6, ry: 4, fill: "#f6d68a" } },
+        { tag: "circle", attrs: { cx: 32, cy: 20, r: 2, fill: "#fff6df" } },
+      ],
+    },
+    {
+      id: "thali",
+      viewBox: "0 0 64 64",
+      label: "Decorative ceremonial thali",
+      shapes: [
+        { tag: "circle", attrs: { cx: 32, cy: 32, r: 26, fill: "#e0a52e" } },
+        { tag: "circle", attrs: { cx: 32, cy: 32, r: 23, fill: "none", stroke: "#a82c44", strokeWidth: 1.5 } },
+        { tag: "circle", attrs: { cx: 32, cy: 32, r: 20, fill: "#fbdbe2" } },
+        { tag: "circle", attrs: { cx: 32, cy: 32, r: 5, fill: "#e0435f" } },
+        { tag: "ellipse", attrs: { cx: 32, cy: 9, rx: 3, ry: 2, fill: "#c9861a" } },
+        { tag: "ellipse", attrs: { cx: 32, cy: 55, rx: 3, ry: 2, fill: "#c9861a" } },
+        { tag: "ellipse", attrs: { cx: 9, cy: 32, rx: 2, ry: 3, fill: "#c9861a" } },
+        { tag: "ellipse", attrs: { cx: 55, cy: 32, rx: 2, ry: 3, fill: "#c9861a" } },
+      ],
+    },
+    {
+      id: "rice-grains",
+      viewBox: "0 0 64 64",
+      label: "Rice grains for the ritual",
+      shapes: [
+        { tag: "ellipse", attrs: { cx: 20, cy: 22, rx: 5, ry: 2.2, fill: "#f6ead0", transform: "rotate(20 20 22)" } },
+        { tag: "ellipse", attrs: { cx: 32, cy: 16, rx: 5, ry: 2.2, fill: "#f6ead0", transform: "rotate(-15 32 16)" } },
+        { tag: "ellipse", attrs: { cx: 44, cy: 24, rx: 5, ry: 2.2, fill: "#f6ead0", transform: "rotate(35 44 24)" } },
+        { tag: "ellipse", attrs: { cx: 24, cy: 38, rx: 5, ry: 2.2, fill: "#f6ead0", transform: "rotate(-25 24 38)" } },
+        { tag: "ellipse", attrs: { cx: 40, cy: 42, rx: 5, ry: 2.2, fill: "#f6ead0", transform: "rotate(10 40 42)" } },
+        { tag: "ellipse", attrs: { cx: 32, cy: 52, rx: 5, ry: 2.2, fill: "#f6ead0", transform: "rotate(-40 32 52)" } },
+      ],
+    },
+    {
+      id: "tassel",
+      viewBox: "0 0 64 64",
+      label: "Red thread tassel",
+      shapes: [
+        { tag: "circle", attrs: { cx: 32, cy: 14, r: 6, fill: "#a82c44" } },
+        { tag: "line", attrs: { x1: 26, y1: 19, x2: 22, y2: 44, stroke: "#e0435f", strokeWidth: 2, strokeLinecap: "round" } },
+        { tag: "line", attrs: { x1: 30, y1: 20, x2: 28, y2: 50, stroke: "#e0a52e", strokeWidth: 2, strokeLinecap: "round" } },
+        { tag: "line", attrs: { x1: 34, y1: 20, x2: 36, y2: 50, stroke: "#e0435f", strokeWidth: 2, strokeLinecap: "round" } },
+        { tag: "line", attrs: { x1: 38, y1: 19, x2: 42, y2: 44, stroke: "#e0a52e", strokeWidth: 2, strokeLinecap: "round" } },
+        { tag: "circle", attrs: { cx: 22, cy: 44, r: 1.8, fill: "#e0a52e" } },
+        { tag: "circle", attrs: { cx: 28, cy: 50, r: 1.8, fill: "#e0435f" } },
+        { tag: "circle", attrs: { cx: 36, cy: 50, r: 1.8, fill: "#e0a52e" } },
+        { tag: "circle", attrs: { cx: 42, cy: 44, r: 1.8, fill: "#e0435f" } },
+      ],
+    },
+  ],
+
+  ambientPattern: {
+    iconIds: ["rakhi", "rice-grains", "tassel"],
+    count: 18,
+    sizeRange: [18, 40],
+    opacityRange: [0.05, 0.13],
+    rotationRange: [-15, 15],
+    seed: "raksha-bandhan-ambient",
+  },
+
+  heroPattern: {
+    iconIds: ["rakhi", "ladoo", "thali", "rice-grains", "tassel"],
+    count: 22,
+    sizeRange: [26, 60],
+    opacityRange: [0.12, 0.23],
+    rotationRange: [-18, 18],
+    seed: "raksha-bandhan-hero",
+  },
+};
+
+export default rakshaBandhan;

@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import "./styles/tokens.css";
 import "./styles/base.css";
+import "./styles/festival.css";
 import App from "./App";
 
 // index.html ships static meta/OG tags (marked data-default) as a fallback

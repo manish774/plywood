@@ -22,6 +22,7 @@
   --accent: #2f5fa8;
   --accent-hover: #24487f;
   --accent-soft: #d9e3f2;
+  --accent-ink: #fff; /* text color on --accent surfaces — overridable per festival theme */
   --amber: #c9860b;
   --amber-hover: #a86f09;
   --danger: #b5362a;

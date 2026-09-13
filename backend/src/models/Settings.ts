@@ -18,6 +18,7 @@ export interface ISettings extends Document {
   ownerPhone: string;
   googleRatingValue: number;
   googleReviewCount: number;
+  festivalTheme: string;
 }
 
 const settingsSchema = new Schema<ISettings>(
@@ -42,6 +43,30 @@ const settingsSchema = new Schema<ISettings>(
     // as new reviews come in.
     googleRatingValue: { type: Number, min: 0, max: 5, default: 5 },
     googleReviewCount: { type: Number, min: 0, default: 5 },
+    // Admin-selected site-wide festival theme id — keep this enum in sync
+    // with frontend/src/themes/types.ts's FestivalThemeId union by hand
+    // (the two codebases can't share a type across the API boundary).
+    festivalTheme: {
+      type: String,
+      trim: true,
+      default: 'none',
+      enum: [
+        'none',
+        'makar-sankranti',
+        'vasant-panchami',
+        'maha-shivaratri',
+        'holi',
+        'ugadi-gudi-padwa',
+        'ram-navami',
+        'akshaya-tritiya',
+        'guru-purnima',
+        'raksha-bandhan',
+        'krishna-janmashtami',
+        'ganesh-chaturthi',
+        'durga-puja-navaratri',
+        'diwali',
+      ],
+    },
   },
   { timestamps: true }
 );

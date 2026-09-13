@@ -138,6 +138,7 @@ export interface Settings {
   ownerPhone: string;
   googleRatingValue: number;
   googleReviewCount: number;
+  festivalTheme: string;
   createdAt?: string;
   updatedAt?: string;
 }

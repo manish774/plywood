@@ -442,6 +442,7 @@ let settings: Settings = {
   ownerPhone: "",
   googleRatingValue: 5,
   googleReviewCount: 5,
+  festivalTheme: "none",
 };
 
 export const mockApi = {

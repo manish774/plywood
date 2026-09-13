@@ -4,10 +4,12 @@ import { getErrorMessage } from "../../utils/errors";
 import { useLanguage } from "../../i18n/useLanguage";
 import { WrenchLoader } from "../../components/Loaders";
 import SettingsPreview from "../../components/admin/SettingsPreview";
+import FestivalIcon from "../../components/festival/FestivalIcon";
+import { FESTIVAL_THEME_LIST } from "../../themes";
 import type { SettingsInput } from "../../types/models";
 
 export default function Customization() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const { settings, loading, update } = useSettings();
   const [form, setForm] = useState<SettingsInput>(settings);
 
@@ -161,6 +163,48 @@ export default function Customization() {
                   onChange={handleChange}
                   placeholder="https://facebook.com/..."
                 />
+              </div>
+            </div>
+
+            <div className="field">
+              <label>{t("admin.festivalThemeLabel")}</label>
+              <small>{t("admin.festivalThemeHint")}</small>
+              <div className="festival-theme-grid">
+                <button
+                  type="button"
+                  className={`festival-theme-card ${!form.festivalTheme || form.festivalTheme === "none" ? "is-selected" : ""}`}
+                  onClick={() => {
+                    setSaved(false);
+                    setForm((f) => ({ ...f, festivalTheme: "none" }));
+                  }}
+                >
+                  <div className="festival-theme-card-swatch-wrap">
+                    <span className="festival-theme-card-swatch" style={{ background: "var(--bg)" }} />
+                  </div>
+                  {t("admin.festivalThemeNone")}
+                </button>
+                {FESTIVAL_THEME_LIST.map((theme) => (
+                  <button
+                    type="button"
+                    key={theme.id}
+                    className={`festival-theme-card ${form.festivalTheme === theme.id ? "is-selected" : ""}`}
+                    onClick={() => {
+                      setSaved(false);
+                      setForm((f) => ({ ...f, festivalTheme: theme.id }));
+                    }}
+                  >
+                    <div className="festival-theme-card-swatch-wrap">
+                      <span
+                        className="festival-theme-card-swatch"
+                        style={{
+                          background: `linear-gradient(${theme.colors.gradientAngle}deg, ${theme.colors.gradientFrom}, ${theme.colors.gradientTo})`,
+                        }}
+                      />
+                      <FestivalIcon icon={theme.icons[0]} className="festival-theme-card-icon" />
+                    </div>
+                    {lang === "hi" ? theme.nameHi : theme.nameEn}
+                  </button>
+                ))}
               </div>
             </div>
 

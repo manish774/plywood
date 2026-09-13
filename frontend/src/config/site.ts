@@ -19,4 +19,5 @@ export const DEFAULT_SETTINGS = {
   ownerPhone: "",
   googleRatingValue: 5,
   googleReviewCount: 5,
+  festivalTheme: "none",
 };

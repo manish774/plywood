@@ -1,0 +1,146 @@
+/* ---------- Festival theme: banner ---------- */
+
+.festival-banner {
+  background: linear-gradient(
+    var(--festival-gradient-angle, 135deg),
+    var(--festival-gradient-from, var(--accent)),
+    var(--festival-gradient-to, var(--accent-hover))
+  );
+  color: #fff;
+  padding: 10px 0;
+  box-shadow: 0 2px 20px color-mix(in srgb, var(--festival-glow, var(--accent)) 45%, transparent);
+}
+
+.festival-banner-inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.festival-banner-icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+.festival-banner-name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+}
+
+.festival-banner-tagline {
+  opacity: 0.92;
+  font-size: 0.85rem;
+}
+
+.festival-banner-date {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  opacity: 0.85;
+}
+
+@media (max-width: 640px) {
+  .festival-banner-date {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+/* ---------- Festival theme: decorative background scatter ---------- */
+
+.festival-background {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.festival-background-ambient {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+.festival-background-hero {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.festival-background-icon {
+  position: absolute;
+}
+
+.festival-background-photo {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3;
+  mix-blend-mode: luminosity;
+}
+
+/* ---------- Festival theme: admin picker grid ---------- */
+
+.festival-theme-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.festival-theme-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 10px 14px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  box-shadow: var(--shadow-raised-sm);
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+.festival-theme-card:hover {
+  color: var(--ink);
+}
+
+.festival-theme-card.is-selected {
+  box-shadow:
+    var(--shadow-pressed-sm),
+    0 0 0 2px var(--accent) inset;
+  color: var(--ink);
+}
+
+.festival-theme-card-swatch-wrap {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.festival-theme-card-swatch {
+  position: absolute;
+  inset: 0;
+}
+
+.festival-theme-card-icon {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 22px;
+  height: 22px;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
+}

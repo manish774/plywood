@@ -17,6 +17,7 @@ interface SettingsBody {
   ownerPhone?: string;
   googleRatingValue?: number;
   googleReviewCount?: number;
+  festivalTheme?: string;
 }
 
 // There is exactly one settings document; create it (with schema defaults)
@@ -51,6 +52,7 @@ async function updateSettings(req: Request<unknown, unknown, SettingsBody>, res:
     ownerPhone,
     googleRatingValue,
     googleReviewCount,
+    festivalTheme,
   } = req.body;
 
   await getOrCreateSettings();
@@ -73,6 +75,7 @@ async function updateSettings(req: Request<unknown, unknown, SettingsBody>, res:
       ownerPhone,
       googleRatingValue,
       googleReviewCount,
+      festivalTheme,
     },
     { new: true, runValidators: true, omitUndefined: true }
   );
