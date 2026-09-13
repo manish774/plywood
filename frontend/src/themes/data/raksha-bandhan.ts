@@ -105,21 +105,24 @@ const rakshaBandhan: FestivalTheme = {
 
   ambientPattern: {
     iconIds: ["rakhi", "rice-grains", "tassel"],
-    count: 18,
+    count: 26,
     sizeRange: [18, 40],
-    opacityRange: [0.05, 0.13],
+    opacityRange: [0.12, 0.26],
     rotationRange: [-15, 15],
     seed: "raksha-bandhan-ambient",
   },
 
   heroPattern: {
     iconIds: ["rakhi", "ladoo", "thali", "rice-grains", "tassel"],
-    count: 22,
+    count: 32,
     sizeRange: [26, 60],
-    opacityRange: [0.12, 0.23],
+    opacityRange: [0.22, 0.42],
     rotationRange: [-18, 18],
     seed: "raksha-bandhan-hero",
   },
+
+  // A rakhi thread with festive sweets and dry fruits — verified live on Unsplash (free to use).
+  heroPhotoUrl: "https://images.unsplash.com/photo-1784286542139-b4904d8117b7?w=1600&q=80",
 };
 
 export default rakshaBandhan;

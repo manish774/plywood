@@ -82,8 +82,15 @@
   inset: 0;
   background-size: cover;
   background-position: center;
-  opacity: 0.3;
   mix-blend-mode: luminosity;
+}
+
+.festival-background-ambient .festival-background-photo {
+  opacity: 0.22;
+}
+
+.festival-background-hero .festival-background-photo {
+  opacity: 0.48;
 }
 
 /* ---------- Festival theme: admin picker grid ---------- */

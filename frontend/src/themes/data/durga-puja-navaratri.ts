@@ -107,21 +107,24 @@ const durgaPujaNavaratri: FestivalTheme = {
 
   ambientPattern: {
     iconIds: ["lotus", "dandiya-crossed", "trishul"],
-    count: 20,
+    count: 26,
     sizeRange: [20, 42],
-    opacityRange: [0.05, 0.14],
+    opacityRange: [0.12, 0.26],
     rotationRange: [-15, 15],
     seed: "durga-puja-navaratri-ambient",
   },
 
   heroPattern: {
     iconIds: ["trishul", "dandiya-crossed", "durga-lion", "lotus", "dhak-drum", "bow-arrow"],
-    count: 28,
+    count: 32,
     sizeRange: [26, 60],
-    opacityRange: [0.12, 0.28],
+    opacityRange: [0.22, 0.42],
     rotationRange: [-20, 20],
     seed: "durga-puja-navaratri-hero",
   },
+
+  // An ornately decorated Durga idol — verified live on Unsplash (free to use).
+  heroPhotoUrl: "https://images.unsplash.com/photo-1616074385287-67f6fb9e9eb8?w=1600&q=80",
 };
 
 export default durgaPujaNavaratri;

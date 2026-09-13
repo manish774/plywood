@@ -90,21 +90,24 @@ const ramNavami: FestivalTheme = {
 
   ambientPattern: {
     iconIds: ["bow-arrow", "lotus", "tulsi-leaf"],
-    count: 20,
+    count: 26,
     sizeRange: [20, 42],
-    opacityRange: [0.05, 0.14],
+    opacityRange: [0.12, 0.26],
     rotationRange: [-15, 15],
     seed: "ram-navami-ambient",
   },
 
   heroPattern: {
     iconIds: ["bow-arrow", "temple-spire", "royal-crown", "lotus", "tulsi-leaf"],
-    count: 24,
+    count: 32,
     sizeRange: [26, 60],
-    opacityRange: [0.12, 0.26],
+    opacityRange: [0.22, 0.42],
     rotationRange: [-18, 18],
     seed: "ram-navami-hero",
   },
+
+  // An arrow struck dead-center in an archery target — verified live on Unsplash (free to use).
+  heroPhotoUrl: "https://images.unsplash.com/photo-1666816584311-ba40d5299760?w=1600&q=80",
 };
 
 export default ramNavami;

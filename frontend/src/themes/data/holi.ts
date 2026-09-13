@@ -115,21 +115,24 @@ const holi: FestivalTheme = {
 
   ambientPattern: {
     iconIds: ["splash-magenta", "splash-yellow", "splash-green", "splash-blue", "colored-handprint"],
-    count: 22,
+    count: 26,
     sizeRange: [18, 42],
-    opacityRange: [0.06, 0.16],
+    opacityRange: [0.12, 0.26],
     rotationRange: [-25, 25],
     seed: "holi-ambient",
   },
 
   heroPattern: {
     iconIds: ["splash-magenta", "splash-yellow", "splash-green", "splash-blue", "pichkari", "colored-handprint", "holika-bonfire"],
-    count: 30,
+    count: 32,
     sizeRange: [26, 60],
-    opacityRange: [0.14, 0.3],
+    opacityRange: [0.22, 0.42],
     rotationRange: [-30, 30],
     seed: "holi-hero",
   },
+
+  // Heaps of vivid Holi gulal powder in rainbow colors — verified live on Unsplash (free to use).
+  heroPhotoUrl: "https://images.unsplash.com/photo-1587586291914-bdbe84ec1416?w=1600&q=80",
 };
 
 export default holi;

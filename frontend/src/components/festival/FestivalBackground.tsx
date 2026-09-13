@@ -8,10 +8,11 @@ interface FestivalBackgroundProps {
   variant: "ambient" | "hero";
 }
 
-// Scatters a theme's icons as a low-opacity, non-interactive decorative
-// layer. `ambient` is mounted once in PublicLayout (fixed, behind every
-// public page); `hero` is mounted only inside Home's hero section (bolder,
-// plus an optional background photo) — same component, different config.
+// Scatters a theme's icons as a decorative layer, plus (when the theme has
+// one) its real background photo. `ambient` is mounted once in PublicLayout
+// — fixed behind every public page, photo kept subtle so body copy stays
+// legible; `hero` is mounted only inside Home's hero section — bolder icons,
+// bolder photo. Same component, different config/intensity per variant.
 export default function FestivalBackground({ theme, variant }: FestivalBackgroundProps) {
   const config = variant === "hero" ? theme.heroPattern : theme.ambientPattern;
   const placements = useMemo(() => buildScatterLayout(config), [config]);
@@ -19,7 +20,7 @@ export default function FestivalBackground({ theme, variant }: FestivalBackgroun
 
   return (
     <div className={`festival-background festival-background-${variant}`} aria-hidden="true">
-      {variant === "hero" && theme.heroPhotoUrl && (
+      {theme.heroPhotoUrl && (
         <div className="festival-background-photo" style={{ backgroundImage: `url(${theme.heroPhotoUrl})` }} />
       )}
       {placements.map((p, i) => {

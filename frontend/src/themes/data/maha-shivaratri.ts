@@ -114,21 +114,24 @@ const mahaShivaratri: FestivalTheme = {
 
   ambientPattern: {
     iconIds: ["crescent-moon", "rudraksha-mala", "serpent-coil", "vigil-flame"],
-    count: 19,
+    count: 26,
     sizeRange: [18, 40],
-    opacityRange: [0.05, 0.13],
+    opacityRange: [0.12, 0.26],
     rotationRange: [-12, 12],
     seed: "maha-shivaratri-ambient",
   },
 
   heroPattern: {
     iconIds: ["trishul", "damru", "crescent-moon", "serpent-coil", "shiva-lingam", "rudraksha-mala", "vigil-flame"],
-    count: 24,
+    count: 32,
     sizeRange: [26, 58],
-    opacityRange: [0.12, 0.24],
+    opacityRange: [0.22, 0.42],
     rotationRange: [-16, 16],
     seed: "maha-shivaratri-hero",
   },
+
+  // A Hindu temple gopuram lit up against the night sky — verified live on Unsplash (free to use).
+  heroPhotoUrl: "https://images.unsplash.com/photo-1566300141301-ab0577dcba1c?w=1600&q=80",
 };
 
 export default mahaShivaratri;

@@ -111,21 +111,24 @@ const ganeshChaturthi: FestivalTheme = {
 
   ambientPattern: {
     iconIds: ["modak", "hibiscus", "laddu"],
-    count: 20,
+    count: 26,
     sizeRange: [20, 42],
-    opacityRange: [0.05, 0.14],
+    opacityRange: [0.12, 0.26],
     rotationRange: [-15, 15],
     seed: "ganesh-chaturthi-ambient",
   },
 
   heroPattern: {
     iconIds: ["modak", "ganesha-trunk", "hibiscus", "ceremonial-umbrella", "laddu"],
-    count: 26,
+    count: 32,
     sizeRange: [28, 60],
-    opacityRange: [0.12, 0.26],
+    opacityRange: [0.22, 0.42],
     rotationRange: [-20, 20],
     seed: "ganesh-chaturthi-hero",
   },
+
+  // A golden Ganesha idol resting on a leaf in soft light — verified live on Unsplash (free to use).
+  heroPhotoUrl: "https://images.unsplash.com/photo-1610085927744-7217728267a6?w=1600&q=80",
 };
 
 export default ganeshChaturthi;

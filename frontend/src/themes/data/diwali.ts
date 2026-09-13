@@ -136,18 +136,18 @@ const diwali: FestivalTheme = {
 
   ambientPattern: {
     iconIds: ["diya", "rangoli-flower", "marigold-flower"],
-    count: 20,
+    count: 26,
     sizeRange: [20, 44],
-    opacityRange: [0.05, 0.14],
+    opacityRange: [0.12, 0.26],
     rotationRange: [-15, 15],
     seed: "diwali-ambient",
   },
 
   heroPattern: {
     iconIds: ["diya", "rangoli-flower", "marigold-flower", "firework-burst", "lakshmi-footprint"],
-    count: 26,
+    count: 32,
     sizeRange: [28, 64],
-    opacityRange: [0.12, 0.26],
+    opacityRange: [0.22, 0.42],
     rotationRange: [-20, 20],
     seed: "diwali-hero",
   },

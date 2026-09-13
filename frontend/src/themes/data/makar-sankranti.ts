@@ -129,21 +129,24 @@ const makarSankranti: FestivalTheme = {
 
   ambientPattern: {
     iconIds: ["kite", "til-gud-ladoo", "sugarcane", "wheat-sheaf"],
-    count: 20,
+    count: 26,
     sizeRange: [20, 42],
-    opacityRange: [0.05, 0.13],
+    opacityRange: [0.12, 0.26],
     rotationRange: [-18, 18],
     seed: "makar-sankranti-ambient",
   },
 
   heroPattern: {
     iconIds: ["kite", "til-gud-ladoo", "sugarcane", "bonfire", "wheat-sheaf", "pongal-pot"],
-    count: 26,
+    count: 32,
     sizeRange: [26, 60],
-    opacityRange: [0.12, 0.27],
+    opacityRange: [0.22, 0.42],
     rotationRange: [-22, 22],
     seed: "makar-sankranti-hero",
   },
+
+  // Bright multicolor kites hung for sale ahead of Makar Sankranti — verified live on Unsplash (free to use).
+  heroPhotoUrl: "https://images.unsplash.com/photo-1641792112180-998e4a9b9843?w=1600&q=80",
 };
 
 export default makarSankranti;

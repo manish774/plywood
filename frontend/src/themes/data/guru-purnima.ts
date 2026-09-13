@@ -97,21 +97,24 @@ const guruPurnima: FestivalTheme = {
 
   ambientPattern: {
     iconIds: ["open-book", "lotus", "peepal-leaf"],
-    count: 16,
+    count: 26,
     sizeRange: [18, 40],
-    opacityRange: [0.04, 0.11],
+    opacityRange: [0.12, 0.26],
     rotationRange: [-12, 12],
     seed: "guru-purnima-ambient",
   },
 
   heroPattern: {
     iconIds: ["open-book", "lamp", "lotus", "peepal-leaf", "footprint"],
-    count: 20,
+    count: 32,
     sizeRange: [26, 58],
-    opacityRange: [0.1, 0.2],
+    opacityRange: [0.22, 0.42],
     rotationRange: [-15, 15],
     seed: "guru-purnima-hero",
   },
+
+  // A warmly lit antique library of books — verified live on Unsplash (free to use).
+  heroPhotoUrl: "https://images.unsplash.com/photo-1722182877533-7378b60bf1e8?w=1600&q=80",
 };
 
 export default guruPurnima;

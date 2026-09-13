@@ -105,21 +105,24 @@ const vasantPanchami: FestivalTheme = {
 
   ambientPattern: {
     iconIds: ["mustard-flower", "manuscript", "swan"],
-    count: 20,
+    count: 26,
     sizeRange: [18, 40],
-    opacityRange: [0.05, 0.14],
+    opacityRange: [0.12, 0.26],
     rotationRange: [-15, 15],
     seed: "vasant-panchami-ambient",
   },
 
   heroPattern: {
     iconIds: ["mustard-flower", "manuscript", "swan", "veena", "peacock-quill"],
-    count: 26,
+    count: 32,
     sizeRange: [26, 60],
-    opacityRange: [0.12, 0.28],
+    opacityRange: [0.22, 0.42],
     rotationRange: [-20, 20],
     seed: "vasant-panchami-hero",
   },
+
+  // A blooming mustard field in early spring — verified live on Unsplash (free to use).
+  heroPhotoUrl: "https://images.unsplash.com/photo-1631678783715-f27855736ed2?w=1600&q=80",
 };
 
 export default vasantPanchami;

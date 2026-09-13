@@ -94,21 +94,24 @@ const akshayaTritiya: FestivalTheme = {
 
   ambientPattern: {
     iconIds: ["gold-coin", "lotus", "wheat-stalk"],
-    count: 18,
+    count: 26,
     sizeRange: [18, 40],
-    opacityRange: [0.05, 0.14],
+    opacityRange: [0.12, 0.26],
     rotationRange: [-15, 15],
     seed: "akshaya-tritiya-ambient",
   },
 
   heroPattern: {
     iconIds: ["gold-kalash", "gold-coin", "lotus", "wheat-stalk", "diya"],
-    count: 22,
+    count: 32,
     sizeRange: [26, 58],
-    opacityRange: [0.12, 0.26],
+    opacityRange: [0.22, 0.42],
     rotationRange: [-18, 18],
     seed: "akshaya-tritiya-hero",
   },
+
+  // Gold coins glowing beside a lit candle — verified live on Unsplash (free to use).
+  heroPhotoUrl: "https://images.unsplash.com/photo-1585633644436-e65366848fcf?w=1600&q=80",
 };
 
 export default akshayaTritiya;

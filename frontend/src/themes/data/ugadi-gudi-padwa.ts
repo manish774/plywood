@@ -101,21 +101,24 @@ const ugadiGudiPadwa: FestivalTheme = {
 
   ambientPattern: {
     iconIds: ["neem-sprig", "rangoli-dot", "mango-torana"],
-    count: 20,
+    count: 26,
     sizeRange: [18, 40],
-    opacityRange: [0.05, 0.14],
+    opacityRange: [0.12, 0.26],
     rotationRange: [-15, 15],
     seed: "ugadi-gudi-padwa-ambient",
   },
 
   heroPattern: {
     iconIds: ["gudi-flag", "neem-sprig", "mango-torana", "pachadi-bowl", "rangoli-dot"],
-    count: 26,
+    count: 32,
     sizeRange: [26, 60],
-    opacityRange: [0.12, 0.28],
+    opacityRange: [0.22, 0.42],
     rotationRange: [-18, 18],
     seed: "ugadi-gudi-padwa-hero",
   },
+
+  // A Gudi Padwa procession carrying a decorated gudi past a garlanded temple gate — verified live on Unsplash (free to use).
+  heroPhotoUrl: "https://images.unsplash.com/photo-1774437777336-92f8e06f514a?w=1600&q=80",
 };
 
 export default ugadiGudiPadwa;

@@ -99,18 +99,18 @@ const krishnaJanmashtami: FestivalTheme = {
 
   ambientPattern: {
     iconIds: ["peacock-feather", "lotus", "matki"],
-    count: 20,
+    count: 26,
     sizeRange: [20, 42],
-    opacityRange: [0.05, 0.14],
+    opacityRange: [0.12, 0.26],
     rotationRange: [-15, 15],
     seed: "krishna-janmashtami-ambient",
   },
 
   heroPattern: {
     iconIds: ["peacock-feather", "bansuri", "matki", "lotus", "mukut"],
-    count: 26,
+    count: 32,
     sizeRange: [28, 60],
-    opacityRange: [0.12, 0.26],
+    opacityRange: [0.22, 0.42],
     rotationRange: [-20, 20],
     seed: "krishna-janmashtami-hero",
   },
