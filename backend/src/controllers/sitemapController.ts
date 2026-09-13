@@ -18,7 +18,10 @@ function urlTag(loc: string, lastmod?: Date, changefreq?: string, priority?: str
 // public pages plus one entry per category/item, so newly added catalog
 // entries show up on the next crawl without a manual resubmission.
 async function getSitemap(req: Request, res: Response): Promise<void> {
-  const siteUrl = (process.env.FRONTEND_URL || 'http://localhost:5173').replace(/\/$/, '');
+  // FRONTEND_URL should be set as a Render env var in production; this
+  // fallback is the real deployed domain so the live sitemap is never
+  // broken (pointing at localhost) if that env var is missing.
+  const siteUrl = (process.env.FRONTEND_URL || 'https://www.plyswastik.com').replace(/\/$/, '');
 
   const [categories, items] = await Promise.all([
     Category.find().select('_id updatedAt'),
