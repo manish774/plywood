@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { getItem } from "../../api/items";
 import Seo, { SITE_URL } from "../../components/Seo";
 import { LoadingBlock, ErrorBlock } from "../../components/public/StateBlock";
+import Lightbox from "../../components/public/Lightbox";
 import { getErrorMessage } from "../../utils/errors";
 import { useLanguage } from "../../i18n/useLanguage";
 import { useSettings } from "../../context/SettingsContext";
@@ -17,6 +18,7 @@ export default function ItemDetail() {
   const [item, setItem] = useState<Item | null>(null);
   const [error, setError] = useState("");
   const [activeImage, setActiveImage] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
   const { t } = useLanguage();
   const { settings } = useSettings();
   const specLabels = t("itemDetail.specLabels");
@@ -136,7 +138,12 @@ export default function ItemDetail() {
 
       <div className="item-detail">
         <div className="item-gallery">
-          <div className="item-gallery-main">
+          <div
+            className={`item-gallery-main${images.length ? " item-gallery-zoomable" : ""}`}
+            onClick={() => images.length && setLightboxOpen(true)}
+            role={images.length ? "button" : undefined}
+            aria-label={images.length ? t("common.viewLargerImage") : undefined}
+          >
             <AnimatePresence mode="wait">
               {images[activeImage] ? (
                 <motion.img
@@ -150,6 +157,14 @@ export default function ItemDetail() {
                 />
               ) : null}
             </AnimatePresence>
+            {images.length > 0 && (
+              <span className="item-gallery-zoom-hint" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="11" cy="11" r="7" />
+                  <path d="M21 21l-4.3-4.3M11 8v6M8 11h6" />
+                </svg>
+              </span>
+            )}
           </div>
           {images.length > 1 && (
             <div className="item-gallery-thumbs">
@@ -223,6 +238,16 @@ export default function ItemDetail() {
           </div>
         </motion.div>
       </div>
+
+      {lightboxOpen && images.length > 0 && (
+        <Lightbox
+          images={images}
+          index={activeImage}
+          alt={item.name}
+          onClose={() => setLightboxOpen(false)}
+          onNavigate={setActiveImage}
+        />
+      )}
     </div>
   );
 }

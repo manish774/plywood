@@ -10,8 +10,10 @@ import Marquee from "../../components/public/Marquee";
 import ValueProps from "../../components/public/ValueProps";
 import BannerCarousel from "../../components/public/BannerCarousel";
 import FeaturedRow from "../../components/public/FeaturedRow";
+import PinnedProcess from "../../components/public/PinnedProcess";
+import ScrollTiltReveal from "../../components/public/ScrollTiltReveal";
 import { LoadingBlock, ErrorBlock, EmptyBlock } from "../../components/public/StateBlock";
-import { staggerContainer, clipReveal, fadeUp } from "../../components/motionVariants";
+import { staggerContainer, clipReveal } from "../../components/motionVariants";
 import { getErrorMessage } from "../../utils/errors";
 import { useLanguage, type LanguageContextValue } from "../../i18n/useLanguage";
 import { useSettings } from "../../context/SettingsContext";
@@ -315,21 +317,7 @@ export default function Home() {
               </motion.h2>
             </div>
           </div>
-          <motion.div
-            className="process-grid"
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.3 }}
-          >
-            {processSteps.map((step, i) => (
-              <motion.div key={i} variants={fadeUp} className="process-step">
-                <span className="process-index">{String(i + 1).padStart(2, "0")}</span>
-                <h3>{step.title}</h3>
-                <p>{step.copy}</p>
-              </motion.div>
-            ))}
-          </motion.div>
+          <PinnedProcess steps={processSteps} image={categories?.[0]?.image} />
         </div>
       </section>
 
@@ -343,23 +331,19 @@ export default function Home() {
               </motion.h2>
             </div>
           </div>
-          <motion.div
-            className="card-grid"
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.3 }}
-          >
+          <div className="card-grid">
             {featureItems.map((f, i) => (
-              <motion.div key={i} variants={fadeUp} className="ply-card" style={{ cursor: "default" }}>
-                <div className="ply-card-edge ply-stripe" aria-hidden="true" />
-                <div className="ply-card-body">
-                  <h3>{f.title}</h3>
-                  <p>{f.copy}</p>
+              <ScrollTiltReveal key={i} index={i}>
+                <div className="ply-card" style={{ cursor: "default" }}>
+                  <div className="ply-card-edge ply-stripe" aria-hidden="true" />
+                  <div className="ply-card-body">
+                    <h3>{f.title}</h3>
+                    <p>{f.copy}</p>
+                  </div>
                 </div>
-              </motion.div>
+              </ScrollTiltReveal>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
     </div>
