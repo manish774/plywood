@@ -117,7 +117,7 @@ const holi: FestivalTheme = {
     iconIds: ["splash-magenta", "splash-yellow", "splash-green", "splash-blue", "colored-handprint"],
     count: 26,
     sizeRange: [18, 42],
-    opacityRange: [0.12, 0.26],
+    opacityRange: [0.05, 0.12],
     rotationRange: [-25, 25],
     seed: "holi-ambient",
   },

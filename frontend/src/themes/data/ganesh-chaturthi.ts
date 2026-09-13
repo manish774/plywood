@@ -113,7 +113,7 @@ const ganeshChaturthi: FestivalTheme = {
     iconIds: ["modak", "hibiscus", "laddu"],
     count: 26,
     sizeRange: [20, 42],
-    opacityRange: [0.12, 0.26],
+    opacityRange: [0.05, 0.12],
     rotationRange: [-15, 15],
     seed: "ganesh-chaturthi-ambient",
   },

@@ -107,7 +107,7 @@ const vasantPanchami: FestivalTheme = {
     iconIds: ["mustard-flower", "manuscript", "swan"],
     count: 26,
     sizeRange: [18, 40],
-    opacityRange: [0.12, 0.26],
+    opacityRange: [0.05, 0.12],
     rotationRange: [-15, 15],
     seed: "vasant-panchami-ambient",
   },

@@ -116,7 +116,7 @@ const mahaShivaratri: FestivalTheme = {
     iconIds: ["crescent-moon", "rudraksha-mala", "serpent-coil", "vigil-flame"],
     count: 26,
     sizeRange: [18, 40],
-    opacityRange: [0.12, 0.26],
+    opacityRange: [0.05, 0.12],
     rotationRange: [-12, 12],
     seed: "maha-shivaratri-ambient",
   },

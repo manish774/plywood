@@ -96,7 +96,7 @@ const akshayaTritiya: FestivalTheme = {
     iconIds: ["gold-coin", "lotus", "wheat-stalk"],
     count: 26,
     sizeRange: [18, 40],
-    opacityRange: [0.12, 0.26],
+    opacityRange: [0.05, 0.12],
     rotationRange: [-15, 15],
     seed: "akshaya-tritiya-ambient",
   },

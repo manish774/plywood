@@ -131,7 +131,7 @@ const makarSankranti: FestivalTheme = {
     iconIds: ["kite", "til-gud-ladoo", "sugarcane", "wheat-sheaf"],
     count: 26,
     sizeRange: [20, 42],
-    opacityRange: [0.12, 0.26],
+    opacityRange: [0.05, 0.12],
     rotationRange: [-18, 18],
     seed: "makar-sankranti-ambient",
   },
