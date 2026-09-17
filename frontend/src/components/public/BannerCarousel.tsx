@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, type PanInfo } from "framer-motion";
 import type { LanguageContextValue } from "../../i18n/useLanguage";
 
 // Placeholder banner photography — swap for real yard/product shots when
@@ -16,6 +16,8 @@ const slideImages = [
 const slideLinks = ["/categories", "/categories", "/contact", "/categories"];
 
 const AUTO_ADVANCE_MS = 5500;
+const SWIPE_OFFSET_THRESHOLD = 60;
+const SWIPE_VELOCITY_THRESHOLD = 400;
 
 export default function BannerCarousel({ t }: { t: LanguageContextValue["t"] }) {
   const slides = t("home.banners");
@@ -35,6 +37,15 @@ export default function BannerCarousel({ t }: { t: LanguageContextValue["t"] }) 
 
   const goTo = (i: number) => setIndex((i + slides.length) % slides.length);
 
+  const handleDragEnd = (_e: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
+    setPaused(false);
+    if (info.offset.x <= -SWIPE_OFFSET_THRESHOLD || info.velocity.x <= -SWIPE_VELOCITY_THRESHOLD) {
+      goTo(index + 1);
+    } else if (info.offset.x >= SWIPE_OFFSET_THRESHOLD || info.velocity.x >= SWIPE_VELOCITY_THRESHOLD) {
+      goTo(index - 1);
+    }
+  };
+
   return (
     <section className="container banner-carousel-band">
       <div
@@ -48,11 +59,21 @@ export default function BannerCarousel({ t }: { t: LanguageContextValue["t"] }) 
           <motion.div
             key={index}
             className="banner-slide"
-            style={{ backgroundImage: `url(${slideImages[index % slideImages.length]})` }}
+            style={{
+              backgroundImage: `url(${slideImages[index % slideImages.length]})`,
+              touchAction: "pan-y",
+              cursor: "grab",
+            }}
             initial={{ opacity: 0, scale: 1.04 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={0.6}
+            onDragStart={() => setPaused(true)}
+            onDragEnd={handleDragEnd}
+            whileDrag={{ cursor: "grabbing" }}
           >
             <div className="banner-slide-overlay" />
             <div className="banner-slide-copy">
