@@ -11,9 +11,12 @@ const slideImages = [
   "https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=1600&q=80", // wood-cabinetry kitchen
   "https://images.unsplash.com/photo-1587582423116-ec07293f0395?w=1600&q=80", // framing a wood roof structure
   "https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=1600&q=80", // wood-grain panel shelving
+  "https://images.unsplash.com/photo-1588939349575-7ab15c8bd1ef?w=1600&q=80", // plywood built-in bunk bed with wardrobe shelving
+  "https://images.unsplash.com/photo-1603673298820-40d77252226d?w=1600&q=80", // wood-grain veneer flush doors
+  "https://images.unsplash.com/photo-1682662045846-77f6e1ce55b4?w=1600&q=80", // dark glossy laminate kitchen cabinets
 ];
 
-const slideLinks = ["/categories", "/categories", "/contact", "/categories"];
+const slideLinks = ["/categories", "/categories", "/contact", "/categories", "/categories", "/categories", "/categories"];
 
 const AUTO_ADVANCE_MS = 5500;
 const SWIPE_OFFSET_THRESHOLD = 60;
