@@ -5,6 +5,7 @@ import { getItem } from "../../api/items";
 import Seo, { SITE_URL } from "../../components/Seo";
 import { LoadingBlock, ErrorBlock } from "../../components/public/StateBlock";
 import Lightbox from "../../components/public/Lightbox";
+import BackButton from "../../components/public/BackButton";
 import { getErrorMessage } from "../../utils/errors";
 import { useLanguage } from "../../i18n/useLanguage";
 import { useSettings } from "../../context/SettingsContext";
@@ -123,6 +124,8 @@ export default function ItemDetail() {
         type="product"
         structuredData={[productSchema, breadcrumbSchema]}
       />
+
+      <BackButton fallbackTo={category?._id ? `/categories/${category._id}` : "/categories"} />
 
       <div className="breadcrumb">
         <Link to="/categories">{t("itemDetail.breadcrumbCategories")}</Link>

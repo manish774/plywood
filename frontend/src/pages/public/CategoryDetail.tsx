@@ -7,6 +7,7 @@ import Seo, { SITE_URL } from "../../components/Seo";
 import ItemCard from "../../components/public/ItemCard";
 import Parallax from "../../components/public/Parallax";
 import { LoadingBlock, ErrorBlock, EmptyBlock } from "../../components/public/StateBlock";
+import BackButton from "../../components/public/BackButton";
 import { staggerContainer } from "../../components/motionVariants";
 import { getErrorMessage } from "../../utils/errors";
 import { useLanguage } from "../../i18n/useLanguage";
@@ -74,6 +75,8 @@ export default function CategoryDetail() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ type: "spring", stiffness: 240, damping: 26 }}
         >
+          <BackButton fallbackTo="/categories" />
+
           <div className="breadcrumb">
             <Link to="/categories">{t("categoryDetail.breadcrumb")}</Link>
             <span>/</span>

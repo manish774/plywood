@@ -1025,6 +1025,15 @@
   color: var(--accent);
 }
 
+.back-button {
+  margin-bottom: 14px;
+}
+
+.back-button svg {
+  width: 16px;
+  height: 16px;
+}
+
 /* ---------- Item detail ---------- */
 .item-detail {
   display: grid;
